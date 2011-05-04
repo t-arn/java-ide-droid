@@ -1,0 +1,13 @@
+#summary Product Backlog: The next things to do
+#labels Phase-Implementation
+
+= Product Backlog =
+
+This is the Product Backlog of JavaIDEdroid, showing all the things that need to be added or corrected. The most important things are on top and it is the idea to work from top to bottom.
+
+= Backlog Items =
+
+Add your content here.  Format your content with:
+  # Bug: ProgressDialog
+  # Task: Recompile BeanShell for 1.5 target to get rid of the compilation warnings
+  # Feature: aapt integration
