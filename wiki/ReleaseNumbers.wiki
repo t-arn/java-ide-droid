@@ -6,6 +6,6 @@
 My releases are numbered x.y.x like 0.4.0
 What is the logic behind this numbering?
 
-x: major release, massiv code restructuring / rewriting
-y: feature release, adding new features
-z: release contains no new features, only bug fixing and internal task completion
+  x: major release, massiv code restructuring / rewriting
+  y: feature release, adding new features
+  z: release contains no new features, only bug fixing and internal task completion
