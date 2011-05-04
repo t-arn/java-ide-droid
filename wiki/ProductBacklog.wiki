@@ -8,6 +8,6 @@ This is the Product Backlog of JavaIDEdroid, showing all the things that need to
 = Backlog Items =
 
 Add your content here.  Format your content with:
-  # Bug: ProgressDialog
-  # Task: Recompile BeanShell for 1.5 target to get rid of the compilation warnings
+  # Bug: Progress dialog
+  # Task: Recompile Beanshell for 1.5 target to get rid of the compilation warnings
   # Feature: aapt integration
