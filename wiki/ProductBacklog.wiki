@@ -11,3 +11,8 @@ Add your content here.  Format your content with:
   # Bug: Progress dialog
   # Task: Recompile Beanshell for 1.5 target to get rid of the compilation warnings
   # Feature: aapt integration
+  # Feature: apkbuilder integration
+  # Feature: jarsigner integration
+  # Task: proper certificate for production
+  # Feature: zipalign integration ?
+  # Feature: ant integration ?
