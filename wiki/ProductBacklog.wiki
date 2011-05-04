@@ -1,5 +1,5 @@
 #summary Product Backlog: The next things to do
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 = Product Backlog =
 
