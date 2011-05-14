@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<TITLE>JavaIDEdroid history</TITLE>
+</HEAD>
+<BODY>
+<H1>JavaIDEdroid history</H1>
+
+<H2> version 0.4.1 (11.05.2011) </H2>
+<UL>
+<LI> New: Some logs to CatLog </LI>
+<LI> Modified: BeanShell recompiled for target 1.5, so we get rid of the compilation warnings.</LI>
+<LI> Modified: The last picked script file is remembered </LI>
+</UL>
+
+<H2> version 0.4.0 (04.05.2011) </H2>
+<P> First public release </P>
+
+</BODY>
+</HTML>
