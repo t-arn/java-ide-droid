@@ -3,14 +3,14 @@
 
 <H2> version 0.5.1 (17.05.2011) </H2>
 <UL>
-<LI> New: ApkBuilder integrated. Only unsigned APKs can be created. </LI>
-<LI> Modified: Only 2 tabs anymore: The BeanShell tab and a Tools tab where you can call all available tools directly </LI>
+<LI> New: !ApkBuilder integrated. Only unsigned APKs can be created. </LI>
+<LI> Modified: Only 2 tabs anymore: The !BeanShell tab and a Tools tab where you can call all available tools directly </LI>
 </UL>
 
 <H2> version 0.4.1 (11.05.2011) </H2>
 <UL>
-<LI> New: Some logs to CatLog </LI>
-<LI> Modified: BeanShell recompiled for target 1.5, so we get rid of the compilation warnings.</LI>
+<LI> New: Some logs to !CatLog </LI>
+<LI> Modified: !BeanShell recompiled for target 1.5, so we get rid of the compilation warnings.</LI>
 <LI> Modified: The last picked script file is remembered </LI>
 </UL>
 
