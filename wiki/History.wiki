@@ -1,6 +1,12 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 0.6.1 (20.05.2011) </H2>
+<UL>
+<LI> New: Ken Ellinwoods Zipsigner-lib integrated. </LI>
+<LI> Modified: The public methods of IDE now return exit codes. </LI>
+</UL>
+
 <H2> version 0.5.1 (17.05.2011) </H2>
 <UL>
 <LI> New: !ApkBuilder integrated. Only unsigned APKs can be created. </LI>
