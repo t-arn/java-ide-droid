@@ -8,6 +8,7 @@ This is the Product Backlog of JavaIDEdroid, showing all the things that need to
 = Backlog Items =
 
 Add your content here.  Format your content with:
+  # Bug: ecj always returns -1 even if compilation is successful
   # Bug: Progress dialog
   # Task: Enable user input in Beanshell tab
   # Feature: aapt integration
