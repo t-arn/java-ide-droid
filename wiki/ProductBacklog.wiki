@@ -10,9 +10,6 @@ This is the Product Backlog of JavaIDEdroid, showing all the things that need to
 Add your content here.  Format your content with:
   # Bug: Progress dialog
   # Task: Enable user input in Beanshell tab
-  # Task: Return exit code from compiler and tools
   # Feature: aapt integration
-  # Feature: jarsigner integration ?
   # Task: proper certificate for production
-  # Feature: zipalign integration ?
   # Feature: ant integration ?
