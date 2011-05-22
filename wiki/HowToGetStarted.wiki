@@ -1,11 +1,11 @@
 #summary This is how you get started
 #labels Featured
 
-  # Dowload and install the latest version of JavaIDEdroid
-  # Download HelloAndroid
-  # Adjust where needed the paths in *.bat and *.bsh in the toplevel directory of HelloAndroid
-  # Run 0_aapt.bat on your *desktop* machine. This creates the R.java and HelloAndroid.apk.res files. <br>
-The rest of the build process can now be done on Android device with scripts started in the BeanShell tab of JavaIDEdroid.
+  # Dowload and install the latest version of !JavaIDEdroid
+  # Download !HelloAndroid
+  # Adjust where needed the paths in *.bat and *.bsh in the toplevel directory of !HelloAndroid
+  # Run 0_aapt.bat on your *desktop* machine. This creates the R.java and !HelloAndroid.apk.res files. <br>
+The rest of the build process can now be done on Android device with scripts started in the !BeanShell tab of !JavaIDEdroid.
   # Run 2_compile-main.bsh to compile the Java sources.
   # Run 3_dx.bsh to create the classes.dex file
   # Run 4_apkbuilder.bsh to create the unsigned APK file. Signing with apkbuilder does *not* work, because a lot of proprierty Sun classes are called.
