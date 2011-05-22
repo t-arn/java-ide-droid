@@ -2,7 +2,7 @@
 #labels Featured
 
   # Dowload and install the latest version of JavaIDEdroid
-  # Download !HelloAndroid
+  # Download !HelloAndroid and unzip it to a directory of your choice
   # Adjust where needed the paths in all .bat and .bsh files in the toplevel directory of !HelloAndroid
   # Run 0_aapt.bat on your *desktop* machine. This creates the R.java and !HelloAndroid.apk.res files.
 
