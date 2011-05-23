@@ -3,6 +3,7 @@
 
   # Dowload and install the latest version of JavaIDEdroid
   # Download !HelloAndroid and unzip it to a directory of your choice
+  # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the compilation task
   # Adjust where needed the paths in all .bat and .bsh files in the toplevel directory of !HelloAndroid
   # Run 1_aapt.bat on your *desktop* machine (with installed Android SDK). This creates the R.java and !HelloAndroid.apk.res files. These files are already in the HelloAndroid.zip. If you don't change the layout, !AndroidManifest.xml or the resources, you do not need to re-create them.
 
