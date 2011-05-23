@@ -14,4 +14,4 @@ The rest of the build process can now be done on your Android device with script
   # Run 5_signjar.bsh to create the final signed APK.
   # Install the APK with a Package Manager like ASTRO or Linda Manager and test the !HelloAndroid app.
 
-Alternatively, you can run 0_build.bsh which will do all at once (except aapt).
+Alternatively, you can run 0_build.bsh which performs the compilation, dx, apkbuilder and signing tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
