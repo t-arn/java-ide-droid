@@ -1,4 +1,4 @@
-#summary This is how you get started
+#summary This is how you get started with JavaIDEdroid
 #labels Featured
 
   # Dowload and install the latest version of JavaIDEdroid
