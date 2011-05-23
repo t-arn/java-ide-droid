@@ -1,6 +1,13 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 0.6.2 (21.05.2011) </H2>
+<UL>
+<LI> Modified: fnCompile() does not use the !ExitSecurityManager any more. </LI>
+<LI> Bugfix: fnCompile() always returned -1. Fixed now. It now returns 0 on OK, 1 on compilation warnings, 2 on compilation errors or 3 on other errors.</LI>
+<LI> Bugfix: Fixed the help message of !ZipSigner</LI>
+</UL>
+
 <H2> version 0.6.1 (20.05.2011) </H2>
 <UL>
 <LI> New: Ken Ellinwoods Zipsigner-lib integrated. </LI>
