@@ -4,9 +4,9 @@
 <H2> version 0.7.0 (02.06.2011) </H2>
 <UL>
 <LI> Modified: Tasks now run in a separate thread </LI>
-<LI> New: While the tasks run, a ProgressDialog is showed</LI>
-<LI> New: fnPublishProgress and fnToast methods in BeanShell scripts</LI>
-<LI> Modified: Code refactoring (eliminated GenericAndroidTextArea and IGenericTextArea, replaced GenericTextAreaOutputStream with StringWriterOutputStream</LI>
+<LI> New: While the tasks run, a !ProgressDialog is showed</LI>
+<LI> New: fnPublishProgress and fnToast methods in !BeanShell scripts</LI>
+<LI> Modified: Code refactoring (eliminated !GenericAndroidTextArea and IGenericTextArea, replaced !GenericTextAreaOutputStream with !StringWriterOutputStream</LI>
 </UL>
 
 <H2> version 0.6.2 (21.05.2011) </H2>
