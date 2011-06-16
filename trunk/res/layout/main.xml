@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:id="@android:id/tabhost"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+>
+  <TabWidget
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@android:id/tabs"
+  />
+  <FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@android:id/tabcontent"
+  >
+    <LinearLayout 
+      android:id="@+id/tabBeanshell"
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:paddingTop="70px"
+    >
+      <LinearLayout android:orientation="horizontal"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	    >
+        <ImageButton android:id="@+id/tabBeanshell_btnBrowse"
+          android:src="@drawable/ic_launcher_folder_small"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="tabBeanShell_btnBrowse"
+        />
+	      <EditText
+          android:id="@+id/tabBeanshell_etScript"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:singleLine="true"
+          android:gravity="top"
+          android:textSize="12px"
+          android:hint="@string/tipBeanshell_etScript"
+        />
+      </LinearLayout>
+      <Button
+        android:id ="@+id/tabBeanshell_btnRun"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tabBeanshell_btnRun"
+        android:onClick="tabBeanshell_btnRun"
+      />
+      <TextView
+        android:id="@+id/tabBeanshell_tvOutput"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:singleLine="false"
+        android:gravity="top"
+        android:textSize="12px"
+      />
+    </LinearLayout>
+    <LinearLayout 
+      android:id="@+id/tabTools"
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:paddingTop="70px"
+    >
+      <Spinner android:id="@+id/sp_tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/ar_tools"
+        android:entryValues="@array/ar_tools"
+      />
+      <LinearLayout android:orientation="horizontal"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	  >
+        <Button
+          android:id ="@+id/tabTools_btnRun"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/tabTools_btnRun"
+          android:onClick="tabTools_btnRun"
+          android:gravity="center_vertical"
+        />
+        <EditText
+          android:id="@+id/tabTools_etArgs"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:singleLine="true"
+          android:gravity="center_vertical"
+          android:textSize="12px"
+          android:hint="@string/tipTools_etArgs"
+        />
+      </LinearLayout>
+      <TextView
+        android:id="@+id/tabTools_tvOutput"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:singleLine="false"
+        android:gravity="top"
+        android:textSize="12px"
+      />
+    </LinearLayout>
+  </FrameLayout>
+</TabHost>

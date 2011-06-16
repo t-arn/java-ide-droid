@@ -1,0 +1,10 @@
+ToDo
+====
+
+- proper certificate
+- input in console
+- options for:
+  -- console font size
+  -- start dir for browsing
+
+- aapt integration

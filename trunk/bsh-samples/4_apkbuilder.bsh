@@ -1,0 +1,24 @@
+
+// BeanShell apkbuilder script for JavaIDEdroid
+//
+// The main activity of JavaIDEdroid is
+// mapped to the variable mainActivity
+//	
+
+stScriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+stScriptPath=stScriptPath.replace('\\','/'); 
+
+name = "HelloAndroid";
+outdir=stScriptPath+"out/test/"+name;
+print("***** Calling ApkBuilder ...");
+mainActivity.bshTask.fnPublishProgress("Running Apkbuilder...");
+
+args =  outdir+"/"+name+".apk.unsigned";
+args += " -u -z "+outdir+"/"+name+".apk.res"; // signing is not working with apkbuilder
+args += " -f "+outdir+"/classes.dex";
+args += " -rf "+stScriptPath+"src";
+// args += " -rj "+stSourcePath+"libs";
+iResult = mainActivity.ide.fnApkBuilder(args);
+
+if (iResult==0) mainActivity.bshTask.fnToast("apkbuilder succeeded!",10000);
+else mainActivity.bshTask.fnToast("apkbuilder failed!",10000);
