@@ -1,0 +1,28 @@
+
+// BeanShell compile script
+//
+// The main activity of JavaIDEdroid is
+// mapped to the variable mainActivity
+//	
+
+stSourcePath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+stSourcePath = stSourcePath.replace('\\','/');
+
+name = "HelloAndroid";
+stJavafile = "src/com/t_arn/HelloAndroid/MainActivity.java";
+
+System.out.println("***** Compiling "+stJavafile+" ...");
+mainActivity.bshTask.fnPublishProgress("Compiling...");
+
+// mainActivity.bshTask.fnClear();
+
+args = "-verbose -deprecation -extdirs \"\" -1.5";
+args += " -bootclasspath /mnt/sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar";
+args += " -classpath "+stSourcePath+"src";
+args +=":"+stSourcePath+"gen";
+args += " -d "+stSourcePath+"out/test/"+name;
+args += " "+stSourcePath+stJavafile;
+iResult = mainActivity.ide.fnCompile(args);
+
+if (iResult==0) mainActivity.bshTask.fnToast("Compilation succeeded!",10000); 
+else mainActivity.bshTask.fnToast("Compilation failed!",10000);

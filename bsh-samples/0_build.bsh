@@ -1,0 +1,31 @@
+
+// BeanShell compile script
+//
+// The main activity of JavaIDEdroid is
+// mapped to the variable mainActivity
+//	
+
+String stSourcePath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+String stSourcePath = stSourcePath.replace('\\','/');
+int iResult = 0;
+
+System.out.println("");
+source (stSourcePath+"2_compile-main.bsh");
+
+if (iResult < 2) 
+{
+  System.out.println("");
+  source (stSourcePath+"3_dx.bsh");
+}
+
+if (iResult == 0)
+{
+  System.out.println("");
+  source (stSourcePath+"4_apkbuilder.bsh");
+}
+
+if (iResult == 0)
+{
+  System.out.println("");
+  source (stSourcePath+"5_signjar.bsh");
+}
