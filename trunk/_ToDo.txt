@@ -1,6 +1,7 @@
 ToDo
 ====
 
+- disclaimer
 - proper certificate
 - input in console
 - options for:
