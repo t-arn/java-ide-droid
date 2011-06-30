@@ -19,7 +19,7 @@
       android:orientation="vertical"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      android:paddingTop="70px"
+      android:paddingTop="100px"
     >
       <LinearLayout android:orientation="horizontal"
 	      android:layout_width="fill_parent"
@@ -37,7 +37,7 @@
           android:layout_height="wrap_content"
           android:singleLine="true"
           android:gravity="top"
-          android:textSize="12px"
+          android:textSize="12sp"
           android:hint="@string/tipBeanshell_etScript"
         />
       </LinearLayout>
@@ -48,21 +48,31 @@
         android:text="@string/tabBeanshell_btnRun"
         android:onClick="tabBeanshell_btnRun"
       />
-      <TextView
-        android:id="@+id/tabBeanshell_tvOutput"
-        android:layout_height="fill_parent"
+      <ScrollView
         android:layout_width="fill_parent"
-        android:singleLine="false"
-        android:gravity="top"
-        android:textSize="12px"
-      />
+        android:layout_height="fill_parent"
+      >
+        <HorizontalScrollView
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+        >
+          <TextView
+            android:id="@+id/tabBeanshell_tvOutput"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:singleLine="false"
+            android:gravity="top"
+            android:textSize="12sp"
+          />
+        </HorizontalScrollView>
+      </ScrollView>
     </LinearLayout>
     <LinearLayout 
       android:id="@+id/tabTools"
       android:orientation="vertical"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      android:paddingTop="70px"
+      android:paddingTop="100px"
     >
       <Spinner android:id="@+id/sp_tools"
         android:layout_width="fill_parent"
@@ -74,7 +84,7 @@
       <LinearLayout android:orientation="horizontal"
 	      android:layout_width="fill_parent"
 	      android:layout_height="wrap_content"
-	  >
+	    >
         <Button
           android:id ="@+id/tabTools_btnRun"
           android:layout_width="wrap_content"
@@ -89,18 +99,28 @@
           android:layout_height="wrap_content"
           android:singleLine="true"
           android:gravity="center_vertical"
-          android:textSize="12px"
+          android:textSize="12sp"
           android:hint="@string/tipTools_etArgs"
         />
       </LinearLayout>
-      <TextView
-        android:id="@+id/tabTools_tvOutput"
-        android:layout_height="fill_parent"
+      <ScrollView
         android:layout_width="fill_parent"
-        android:singleLine="false"
-        android:gravity="top"
-        android:textSize="12px"
-      />
+        android:layout_height="fill_parent"
+      >
+        <HorizontalScrollView
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+        >
+          <TextView
+            android:id="@+id/tabTools_tvOutput"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:singleLine="false"
+            android:gravity="top"
+            android:textSize="12sp"
+          />
+        </HorizontalScrollView>
+      </ScrollView>
     </LinearLayout>
   </FrameLayout>
 </TabHost>

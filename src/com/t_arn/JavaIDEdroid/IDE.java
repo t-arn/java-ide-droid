@@ -9,7 +9,6 @@ import com.t_arn.lib.io.StringWriterOutputStream;
  * @since 01.06.2011
  * @author Tom Arn
  * @author www.t-arn.com
- * @version 0.6
  */
 public class IDE
 //##################################################################
