@@ -1,6 +1,13 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 0.7.1 (30.06.2011) </H2>
+<UL>
+<LI> New: Options screen now allows to set font size and font type </LI>
+<LI> Modified: better scrolling </LI>
+<LI> Modified: Reduced the application permissions to WRITE_EXTERNAL_STORAGE </LI>
+</UL>
+
 <H2> version 0.7.0 (02.06.2011) </H2>
 <UL>
 <LI> Modified: Tasks now run in a separate thread </LI>
