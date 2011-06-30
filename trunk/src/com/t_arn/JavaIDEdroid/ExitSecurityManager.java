@@ -1,6 +1,8 @@
 package com.t_arn.JavaIDEdroid;
 
+//##################################################################
 class ExitSecurityManager extends SecurityManager 
+//##################################################################
 {
 	// Many thanks to www.hasiland.com for this class
 	

@@ -16,6 +16,7 @@
       </intent-filter>
     </activity>
     <activity android:name="HelpActivity" />
+    <activity android:name="SettingActivity" />
     >
   </application>
 </manifest> 

@@ -6,4 +6,8 @@
     <item>ApkBuilder</item>
     <item>ZipSigner</item>
   </array>
+  <array name="ar_font_type">
+    <item>Normal</item>
+    <item>Monospace</item>
+  </array>
 </resources>

@@ -5,7 +5,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +16,16 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//##################################################################
+/**
+ * This is the main Activity of JavaIDEdroid
+ *
+ * @since 01.06.2011
+ * @author Tom Arn
+ * @author www.t-arn.com
+ */
 public class MainActivity extends TabActivity
+//##################################################################
 {
   public static final String stProgramName = "JavaIDEdroid";
   public IDE ide;
@@ -25,6 +33,7 @@ public class MainActivity extends TabActivity
   public TextView tabBeanshell_tvOutput, tabTools_tvOutput;
   private EditText tabBeanshell_etScript, tabTools_etArgs;
   private static final int REQUEST_CODE_PICK_FILE_OR_DIRECTORY = 1;
+  private static final int REQUEST_CODE_SETTINGS = 2;
 
 //===================================================================
   /** Called when the activity is first created. */
@@ -49,13 +58,14 @@ public class MainActivity extends TabActivity
 
       tabBeanshell_etScript=(EditText)findViewById(R.id.tabBeanshell_etScript);
       tabBeanshell_tvOutput=(TextView)findViewById(R.id.tabBeanshell_tvOutput);
-      tabBeanshell_tvOutput.setMovementMethod(ScrollingMovementMethod.getInstance());
       
       ide = new IDE();
       
       tabTools_etArgs=(EditText)findViewById(R.id.tabTools_etArgs);
       tabTools_tvOutput=(TextView)findViewById(R.id.tabTools_tvOutput);
-      tabTools_tvOutput.setMovementMethod(ScrollingMovementMethod.getInstance());
+      
+      // load and set application settings
+      SettingActivity.fnApplySettings(this);
     }
     catch (Throwable t) { fnToast("Exception in onCreate!\n"+t.toString(),10000); }
   }//onCreate
@@ -70,6 +80,12 @@ public class MainActivity extends TabActivity
     {
       case REQUEST_CODE_PICK_FILE_OR_DIRECTORY:
         if (resultCode == RESULT_OK && data != null) filename = fnPickFile(data);
+        break;
+      case REQUEST_CODE_SETTINGS:
+        SettingActivity.fnApplySettings(this);
+        break;
+      default:
+        Log.e(stProgramName, "ActivityResult not handled: "+requestCode);
         break;
     }
     tabBeanshell_etScript.setText(filename);
@@ -88,7 +104,7 @@ public class MainActivity extends TabActivity
     switch (item.getItemId())
     {
       case R.id.opt_options:
-        fnOptions ();
+        startActivityForResult(new Intent(this, SettingActivity.class), REQUEST_CODE_SETTINGS);
         return true;
       case R.id.opt_help:
         fnHelp ();
@@ -177,7 +193,9 @@ public void fnClear ()
   public void fnError (String where, Throwable t)
 //===================================================================
   {
-    fnToast("Error in "+where+"!\n"+t.toString(),10000);
+    String errMsg="";
+    if (t!=null) errMsg=t.toString();
+    fnToast("Error in "+where+"!\n"+errMsg,10000);
     if (t!=null) t.printStackTrace();
   }//fnError
 //===================================================================
@@ -188,12 +206,6 @@ public void fnClear ()
     Log.i(stProgramName, "Starting help");
     startActivity(i);
   } //fnHelp
-//===================================================================
-  private void fnOptions ()
-//===================================================================
-  {
-    fnToast("not yet implemented.", 5000);
-  } //fnOptions
 //===================================================================
   private String fnPickFile (Intent data)
 //===================================================================
@@ -218,3 +230,4 @@ public void fnClear ()
   } //
 //===================================================================
 }//MainActivity
+//##################################################################
