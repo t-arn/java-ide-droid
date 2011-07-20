@@ -15,21 +15,830 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="14b05522-224a-4a7d-bf3b-171becabac47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml/settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/SettingActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals/res/values" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals/res" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/Changes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/CleanSpec.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/MANIFEST" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/MODULE_LICENSE_BSD_LIKE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/Makefile.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/ThirdPartyProject.prop" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/inline4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/interfaces" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/libraries" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/proto" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/all_projects.bpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/elements.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/elements.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/elements.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat_static.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat_static.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expat_static.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw_static.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw_static.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/expatw_static.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/libexpat_mtd.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/libexpatw_mtd.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/makefile.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/outline.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/outline.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/outline.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/xmlwf.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/xmlwf.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/xmlwf.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/configure.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/configure" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/PrintPath" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/ac_c_bigendian_cross.m4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/config.guess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/config.sub" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/expat.m4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/install-sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/libtool.m4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/mkinstalldirs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/expat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/valid-xhtml10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/xmlwf.1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/xmlwf.sgml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/examples/elements.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/examples/outline.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/examples" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/expat.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/expat_config.h.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/Makefile.MPW" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expat.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expat_static.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expatw.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expatw_static.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/libexpat.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/libexpatw.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/benchmark/benchmark.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/benchmark/benchmark.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/benchmark" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/vms/README.vms" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/vms/descrip.mms" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/vms" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/win32/expat.iss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/win32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlwf.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlwin32url.cxx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/ANNOUNCE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/Android.mk.original" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/CHANGES" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/CleanSpec.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/INSTALL" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/KNOWNBUG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/MODULE_LICENSE_BSD_LIKE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/Makefile.am" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/Makefile.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/TODO" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/ThirdPartyProject.prop" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/Y2KINFO" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/aclocal.m4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/config.guess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/config.h.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/config.sub" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/configure.ac" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/configure" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/COPYING" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/Makefile.mingw32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/Makefile.sgi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/Makefile.unx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/Makefile.w32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/makevms.com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/toucan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder/makefile.std" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder/makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/makefile.std" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/preader/makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/preader" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/makefile.std" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/makefile.tc3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/makevms.com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn0g01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn0g02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn0g04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn0g08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn0g16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn2c08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn2c16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn3p01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn3p02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn3p04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn3p08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn4a08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn4a16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn6a08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/basn6a16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/depcomp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/install-sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/libpng.3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/libpngpf.3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/missing" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/mkinstalldirs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/png.5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngbar.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngbar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngnow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngtest.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/beos/x86-shared.proj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/beos/x86-static.proj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/beos" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpng.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpng.bpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpng.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpngstat.bpf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpngstat.bpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc6/libpng.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc6/libpng.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc6/pngtest.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/PRJ0041.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/libpng.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/libpng.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/pngtest.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/zlib.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/xcode/Info.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/xcode/libpng.xcodeproj/project.pbxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/xcode/libpng.xcodeproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/xcode" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/SCOPTIONS.ppc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/descrip.mms" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng-config-body.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng-config-head.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng-config.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng.icc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng.pc-configure.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/libpng.pc.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.32sunu" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.64sunu" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.acorn" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.aix" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.amiga" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.atari" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.bc32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.beos" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.bor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.cegcc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.cygwin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.darwin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.dec" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.dj2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.elf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.freebsd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.gcc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.gcmmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.hp64" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.hpgcc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.hpux" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.ibmc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.intel" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.knr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.linux" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.mingw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.mips" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.msc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.ne12bsd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.netbsd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.nommx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.openbsd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.os2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.sco" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.sggcc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.sgi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.so9" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.solaris-x86" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.solaris" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.std" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.sunos" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.tc3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.vcawin32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.vcwin32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makefile.watcom" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/makevms.com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/png32ce.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/pngos2.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/pngw32.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/pngw32.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/smakefile.ppc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/png.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngerror.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pnggccrd.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngget.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngmem.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngpread.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngread.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngrio.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngrtran.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngrutil.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngset.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngtrans.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngvcrd.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngwio.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngwrite.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngwtran.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png/pngwutil.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs/png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi/objs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local/armeabi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj/local" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/Android.mk.original" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/ChangeLog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/CleanSpec.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/FAQ" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/INDEX" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/MODULE_LICENSE_BSD_LIKE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/Makefile.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/NOTICE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/ThirdPartyProject.prop" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/amiga/Makefile.pup" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/amiga/Makefile.sas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/amiga" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/as400/bndsrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/as400/compile.clp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/as400/zlib.inc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/as400" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/configure" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/README.contrib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/buffer_demo.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/mtest.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/read.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/test.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib-streams.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib-streams.ads" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib-thin.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib-thin.ads" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib.adb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib.ads" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/zlib.gpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/amd64/amd64-match.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/amd64" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm586/README.586" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm586/match.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm586" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm686/README.686" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm686/match.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/asm686" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/test.pk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/delphi/ZLib.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/delphi/ZLibConst.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/delphi/zlibd32.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/delphi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib.build" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib.chm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/DotZLib.csproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/gcc_gvmat64/gvmat64.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/gcc_gvmat64" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/inflate86/inffast.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/inflate86" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3/TODO" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3/test.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3/zfstream.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masm686/match.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masm686" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/gvmat64.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/gvmat64.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/inffasx64.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/inffasx64.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/gvmat32.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/gvmat32.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/inffas32.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/inffas32.obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/match686.asm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/ChangeLogUnzip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/make_vms.com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/pascal/example.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/pascal/zlibd32.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/pascal/zlibpas.pas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/pascal" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff/zeros.raw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/testzlib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/untgz/Makefile.msc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/untgz/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/untgz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/miniunz.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/miniunz.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/miniunz.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/minizip.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/minizip.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/minizip.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlib.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlib.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlib.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlibdll.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlibdll.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/testzlibdll.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlib.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibstat.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibstat.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibstat.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibvc.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibvc.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibvc.vcxproj.filters" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibvc.vcxproj.user" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10/zlibvc.vcxproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc10" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/miniunz.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/minizip.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/testzlib.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/zlib.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/zlibstat.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/zlibvc.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/zlibvc.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7/zlibvc.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc7" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/miniunz.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/minizip.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/testzlib.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/testzlibdll.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/zlib.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/zlibstat.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/zlibvc.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/zlibvc.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8/zlibvc.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc8" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/miniunz.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/minizip.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/testzlib.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/testzlibdll.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/zlib.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/zlibstat.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/zlibvc.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/zlibvc.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9/zlibvc.vcproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/vc9" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/README.examples" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/make_vms.com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos/Makefile.bor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos/Makefile.dj2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos/Makefile.emx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos/Makefile.msc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos/Makefile.tc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/msdos" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/nintendods/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/nintendods" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/Makefile.riscos" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/as400/bndsrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/as400/compile.clp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/as400/zlib.inc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/as400" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/descrip.mms" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/os2/Makefile.os2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/os2/zlib.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/os2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6/example.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6/minigzip.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6/zlib.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6/zlib.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/README.projects" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6/example.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6/minigzip.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6/zlib.dsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6/zlib.dsw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/qnx/package.qpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/qnx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/watcom/watcom_f.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/watcom/watcom_l.mak" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/watcom" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/Makefile.bor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/Makefile.emx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/Makefile.gcc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/Makefile.msc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/zlib.def" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/zlib1.rc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zconf.h.cmakein" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zconf.h.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib.3.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib.3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib.pc.in" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib2ansi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/libs/armeabi/libminigzip.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/libs/armeabi/libunz.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/libs/armeabi/libz.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/libs/armeabi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/libs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/libminigzip.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/libunz.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/libz.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/minigzip/minigzip.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/minigzip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/adler32.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/crc32.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/inffast.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/inflate.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/inftrees.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz/zutil.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/unz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/adler32.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/compress.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/crc32.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/deflate.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/gzclose.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/gzlib.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/gzread.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/gzwrite.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/infback.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/inffast.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/inflate.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/inftrees.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/trees.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/uncompr.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z/zutil.o.d" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs/z" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi/objs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local/armeabi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj/local" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/obj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/AaptAssets.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/AaptAssets.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Bundle.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Command.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Images.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Images.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Main.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Main.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Package.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/Resource.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ResourceTable.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ResourceTable.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/SourcePos.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/SourcePos.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/StringPool.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/StringPool.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/XMLNode.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/XMLNode.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ZipEntry.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ZipEntry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ZipFile.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/ZipFile.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/ByteOrder.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/Errors.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/List.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/Log.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/ResourceTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/SortedVector.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/String16.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/String8.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/ZipUtils.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/misc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/includes/threads.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/printapk.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/jni/tests/plurals/run.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/aapt/ndk-build.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/expat.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/expat_lib.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/expat_vectors.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/inline4/expat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/interfaces/expat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/libraries/expat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/include/proto/expat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/launch.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/amiga/stdlib.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/bcb5/setup.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/get-version.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/conftools/ltmain.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/reference.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/doc/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/examples/elements.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/examples/outline.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/expat_config.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/amigaconfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/ascii.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/asciitab.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/expat_external.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/iasciitab.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/internal.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/latin1tab.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/macconfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/nametab.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/utf8tab.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/winconfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmlparse.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmlrole.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmlrole.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmltok.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmltok.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmltok_impl.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmltok_impl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/lib/xmltok_ns.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/benchmark/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/benchmark/benchmark.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/chardata.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/chardata.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/minicheck.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/minicheck.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/runtests.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/runtestspp.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/tests/xmltest.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/vms/expat_config.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/win32/MANIFEST.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/win32/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/codepage.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/codepage.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/ct.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/filemap.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/readfilemap.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/unixfilemap.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/win32filemap.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlfile.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlfile.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlmime.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlmime.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmltchar.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlurl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/jni/xmlwf/xmlwf.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/expat/ndk-build.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/autogen.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/readpng.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/readpng.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/readpng2.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/readpng2.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/readppm.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/rpng-win.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/rpng-x.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/rpng2-win.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/rpng2-x.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/wpng.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/writepng.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/gregbook/writepng.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder/gather.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/decoder/pngusr.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/dummy_inflate.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/gather.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/encoder/pngusr.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/preader/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/preader/gather.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminim/preader/pngusr.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/png2pnm.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/png2pnm.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/png2pnm.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/pngminus.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/pngminus.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/pnm2png.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/pnm2png.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngminus/pnm2png.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/pngsuite/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/PngFile.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/PngFile.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/VisualPng.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/cexcept.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/contrib/visupng/resource.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/example.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/libpng-1.2.44.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/ltmain.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/png.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/png.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngconf.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngerror.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pnggccrd.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngget.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngmem.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngpread.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngread.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngrio.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngrtran.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngrutil.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngset.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngtest.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngtrans.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngusr.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngvcrd.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngwio.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngwrite.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngwtran.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/pngwutil.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/beos/x86-shared.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/beos/x86-static.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpng.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/libpng.readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/cbuilder5/zlib.readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/netware.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc6/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/visualc71/README_zlib.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/wince.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/projects/xcode/libpng.xcodeproj/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/scripts/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/jni/test-pngtest.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/libpng/ndk-build.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/adler32.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/algorithm.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/as400/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/compress.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/ada/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/blast.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/blast.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/blast/test.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/delphi/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/AssemblyInfo.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/ChecksumImpl.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/CircularBuffer.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/CodecBase.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/Deflater.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/DotZLib.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/GZipStream.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/Inflater.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/DotZLib/UnitTests.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/LICENSE_1_0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/dotzlib/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/infback9.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/infback9.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/inffix9.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/inflate9.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/inftree9.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/infback9/inftree9.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/inflate86/inffas86.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream2/zstream.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream2/zstream_test.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream3/zfstream.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream/test.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream/zfstream.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/iostream/zfstream.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/bld_ml64.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/inffas8664.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx64/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/bld_ml32.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/gvmat32c.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/mkasm.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/masmx86/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/MiniZip64_Changes.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/MiniZip64_info.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/crypt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/ioapi.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/ioapi.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/iowin32.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/iowin32.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/miniunz.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/minizip.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/mztools.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/mztools.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/unzip.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/unzip.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/zip.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/minizip/zip.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/pascal/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff/puff.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/puff/puff.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/testzlib/testzlib.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/testzlib/testzlib.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/untgz/untgz.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/contrib/vstudio/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/crc32.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/crc32.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/deflate.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/deflate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc/algorithm.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc/rfc1950.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc/rfc1951.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc/rfc1952.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/doc/txtvsbin.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/example.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/enough.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/fitblk.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/gun.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/gzappend.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/gzjoin.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/gzlog.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/gzlog.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/zlib_how.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/zpipe.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/examples/zran.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzclose.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzguts.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzio.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzlib.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzread.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/gzwrite.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/infback.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inffast.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inffast.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inffixed.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inflate.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inflate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inftrees.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/inftrees.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/minigzip.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/nintendods/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/as400/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visual-basic.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/visualc6/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/old/zlib.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/projects/visualc6/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/treebuild.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/trees.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/trees.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/uncompr.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/DLL_FAQ.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/README-WIN32.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/win32/VisualC.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zconf.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zconf.in.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zlib.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zutil.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/jni/zutil.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jni/zlib/ndk-build.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$" afterPath="$PROJECT_DIR$" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/0_build.bat" afterPath="$PROJECT_DIR$/0_build.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_ToDo.txt" afterPath="$PROJECT_DIR$/_ToDo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/t_arn/JavaIDEdroid/R.java" afterPath="$PROJECT_DIR$/gen/com/t_arn/JavaIDEdroid/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/raw/help.html" afterPath="$PROJECT_DIR$/res/raw/help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/arrays.xml" afterPath="$PROJECT_DIR$/res/values/arrays.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/ExitSecurityManager.java" afterPath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/ExitSecurityManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/HelpActivity.java" afterPath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/HelpActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/IDE.java" afterPath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/IDE.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/t_arn/JavaIDEdroid/MainActivity.java" />
     </list>
     <ignored path="JavaIDEdroid.iws" />
@@ -161,6 +970,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,27 +990,100 @@
               <option name="myItemId" value="JavaIDEdroid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaIDEdroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aapt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="146" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="127" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="146" />
     <property name="project.structure.last.edited" value="Libraries" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="127" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="44" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="147" />
     <property name="project.structure.proportion" value="0.23242188" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="147" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="122" />
     <property name="MemberChooser.sorted" value="false" />
@@ -214,22 +1099,22 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="822" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="E:\Users\Tom\IdeaProjects\JavaIDEdroid\lib" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="Downloaded.Files.Path" value="E:\Users\Tom\IdeaProjects\JavaIDEdroid\lib" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.lastSelected" value="project.propSubversion" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -434,16 +1319,17 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270548" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59931505" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30479452" sideWeight="0.99914235" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37328768" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902735" sideWeight="0.6729452" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32902735" sideWeight="0.6712329" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -452,8 +1338,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30479452" sideWeight="0.99914235" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -473,7 +1358,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.7.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="added aapt source files&#10;zlib successfully (?) compiled as shared lib&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -489,6 +1374,7 @@
     <MESSAGE value="Version 0.7.0" />
     <MESSAGE value="fixed targetSdkVersion and permissions" />
     <MESSAGE value="Version 0.7.1" />
+    <MESSAGE value="added aapt source files&#10;zlib successfully (?) compiled as shared lib&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

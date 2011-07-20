@@ -3,6 +3,7 @@ package com.t_arn.JavaIDEdroid;
 import android.app.TabActivity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,7 +44,6 @@ public class MainActivity extends TabActivity
   {
     try
     {
-      super.onCreate(savedInstanceState);
       setContentView(R.layout.main);
       TabHost tabHost=getTabHost();
       TabSpec tabBeanshell=tabHost.newTabSpec("BeanShell");
@@ -66,6 +66,7 @@ public class MainActivity extends TabActivity
       
       // load and set application settings
       SettingActivity.fnApplySettings(this);
+      super.onCreate(savedInstanceState);
     }
     catch (Throwable t) { fnToast("Exception in onCreate!\n"+t.toString(),10000); }
   }//onCreate
@@ -89,8 +90,18 @@ public class MainActivity extends TabActivity
         break;
     }
     tabBeanshell_etScript.setText(filename);
+    super.onActivityResult(requestCode, resultCode, data);
   }
 //===================================================================
+  @Override 
+  public void onConfigurationChanged(Configuration config)
+//===================================================================
+  {
+    Log.i(stProgramName, "onConfigurationChanged()");
+    super.onConfigurationChanged(config);
+  }
+//===================================================================
+   @Override 
    public boolean onCreateOptionsMenu (Menu menu)
 //===================================================================
   {
@@ -98,6 +109,7 @@ public class MainActivity extends TabActivity
     return super.onCreateOptionsMenu(menu);
   }
 //===================================================================
+  @Override 
   public boolean onOptionsItemSelected (MenuItem item)
 //===================================================================
   {
