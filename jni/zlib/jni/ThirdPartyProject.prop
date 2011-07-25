@@ -1,0 +1,9 @@
+# Copyright 2010 Google Inc. All Rights Reserved.
+#Fri Jul 16 10:03:09 PDT 2010
+currentVersion=1.2.3
+version=1.2.3
+isNative=true
+name=zlib
+keywords=zlib
+onDevice=true
+homepage=http\://www.zlib.net/
