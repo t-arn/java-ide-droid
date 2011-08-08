@@ -1,10 +1,17 @@
 ToDo
 ====
 
-- disclaimer
-- proper certificate
+- icon
 - input in console
 - options for:
   -- start dir for browsing
 
 - aapt integration
+  -- zlib: already on device by default
+  -- liblog: already on device by default
+  -- libpng: ok
+  -- expat
+  -- libhost
+  -- libutils
+  -- libcutils
+  

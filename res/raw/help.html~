@@ -44,8 +44,8 @@ kbd {
 <h2>1. Introduction</h2>
 <p>JavaIDEdroid is an Android application that aims to be an integrated development environment for creating native Android applications. Ideally, it will allow you to create APK files completely on Android devices, without the need to use the Android SDK on Windows or Linux.</p>
 <table>
-<tr><td>Version:</td><td>0.7.2</td>
-<tr><td>Date: </td><td>2011-08-08</td>
+<tr><td>Version:</td><td>0.7.1</td>
+<tr><td>Date: </td><td>2011-06-30</td>
 <tr><td>Author:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
 <tr><td>Contributions by: </td><td>Ken Ellinwood</td>
 <tr><td>Project home page:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
@@ -62,23 +62,20 @@ kbd {
 <h2>2. BeanShell</h2>
 <p>The integrated BeanShell interpreter allows you to automate the build process by writing your own BeanShell scripts.</p>
 <h3>2.1 Writing scripts</h3>
-<p>BeanShell scripts can access the functionality built into JavaIDEdroid by using the pre-defined variable <kbd>G</kbd>. This variable references G.class with following accessible variables and methods:</p>
+<p>BeanShell scripts can access the functionality built into JavaIDEdroid by using the pre-defined variable <kbd>mainActivity</kbd>. This variable references the MainActivity class with following accessible methods:</p>
 <ul>
-<li>MainActivity class: G.main </li>
-<li>IDE class: G.ide </li>
-<li>BeanShellTask class: G.bshTask </li>
-<li>int G.ide.fnCompile (String arguments)</li>
-<li>int G.ide.fnCompile (String[] arguments)</li>
-<li>int G.ide.fnDx (String arguments)</li>
-<li>int G.ide.fnDx (String[] arguments)</li>
-<li>int G.ide.fnApkBuilder (String arguments)</li>
-<li>int G.ide.fnApkBuilder (String[] arguments)</li>
-<li>int G.ide.fnSignApk (String arguments)</li>
-<li>int G.ide.fnSignApk (String[] arguments)</li>
-<li>String[] G.ide.fnTokenize (String commandline) // tokenizes the commandline arguments</li>
-<li>void G.bshTask.fnClear () // clears BeanShell output</li>
-<li>void G.bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
-<li>void G.bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
+<li>int ide.fnCompile (String arguments)</li>
+<li>int ide.fnCompile (String[] arguments)</li>
+<li>int ide.fnDx (String arguments)</li>
+<li>int ide.fnDx (String[] arguments)</li>
+<li>int ide.fnApkBuilder (String arguments)</li>
+<li>int ide.fnApkBuilder (String[] arguments)</li>
+<li>int ide.fnSignApk (String arguments)</li>
+<li>int ide.fnSignApk (String[] arguments)</li>
+<li>String[] ide.fnTokenize (String commandline) // tokenizes the commandline arguments</li>
+<li>void bshTask.fnClear () // clears BeanShell output</li>
+<li>void bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
+<li>void bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
 </ul>
 <p>Meaning of the return value: <br>
    <pre>
@@ -87,25 +84,13 @@ kbd {
    255: no defined return value
    </pre>
 <p>
-<p>Example for calling ecj:<br><kbd>int rc = G.ide.fnCompile("--version");</kbd></p>
+<p>Example for calling ecj:<br><kbd>int rc = mainActivity.ide.fnCompile("--version");</kbd></p>
 
 <h3>2.2 Running scripts</h3>
 <p>BeanShell scripts must be stored somewhere on the Storage Card. You can enter the path and filename of the script in the edit field or choose the script by tapping the folder icon. To choose a script, the OI File Manager needs to be installed on the device. The <kbd>"Run script!"</kbd> button will start the specified BeanShell script.</p>
 
 <h2>3. Tools</h2>
 <p>This tab provides a direct access to the built-in tools without the need for a BeanShell script. All arguments need to be entered in the edit field.</p>
-
-<h2>4. Legal issues</h2>
-<p>Thank you for choosing this SOFTWARE! You may only use this SOFTWARE if you agree with the conditions listed further below:</p>
-
-<p><b>COPYRIGHT</b><br>
-This SOFTWARE has been developed by Tom Arn, www.t-arn.com, (in the following termed AUTHOR) and is free under the terms of the GNU General Public License.</p>
-
-<p><b>NO WARRANTY</b><br>
-The SOFTWARE is provided AS IS without a warranty of any kind. All express, implied or statutory warranties, including any implied warranty of merchantibility or fitness for a particular purpose, are hereby excluded. The AUTHOR does not warrant that the SOFTWARE is fail-safe or error-free. The user must bear all risks when using the SOFTWARE.</p>
-
-<p><b>NO LIABILITY</b><br>
-In no event will the AUTHOR be liable for direct, indirect or consequential damages related to the use (or the inability of the use) of the SOFTWARE, even if the AUTHOR has been advised of the possibility of such damages.</p>
 
 </body>
 </html>
