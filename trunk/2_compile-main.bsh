@@ -1,8 +1,8 @@
 
 // BeanShell compile script for JavaIDEdroid
 //
-// The main activity of JavaIDEdroid is
-// mapped to the variable mainActivity
+// The global class G of JavaIDEdroid is
+// mapped to the bsh variable G
 //	
 
 stSourcePath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
@@ -11,16 +11,16 @@ stSourcePath = stSourcePath.replace('\\','/');
 stJavafile = "src/com/t_arn/JavaIDEdroid/MainActivity.java";
 
 System.out.println("Compiling "+stJavafile+" ...");
-mainActivity.bshTask.fnPublishProgress("Compiling...");
+G.bshTask.fnPublishProgress("Compiling...");
 
 args = "-verbose -deprecation -extdirs \"\" -1.5";
-args += " -bootclasspath /mnt/sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/ecj.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/dx.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/bsh.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/sdklib.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/androidprefs.jar:/mnt/sdcard/!Daten/Android/IdeaProjects/JavaIDEdroid/libs/zipsigner-lib_all.jar";
+args += " -bootclasspath /mnt/sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/ecj.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/dx.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/bsh.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/sdklib.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/androidprefs.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/zipsigner-lib_all.jar";
 args += " -classpath "+stSourcePath+"src";
 args +=":"+stSourcePath+"gen";
 args += " -d "+stSourcePath+"out/test/JavaIDEdroid";
 args += " "+stSourcePath+stJavafile;
 
-iResult = mainActivity.ide.fnCompile(args);
-if (iResult>=2) mainActivity.bshTask.fnToast("Compilation failed!",10000);
-else if (iResult==1) mainActivity.bshTask.fnToast("Compilation with warnings",10000);
-else mainActivity.bshTask.fnToast("Compilation succeeded.",10000);
+iResult = G.ide.fnCompile(args);
+if (iResult>=2) G.bshTask.fnToast("Compilation failed!",10000);
+else if (iResult==1) G.bshTask.fnToast("Compilation with warnings",10000);
+else G.bshTask.fnToast("Compilation succeeded.",10000);

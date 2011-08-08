@@ -4,16 +4,20 @@ rem Batch to build JavaIDEdroid
 rem
 :start
 cls
-echo Building JavaIDEdroid
+echo Building JavaIDEdroid (DEBUG)
 echo.=====================
 echo.
 rem setting java home
 set JSDK=u:\programs\jdk6
 
+rem setting keystore and key
+set KS=v:\!Daten\Privat\EN\keystore.ks
+set KEY=sw@t-arn.com
+
 rem set project name and directory and output directory
 set PNAME=JavaIDEdroid
 set PDIR=%~dp0
-set OUTDIR=%PDIR%out\production\%PNAME%
+set OUTDIR=%PDIR%out\test\%PNAME%
 
 rem change to project directory
 cd /d %PDIR%
@@ -25,8 +29,7 @@ echo 0: clear old output files
 echo 1: generate resources
 echo 2: compile
 echo 3: dexify
-echo 4: create APK package (debug key)
-rem echo 5: sign APK package
+echo 4: create and test-sign APK package
 echo a: do it all
 echo q: quit
 echo.
@@ -37,24 +40,25 @@ if "%ACTION%"=="1" goto aapt
 if "%ACTION%"=="2" goto compile
 if "%ACTION%"=="3" goto dx
 if "%ACTION%"=="4" goto apk
-if "%ACTION%"=="5" goto sign
 if "%ACTION%"=="a" goto clear
 goto end
 
 :clear
 rd %OUTDIR% /S
 md %OUTDIR%
-if not "%ACTION%"=="a" goto end
 echo Errorlevel: %ERRORLEVEL%
+if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause
+
 
 :aapt
 rem generate resource java code and packaged resources
 echo ***** Generating R.java and packaged resources *****
 %ASDK%\platform-tools\aapt p -m -J gen -M AndroidManifest.xml -S res -I %ASDK%\platforms\android-8\android.jar -f -F %OUTDIR%\%PNAME%.apk.res
-if not "%ACTION%"=="a" goto end
 echo Errorlevel: %ERRORLEVEL%
+if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause
+
 
 :compile
 rem compile
@@ -64,13 +68,15 @@ echo Errorlevel: %ERRORLEVEL%
 if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause
 
+
 :dx
 rem dexify
 echo ***** Creating classes.dex *****
 CALL %ASDK%\platform-tools\dx.bat --dex --output=%OUTDIR%\classes.dex %OUTDIR% %PDIR%libs\*.jar
-if not "%ACTION%"=="a" goto end
 echo Errorlevel: %ERRORLEVEL%
+if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause
+
 
 :apk
 rem package resources and dex files together
@@ -83,12 +89,6 @@ goto end
 if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause
 
-:sign
-rem zipsigner
-rem not woking so far...maybe it's better to use jarsigner here...
-echo ***** Signing the APK file *****
-%JSDK%\bin\java -cp %OUTDIR% com.t_arn.%PNAME%.SignApk -M testkey -I "%OUTDIR%\%PNAME%.apk.unsigned" -O "%OUTDIR%\%PNAME%.apk"
-if not %ERRORLEVEL%==0 pause
 
 :end
 if "%ACTION%"=="q" exit

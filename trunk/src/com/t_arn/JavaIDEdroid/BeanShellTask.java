@@ -11,21 +11,19 @@ public class BeanShellTask
 //##################################################################
 { 
   private ProgressDialog progressDialog;
-  private MainActivity mainAct;
   private StringWriterOutputStream swos;
   
-public BeanShellTask (MainActivity main)
+public BeanShellTask ()
 //===================================================================
 {
-  this.mainAct = main;
 } //
 //===================================================================
 protected void onPreExecute() 
 //===================================================================
 {
-  Log.i(MainActivity.stProgramName, "onPreExecute");
+  Log.i(G.stProgramName, "onPreExecute");
   // show progress dialog
-  progressDialog = new ProgressDialog(mainAct);
+  progressDialog = new ProgressDialog(G.main);
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
   progressDialog.setTitle("BeanShell Task");
   progressDialog.setMessage("Task running...");
@@ -39,16 +37,16 @@ protected Void doInBackground(String... args)
   try
   {
     final bsh.Interpreter i;
-    Log.i(MainActivity.stProgramName, "doInBackground");
+    Log.i(G.stProgramName, "doInBackground");
     i = new bsh.Interpreter();
-    i.set("mainActivity", mainAct);
+    i.set("G", new G());
     swos = new StringWriterOutputStream();
-    mainAct.ide.fnRedirectOutput(swos);
-    mainAct.ide.fnRunBeanshellScript(i, args[0]);
+    G.ide.fnRedirectOutput(swos);
+    G.ide.fnRunBeanshellScript(i, args[0]);
   }
   catch (Throwable t)
   {
-    mainAct.fnError("doInBackground", t);
+  G.fnError("doInBackground", t);
   }
   return null;
 }
@@ -58,7 +56,7 @@ protected void onProgressUpdate(String... progress)
   String[] uitask;
   try
   {
-    Log.i(MainActivity.stProgramName, "onProgressUpdate");
+    Log.i(G.stProgramName, "onProgressUpdate");
     if (!progress[0].startsWith("~UITASK~")) progressDialog.setMessage(progress[0]);
     else
     {
@@ -66,21 +64,21 @@ protected void onProgressUpdate(String... progress)
       if (uitask[1].equals("CLEAR")) 
       {
         swos.toStringBuffer().setLength(0);
-        mainAct.fnClear();
+        G.main.fnClear();
       }
       if (uitask[1].equals("TOAST"))
       { 
-        mainAct.fnToast(uitask[2], Integer.parseInt(uitask[3]));
+        G.fnToast(uitask[2], Integer.parseInt(uitask[3]));
       }
     }//else
-  } catch (Exception e) { Log.e(MainActivity.stProgramName, "onProgressUpdate: "+e.getMessage()); }
+  } catch (Exception e) { Log.e(G.stProgramName, "onProgressUpdate: "+e.getMessage()); }
 } // onProgressUpdate
 //===================================================================
 protected void onPostExecute(Void unused) 
 //===================================================================
 { 
   publishProgress("Task finished");
-  mainAct.tabBeanshell_tvOutput.append(swos.toString());
+  G.tabBeanshell_tvOutput.append(swos.toString());
   if (progressDialog.isShowing()) progressDialog.dismiss();
 } 
 //===================================================================

@@ -15,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
-import android.widget.Toast;
 
 //##################################################################
 /**
@@ -28,10 +27,6 @@ import android.widget.Toast;
 public class MainActivity extends TabActivity
 //##################################################################
 {
-  public static final String stProgramName = "JavaIDEdroid";
-  public IDE ide;
-  public BeanShellTask bshTask;
-  public TextView tabBeanshell_tvOutput, tabTools_tvOutput;
   private EditText tabBeanshell_etScript, tabTools_etArgs;
   private static final int REQUEST_CODE_PICK_FILE_OR_DIRECTORY = 1;
   private static final int REQUEST_CODE_SETTINGS = 2;
@@ -57,18 +52,18 @@ public class MainActivity extends TabActivity
       tabHost.addTab(tabTools);
 
       tabBeanshell_etScript=(EditText)findViewById(R.id.tabBeanshell_etScript);
-      tabBeanshell_tvOutput=(TextView)findViewById(R.id.tabBeanshell_tvOutput);
+      G.tabBeanshell_tvOutput=(TextView)findViewById(R.id.tabBeanshell_tvOutput);
       
-      ide = new IDE();
+      G.ide = new IDE();
       
       tabTools_etArgs=(EditText)findViewById(R.id.tabTools_etArgs);
-      tabTools_tvOutput=(TextView)findViewById(R.id.tabTools_tvOutput);
+      G.tabTools_tvOutput=(TextView)findViewById(R.id.tabTools_tvOutput);
       
-      // load and set application settings
-      SettingActivity.fnApplySettings(this);
+      // load and set global application variables and settings
+      G.fnInit(this);
       super.onCreate(savedInstanceState);
     }
-    catch (Throwable t) { fnToast("Exception in onCreate!\n"+t.toString(),10000); }
+    catch (Throwable t) { G.fnToast("Exception in onCreate!\n"+t.toString(),10000); }
   }//onCreate
 //===================================================================
   @Override
@@ -83,10 +78,10 @@ public class MainActivity extends TabActivity
         if (resultCode == RESULT_OK && data != null) filename = fnPickFile(data);
         break;
       case REQUEST_CODE_SETTINGS:
-        SettingActivity.fnApplySettings(this);
+        G.oSet.fnApplySettings();
         break;
       default:
-        Log.e(stProgramName, "ActivityResult not handled: "+requestCode);
+        Log.e(G.stProgramName, "ActivityResult not handled: "+requestCode);
         break;
     }
     tabBeanshell_etScript.setText(filename);
@@ -97,7 +92,7 @@ public class MainActivity extends TabActivity
   public void onConfigurationChanged(Configuration config)
 //===================================================================
   {
-    Log.i(stProgramName, "onConfigurationChanged()");
+    Log.i(G.stProgramName, "onConfigurationChanged()");
     super.onConfigurationChanged(config);
   }
 //===================================================================
@@ -145,9 +140,9 @@ public class MainActivity extends TabActivity
     catch (ActivityNotFoundException e) 
     {
       // No compatible file manager was found.
-      fnToast("OI Filemanager needs to be installed", 10000);
+      G.fnToast("OI Filemanager needs to be installed", 10000);
     }
-    catch (Throwable t) { fnError("tabBeanshell_btnBrowse", t); }
+    catch (Throwable t) { G.fnError("tabBeanshell_btnBrowse", t); }
   }//tabBeanshell_btnBrowse
 //===================================================================
   public void tabBeanshell_btnRun (final View view)
@@ -156,13 +151,13 @@ public class MainActivity extends TabActivity
     try
     {
       String script;
-      Log.i(stProgramName, "Starting BeanShell script");
-      fnClear(tabBeanshell_tvOutput);
+      Log.i(G.stProgramName, "Starting BeanShell script");
+      fnClear(G.tabBeanshell_tvOutput);
       script=tabBeanshell_etScript.getText().toString();
-      bshTask = new BeanShellTask(this);
-      bshTask.execute(script);
+      G.bshTask = new BeanShellTask();
+      G.bshTask.execute(script);
     }
-    catch (Throwable t) { fnError("tabBeanshell_btnRun", t); }
+    catch (Throwable t) { G.fnError("tabBeanshell_btnRun", t); }
   }
 //===================================================================
   public void tabTools_btnRun (final View view)
@@ -175,11 +170,11 @@ public class MainActivity extends TabActivity
       String[] ar_tools_values = getResources().getStringArray(R.array.ar_tools);
       String stChosen = ar_tools_values[pos];
       String params = tabTools_etArgs.getText().toString();
-      fnClear(tabTools_tvOutput);
-      Log.i(stProgramName, "Starting "+stChosen);
-      new ToolTask(this).execute(stChosen, params);
+      fnClear(G.tabTools_tvOutput);
+      Log.i(G.stProgramName, "Starting "+stChosen);
+      new ToolTask().execute(stChosen, params);
     }
-    catch (Throwable t) { fnError("tabTools_btnRun", t); }
+    catch (Throwable t) { G.fnError("tabTools_btnRun", t); }
   } //tabTools_btnRun
 //===================================================================
 public void fnClear ()
@@ -187,9 +182,9 @@ public void fnClear ()
 {
   try
   {
-    tabBeanshell_tvOutput.setText("");
+    G.tabBeanshell_tvOutput.setText("");
   }
-  catch (Throwable t) { fnError("fnClear", t); }
+  catch (Throwable t) { G.fnError("fnClear", t); }
 }//fnClear
 //===================================================================
   protected void fnClear (TextView tv)
@@ -199,23 +194,14 @@ public void fnClear ()
     {
       tv.setText("");
     }
-    catch (Throwable t) { fnError("fnClear", t); }
+    catch (Throwable t) { G.fnError("fnClear", t); }
   }//fnClear
-//===================================================================
-  public void fnError (String where, Throwable t)
-//===================================================================
-  {
-    String errMsg="";
-    if (t!=null) errMsg=t.toString();
-    fnToast("Error in "+where+"!\n"+errMsg,10000);
-    if (t!=null) t.printStackTrace();
-  }//fnError
 //===================================================================
   private void fnHelp ()
 //===================================================================
   {
     final Intent i = new Intent (this, HelpActivity.class);
-    Log.i(stProgramName, "Starting help");
+    Log.i(G.stProgramName, "Starting help");
     startActivity(i);
   } //fnHelp
 //===================================================================
@@ -234,12 +220,6 @@ public void fnClear ()
     else filename = "";
     return filename;
   } //fnPickFile
-//===================================================================
-  public void fnToast (String msg, int msec)
-//===================================================================
-  {
-    Toast.makeText(MainActivity.this,msg,msec).show();
-  } //
 //===================================================================
 }//MainActivity
 //##################################################################

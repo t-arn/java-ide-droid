@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.webkit.WebView;
 
@@ -26,6 +27,13 @@ public class HelpActivity extends Activity
     initWebKit(view, this);
     view.bringToFront();
   } // onCreate
+//===================================================================
+  @Override 
+  public void onConfigurationChanged(Configuration config)
+//===================================================================
+  {
+    super.onConfigurationChanged(config);
+  }
 //===================================================================
   private void initWebKit(final WebView view, final Context context) 
 //===================================================================
