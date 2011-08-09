@@ -1,13 +1,21 @@
 #!/bin/sh
+#
+
+### Cygwin script to build all the native code
 
 ### build libpng
 cd libpng
 pwd
-./ndk-build.sh clean
-./ndk-build.sh -B -V1
-cp libs/armeabi/libpng.so ../libs/armeabi/
+./ndk-build.sh
+cp libs/armeabi/libpng.so ../../libs/armeabi/
 cd ..
 
+### build expat
+cd expat
+pwd
+./ndk-build.sh
+cp libs/armeabi/libpng.so ../../libs/armeabi/
+cd ..
 
-### show libs
-ls -l libs/armeabi/
+### show built libs
+ls -l ../libs/armeabi/
