@@ -1,0 +1,4 @@
+
+aapt: libpng, zlib, expat, utils, cutils, host
+
+libpng: zlib

@@ -4,4 +4,4 @@ default:
 
 android-ndk/platforms/android-8/arch-arm/usr/lib/libz.so
 
-hmmm... is libunz also needed ???
+hmmm... is libunz needed by aapt???
