@@ -1,4 +1,8 @@
 
-aapt: libpng, zlib, expat, utils, cutils, host
+aapt: libpng, zlib, expat, libutils, libcutils, libhost
 
 libpng: zlib
+libcutils:
+expat:
+libhost:
+libutils: libcutils, zlib, log

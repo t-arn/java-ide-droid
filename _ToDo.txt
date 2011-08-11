@@ -5,13 +5,14 @@ ToDo
 - input in console
 - options for:
   -- start dir for browsing
-
+- prevent dx System.exit: [platform/dalvik.git] / dx / src
+  
 - aapt integration
   -- zlib: already on device by default
   -- liblog: already on device by default
   -- libpng: ok
-  -- expat
+  -- expat: ok
+  -- libcutils: (mspace needed?)
   -- libhost
   -- libutils
-  -- libcutils
   
