@@ -5,9 +5,9 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-#
+#############################################################################
 # libpng definitions
-#
+#############################################################################
 libpng_SRC_FILES := \
 	libpng/jni/png.c \
 	libpng/jni/pngerror.c \
@@ -40,9 +40,9 @@ expat_SRC_FILES := \
 expat_CFLAGS += -DHAVE_EXPAT_CONFIG_H
 expat_C_INCLUDES := $(LOCAL_PATH)/expat/jni/lib
 
-#
+#############################################################################
 # libcutils definitions
-#
+#############################################################################
 libcutils_SRC_FILES := \
 	libcutils/jni/array.c \
 	libcutils/jni/hashmap.c \
@@ -101,12 +101,12 @@ libcutils_CFLAGS += $(libcutils_targetSmpFlag)
 libcutils_CFLAGS += -DHAVE_PTHREADS -DHAVE_SYS_UIO_H
 libcutils_C_INCLUDES := $(LOCAL_PATH)/libcutils/jni/include
 	
-#
+#############################################################################
 # libhost definitions
-#
+#############################################################################
 libhost_SRC_FILES:= \
-	CopyFile.c \
-	pseudolocalize.cpp
+	libhost/jni/CopyFile.c \
+	libhost/jni/pseudolocalize.cpp
 
 ifeq ($(HOST_OS),cygwin)
 libhost_CFLAGS += -DWIN32_EXE
@@ -124,19 +124,21 @@ endif
 libhost_C_INCLUDES := $(LOCAL_PATH)/libhost/jni/include
 
 
-#
+#############################################################################
 # put it all together
-#
+#############################################################################
 include $(CLEAR_VARS)
 LOCAL_MODULE:= libaaptcomplete
 
 LOCAL_SRC_FILES += $(libpng_SRC_FILES)
 LOCAL_SRC_FILES += $(expat_SRC_FILES)
 LOCAL_SRC_FILES += $(libcutils_SRC_FILES)
+LOCAL_SRC_FILES += $(libhost_SRC_FILES)
 
 LOCAL_C_INCLUDES += $(libpng_C_INCLUDES)
 LOCAL_C_INCLUDES += $(expat_C_INCLUDES)
 LOCAL_C_INCLUDES += $(libcutils_C_INCLUDES)
+LOCAL_C_INCLUDES += $(libhost_C_INCLUDES)
 
 LOCAL_CFLAGS += $(expat_CFLAGS)
 LOCAL_CFLAGS += $(libcutils_CFLAGS)
