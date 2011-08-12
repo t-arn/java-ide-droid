@@ -63,7 +63,7 @@ if not %ERRORLEVEL%==0 pause
 :compile
 rem compile
 echo ***** Compiling Java sources *****
-%JSDK%\bin\javac -verbose -deprecation -extdirs "" -encoding ascii -target 1.5 -d %OUTDIR% -bootclasspath "%ASDK%\platforms\android-8\android.jar;%PDIR%libs\ecj.jar;%PDIR%libs\dx.jar;%PDIR%libs\bsh.jar;%PDIR%libs\androidprefs.jar;%PDIR%libs\sdklib.jar;%PDIR%libs\zipsigner-lib_all.jar" -classpath "%PDIR%gen;%PDIR%src" "%PDIR%src\com\t_arn\%PNAME%\MainActivity.java"
+%JSDK%\bin\javac -verbose -deprecation -extdirs "" -encoding ascii -target 1.5 -d %OUTDIR% -bootclasspath "%ASDK%\platforms\android-8\android.jar;%PDIR%libs\ecj.jar;%PDIR%libs\dx_ta.jar;%PDIR%libs\bsh.jar;%PDIR%libs\androidprefs.jar;%PDIR%libs\sdklib_ta.jar;%PDIR%libs\zipsigner-lib_all.jar" -classpath "%PDIR%gen;%PDIR%src" "%PDIR%src\com\t_arn\%PNAME%\MainActivity.java"
 echo Errorlevel: %ERRORLEVEL%
 if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause

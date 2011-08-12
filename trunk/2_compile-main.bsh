@@ -14,7 +14,7 @@ System.out.println("Compiling "+stJavafile+" ...");
 G.bshTask.fnPublishProgress("Compiling...");
 
 args = "-verbose -deprecation -extdirs \"\" -1.5";
-args += " -bootclasspath /mnt/sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/ecj.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/dx.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/bsh.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/sdklib.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/androidprefs.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/zipsigner-lib_all.jar";
+args += " -bootclasspath /mnt/sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/ecj.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/dx_ta.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/bsh.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/sdklib_ta.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/androidprefs.jar:/mnt/sdcard/!Daten/Android/JavaIDEdroid/libs/zipsigner-lib_all.jar";
 args += " -classpath "+stSourcePath+"src";
 args +=":"+stSourcePath+"gen";
 args += " -d "+stSourcePath+"out/test/JavaIDEdroid";
