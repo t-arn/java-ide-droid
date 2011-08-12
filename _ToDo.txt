@@ -5,7 +5,6 @@ ToDo
 - input in console
 - options for:
   -- start dir for browsing
-- prevent dx System.exit: [platform/dalvik.git] / dx / src
   
 - aapt integration
   -- zlib: already on device by default

@@ -13,13 +13,12 @@ import com.t_arn.lib.io.StringWriterOutputStream;
 public class IDE
 //##################################################################
 {
-  private	ExitSecurityManager esm;
 
 //===================================================================
 public IDE () 
 //===================================================================
 {
-  esm = new ExitSecurityManager();
+  
 }
 //===================================================================
 public int fnApkBuilder (String commandLine) 
@@ -32,32 +31,23 @@ public int fnApkBuilder (String[] args)
 //===================================================================
 {
   long start=0;
-  int i, rc = -99;
+  int i, rc = 99;
   try
   {
-    // prevent compiler from exiting the VM
-    System.setSecurityManager(esm);
-    esm.setCanExit(false);
-    esm.ExitValue = 255;
-    // call ApkBuilder
+    // show arguments
     start = System.currentTimeMillis();
     System.out.println("ApkBuilder arguments:");
     for (i=0;i<args.length;i++) System.out.println(args[i]);
     System.out.println("");
-    com.android.sdklib.build.ApkBuilderMain.main(args);
-    rc = 0;
-  }
-  catch (ExitSecurityManager.Exception e)
-  {
-    rc = esm.ExitValue;
-    System.out.println("Preventing VM exit...");
+    // call ApkBuilder
+    rc = com.android.sdklib.build.ApkBuilderMain.main(args);
   }
   catch (Throwable t)
   {
+    rc = 99;
     System.out.println("Error occurred!\n");
     t.printStackTrace();
   }
-  esm.setCanExit(true);
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
   System.out.println("ExitValue: "+rc);
   return rc;
@@ -116,30 +106,20 @@ public int fnDx (String[] args)
   int i, rc=99;
   try
   {
-    // prevent app from exiting the VM
-    System.setSecurityManager(esm);
-    esm.setCanExit(false);
-    esm.ExitValue = 255;
     // show arguments
     start = System.currentTimeMillis();
     System.out.println("Dx arguments:");
     for (i=0;i<args.length;i++) System.out.println(args[i]);
     System.out.println("");
     // start dx
-    com.android.dx.command.Main.main(args);
-    rc = 0;
-  }
-  catch (ExitSecurityManager.Exception e)
-  {
-    rc = esm.ExitValue;
-    System.out.println("Preventing VM exit...");
+    rc = com.android.dx.command.Main.main(args);
   }
   catch (Throwable t)
   {
+    rc = 99;
     System.out.println("Error occurred!\n");
     t.printStackTrace();
   }
-  esm.setCanExit(true);
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
   System.out.println("ExitValue: "+rc);
   return rc;
@@ -185,7 +165,7 @@ public int fnSignApk (String[] args)
 //===================================================================
 {
   long start=0;
-  int i, rc;
+  int i, rc = 99;
   try
   {
     // show arguments
@@ -198,7 +178,7 @@ public int fnSignApk (String[] args)
   }
   catch (Throwable t)
   {
-    rc = 255;
+    rc = 99;
     System.out.println("Error occurred!\n");
     t.printStackTrace();
   }
