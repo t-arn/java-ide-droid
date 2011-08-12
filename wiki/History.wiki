@@ -1,6 +1,12 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 0.7.3 (12.08.2011) </H2>
+<UL>
+<LI> New: Modified dx.jar and sdklib.jar to not call System.exit() anymore </LI>
+<LI> Modified: Removed ExitSecurityManager which threw an Exception on Android 2.3 and higher (ExitSecurityManager is no longer supported on Android 2.3 and higher) </LI>
+</UL>
+
 <H2> version 0.7.2 (08.08.2011) </H2>
 <UL>
 <LI> New: Added G.class which provides access to global variables and methods </LI>
