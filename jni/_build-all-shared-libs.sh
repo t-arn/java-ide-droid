@@ -7,35 +7,36 @@
 cd libpng
 pwd
 ./ndk-build.sh
-cp libs/armeabi/libpng.so ..
 cd ..
 
 ### build expat
 cd expat
 pwd
 ./ndk-build.sh
-cp libs/armeabi/libpng.so ..
+cd ..
+
+### build liblog
+cd liblog
+pwd
+./ndk-build.sh
 cd ..
 
 ### build libcutils
 cd libcutils
 pwd
 ./ndk-build.sh
-cp libs/armeabi/libcutils.so ..
-cd ..
-
-### build libcutils
-cd libcutils
-pwd
-./ndk-build.sh
-cp libs/armeabi/libcutils.so ..
 cd ..
 
 ### build libhost
 cd libhost
 pwd
 ./ndk-build.sh
-cp libs/armeabi/libhost.so ..
+cd ..
+
+### build libutils
+cd libutils
+pwd
+./ndk-build.sh
 cd ..
 
 ### show built libs

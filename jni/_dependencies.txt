@@ -1,8 +1,9 @@
 
-aapt: libpng, zlib, expat, libutils, libcutils, libhost
+aapt: libpng, zlib, expat, libutils, libcutils, libhost, log, liblog
 
 libpng: zlib
-libcutils:
-expat:
-libhost:
+libcutils: log, liblog
+liblog: libcutil header files
+expat: -
+libhost: -
 libutils: libcutils, zlib, log

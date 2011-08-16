@@ -29,9 +29,9 @@ libpng_SRC_FILES := \
 
 libpng_C_INCLUDES := $(LOCAL_PATH)/libpng/jni
 
-#
+#############################################################################
 # expat definitions
-#
+#############################################################################
 expat_SRC_FILES := \
 	expat/jni/lib/xmlparse.c \
 	expat/jni/lib/xmlrole.c \
@@ -39,6 +39,13 @@ expat_SRC_FILES := \
 
 expat_CFLAGS += -DHAVE_EXPAT_CONFIG_H
 expat_C_INCLUDES := $(LOCAL_PATH)/expat/jni/lib
+
+#############################################################################
+# liblog definitions
+#############################################################################
+liblog_SRC_FILES := liblog/jni/logd_write.c
+liblog_CFLAGS := -DHAVE_PTHREADS
+liblog_C_INCLUDES += $(LOCAL_PATH)/libcutils/jni/include
 
 #############################################################################
 # libcutils definitions
@@ -98,7 +105,7 @@ else
 endif
 
 libcutils_CFLAGS += $(libcutils_targetSmpFlag)
-libcutils_CFLAGS += -DHAVE_PTHREADS -DHAVE_SYS_UIO_H
+libcutils_CFLAGS += -DHAVE_PTHREADS -DHAVE_SCHED_H -DHAVE_SYS_UIO_H -DHAVE_ANDROID_OS -DHAVE_IOCTL -DHAVE_TM_GMTOFF
 libcutils_C_INCLUDES := $(LOCAL_PATH)/libcutils/jni/include
 	
 #############################################################################
@@ -123,6 +130,49 @@ endif
 
 libhost_C_INCLUDES := $(LOCAL_PATH)/libhost/jni/include
 
+#############################################################################
+# libutils definitions
+#############################################################################
+libutils_SRC_FILES := \
+	libutils/jni/Asset.cpp \
+	libutils/jni/AssetDir.cpp \
+	libutils/jni/AssetManager.cpp \
+	libutils/jni/BufferedTextOutput.cpp \
+	libutils/jni/CallStack.cpp \
+	libutils/jni/Debug.cpp \
+	libutils/jni/FileMap.cpp \
+	libutils/jni/Flattenable.cpp \
+	libutils/jni/ObbFile.cpp \
+	libutils/jni/Pool.cpp \
+	libutils/jni/RefBase.cpp \
+	libutils/jni/ResourceTypes.cpp \
+	libutils/jni/SharedBuffer.cpp \
+	libutils/jni/Static.cpp \
+	libutils/jni/StopWatch.cpp \
+	libutils/jni/StreamingZipInflater.cpp \
+	libutils/jni/String8.cpp \
+	libutils/jni/String16.cpp \
+	libutils/jni/StringArray.cpp \
+	libutils/jni/SystemClock.cpp \
+	libutils/jni/TextOutput.cpp \
+	libutils/jni/Threads.cpp \
+	libutils/jni/Timers.cpp \
+	libutils/jni/VectorImpl.cpp \
+	libutils/jni/ZipFileCRO.cpp \
+	libutils/jni/ZipFileRO.cpp \
+	libutils/jni/ZipUtils.cpp \
+	libutils/jni/misc.cpp \
+  libutils/jni/BackupData.cpp \
+	libutils/jni/BackupHelpers.cpp \
+	libutils/jni/Looper.cpp
+
+libutils_CFLAGS += -DHAVE_ENDIAN_H -DHAVE_ANDROID_OS -DHAVE_PTHREADS -DHAVE_SYS_UIO_H -DHAVE_POSIX_FILEMAP
+libutils_C_INCLUDES += $(LOCAL_PATH)/libutils/jni/include
+
+#############################################################################
+# aapt definitions
+#############################################################################
+
 
 #############################################################################
 # put it all together
@@ -132,17 +182,21 @@ LOCAL_MODULE:= libaaptcomplete
 
 LOCAL_SRC_FILES += $(libpng_SRC_FILES)
 LOCAL_SRC_FILES += $(expat_SRC_FILES)
+LOCAL_SRC_FILES += $(liblog_SRC_FILES)
 LOCAL_SRC_FILES += $(libcutils_SRC_FILES)
 LOCAL_SRC_FILES += $(libhost_SRC_FILES)
+LOCAL_SRC_FILES += $(libutils_SRC_FILES)
 
 LOCAL_C_INCLUDES += $(libpng_C_INCLUDES)
 LOCAL_C_INCLUDES += $(expat_C_INCLUDES)
 LOCAL_C_INCLUDES += $(libcutils_C_INCLUDES)
 LOCAL_C_INCLUDES += $(libhost_C_INCLUDES)
+LOCAL_C_INCLUDES += $(libutils_C_INCLUDES)
 
 LOCAL_CFLAGS += $(expat_CFLAGS)
 LOCAL_CFLAGS += $(libcutils_CFLAGS)
 LOCAL_CFLAGS += $(libhost_CFLAGS)
+LOCAL_CFLAGS += $(libutils_CFLAGS)
 
 LOCAL_LDLIBS += -lz -llog
 
