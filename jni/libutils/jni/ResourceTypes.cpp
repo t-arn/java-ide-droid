@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// modified by Tom Arn, www.t-arn.com <ta>
+
 #define LOG_TAG "ResourceType"
 //#define LOG_NDEBUG 0
 
@@ -4296,7 +4298,7 @@ bool ResTable::getIdmapInfo(const void* idmap, size_t sizeBytes,
 }
 
 
-#ifndef HAVE_ANDROID_OS
+// <ta> #ifndef HAVE_ANDROID_OS
 #define CHAR16_TO_CSTR(c16, len) (String8(String16(c16,len)).string())
 
 #define CHAR16_ARRAY_EQ(constant, var, len) \
@@ -4754,6 +4756,6 @@ void ResTable::print(bool inclValues) const
     }
 }
 
-#endif // HAVE_ANDROID_OS
+//<ta> #endif // HAVE_ANDROID_OS
 
 }   // namespace android

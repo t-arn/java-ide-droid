@@ -46,4 +46,3 @@ LOCAL_SRC_FILES := $(liblog_sources)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../libcutils/jni/include
 LOCAL_CFLAGS += -DHAVE_PTHREADS
 include $(BUILD_SHARED_LIBRARY)
-

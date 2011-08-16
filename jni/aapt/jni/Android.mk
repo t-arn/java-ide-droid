@@ -8,19 +8,18 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+	StringPool.cpp \
+  ZipFile.cpp \
+  ZipEntry.cpp \
+	Images.cpp \
+  SourcePos.cpp \
+	ResourceTable.cpp \
+	Resource.cpp \
 	AaptAssets.cpp \
-	Command.cpp \
 	Main.cpp \
 	Package.cpp \
-	StringPool.cpp \
+	Command.cpp \
 	XMLNode.cpp \
-	ResourceTable.cpp \
-	Images.cpp \
-	Resource.cpp \
-  SourcePos.cpp \
-  ZipEntry.cpp \
-  ZipFile.cpp
-
 
 LOCAL_CFLAGS += -Wno-format-y2k
 LOCAL_CFLAGS += -DHAVE_ENDIAN_H -DHAVE_ANDROID_OS -DHAVE_PTHREADS -DHAVE_SYS_UIO_H -DHAVE_POSIX_FILEMAP

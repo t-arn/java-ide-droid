@@ -1,5 +1,5 @@
 #
-# Build file to create one big shared library
+# Build file to create one big executable / shared library
 # with aapt and all depending libs
 #
 
@@ -172,7 +172,21 @@ libutils_C_INCLUDES += $(LOCAL_PATH)/libutils/jni/include
 #############################################################################
 # aapt definitions
 #############################################################################
+aapt_SRC_FILES := \
+	aapt/jni/StringPool.cpp \
+  aapt/jni/ZipFile.cpp \
+  aapt/jni/ZipEntry.cpp \
+	aapt/jni/Images.cpp \
+  aapt/jni/SourcePos.cpp \
+	aapt/jni/ResourceTable.cpp \
+	aapt/jni/Resource.cpp \
+	aapt/jni/AaptAssets.cpp \
+	aapt/jni/Main.cpp \
+	aapt/jni/Package.cpp \
+	aapt/jni/Command.cpp \
+	aapt/jni/XMLNode.cpp
 
+aapt_CFLAGS += -Wno-format-y2k
 
 #############################################################################
 # put it all together
@@ -186,6 +200,7 @@ LOCAL_SRC_FILES += $(liblog_SRC_FILES)
 LOCAL_SRC_FILES += $(libcutils_SRC_FILES)
 LOCAL_SRC_FILES += $(libhost_SRC_FILES)
 LOCAL_SRC_FILES += $(libutils_SRC_FILES)
+LOCAL_SRC_FILES += $(aapt_SRC_FILES)
 
 LOCAL_C_INCLUDES += $(libpng_C_INCLUDES)
 LOCAL_C_INCLUDES += $(expat_C_INCLUDES)
@@ -197,7 +212,12 @@ LOCAL_CFLAGS += $(expat_CFLAGS)
 LOCAL_CFLAGS += $(libcutils_CFLAGS)
 LOCAL_CFLAGS += $(libhost_CFLAGS)
 LOCAL_CFLAGS += $(libutils_CFLAGS)
+LOCAL_CFLAGS += $(aapt_CFLAGS)
 
 LOCAL_LDLIBS += -lz -llog
 
-include $(BUILD_SHARED_LIBRARY)
+# Building a commandline executable for Android
+include $(BUILD_EXECUTABLE)
+
+# Building a shared library for Android
+#include $(BUILD_SHARED_LIBRARY)

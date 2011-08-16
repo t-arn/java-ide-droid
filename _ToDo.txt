@@ -7,13 +7,22 @@ ToDo
   -- start dir for browsing
   
 - aapt integration
-  -- zlib: already on device by default
+  -- zlib: ok, already on device by default
   -- liblog: ok
   -- libpng: ok
   -- expat: ok
   -- libcutils: ok ?
-     --- mspace.c source removed. Is this needed??
+     --- mspace.c source removed. Does not seem to be needed by aapt...
+     --- tztime.c:1267: warning: assignment discards qualifiers from pointer target type
+         is this a problem??? how to solve ???
   -- libhost: ok
   -- libutils: ok
-     --- requires >android 2.3 !! -> Check in Java Code before loading the Shared library
-  -- aapt: 
+  -- libaaptcomplete.so: ok ?
+     --- "ld.exe: warning: type and size of dynamic symbol `__dso_handle' are not defined"
+         is this a problem??? how to solve ???
+  -- adding the JNI interface
+  -- redirecting stderr and stdout to a string and return it through the JNI interface
+  -- write the aapt Java class
+     --- Load native lib: check for Android >=2.3 before loading
+  -- add aapt tool to IDE class
+  -- add aapt tool to tools tab
