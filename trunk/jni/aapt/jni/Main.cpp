@@ -3,6 +3,14 @@
 //
 // Android Asset Packaging Tool main entry point.
 //
+
+// modified by Tom Arn, www.t-arn.com <ta>
+// <ta>
+#if defined(HAVE_ANDROID_OS)
+  #define OS_PATH_SEPARATOR '/'
+#endif
+// </ta>
+
 #include "Main.h"
 #include "Bundle.h"
 

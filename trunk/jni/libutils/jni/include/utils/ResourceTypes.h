@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// modified by Tom Arn, www.t-arn.com <ta>
+
 //
 // Definitions of resource data structures.
 //
@@ -1999,10 +2001,10 @@ public:
     static bool getIdmapInfo(const void* idmap, size_t size,
                              uint32_t* pOriginalCrc, uint32_t* pOverlayCrc);
 
-#ifndef HAVE_ANDROID_OS
+// <ta> #ifndef HAVE_ANDROID_OS
     void print(bool inclValues) const;
     static String8 normalizeForOutput(const char* input);
-#endif
+// <ta> #endif
 
 private:
     struct Header;
