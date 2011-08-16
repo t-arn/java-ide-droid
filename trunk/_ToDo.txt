@@ -8,10 +8,12 @@ ToDo
   
 - aapt integration
   -- zlib: already on device by default
-  -- liblog: already on device by default
+  -- liblog: ok
   -- libpng: ok
   -- expat: ok
-  -- libcutils: (mspace needed?)
-  -- libhost
-  -- libutils
-  
+  -- libcutils: ok ?
+     --- mspace.c source removed. Is this needed??
+  -- libhost: ok
+  -- libutils: ok
+     --- requires >android 2.3 !! -> Check in Java Code before loading the Shared library
+  -- aapt: 
