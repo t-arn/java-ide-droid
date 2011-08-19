@@ -4,4 +4,4 @@
   # Adjust ndk-build-aaptcomplete.sh to call the ndk-build script of the Android NDK
   # Execute ndk-build-aaptcomplete.sh<br>This step creates the shared library libaaptcomplete.so in libs/armeabi
   # Adjust 0_build-debug.bat and 0_build-prod.bat to match your environment.<br>Adjust following variables: JSDK, ASDK, KS, KEY
-  # Execute 0_build-debug.bat or 0_build-prod.bat<br>This creates JavaIDEdroid.apk in out/test/JavaIDEdroid/ or out/production/JavaIDEdroid/
+  # Execute 0_build-debug.bat or 0_build-prod.bat and choose "do it all"<br>This creates JavaIDEdroid.apk in out/test/JavaIDEdroid/ or out/production/JavaIDEdroid/
