@@ -7,7 +7,7 @@
   # Adjust where needed the paths in all .bsh files in the toplevel directory of !HelloAndroid
 
 
-Build the !HelloAndroid.APK with the scripts started in the !BeanShell tab of JavaIDEdroid:
+<BR/>Build the !HelloAndroid.APK with the scripts started in the !BeanShell tab of JavaIDEdroid:
   # Run 1_aapt.bsh to create R.java and !HelloAndroid.apk.res
   # Run 2_compile-main.bsh to compile the Java sources.
   # Run 3_dx.bsh to create the classes.dex file
