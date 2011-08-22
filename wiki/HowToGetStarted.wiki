@@ -4,15 +4,15 @@
   # Dowload and install the latest version of JavaIDEdroid
   # Download !HelloAndroid and unzip it to a directory of your choice
   # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the compilation task. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
-  # Adjust where needed the paths in all .bat and .bsh files in the toplevel directory of !HelloAndroid
-  # Run 1_aapt.bat on your *desktop* machine (with installed Android SDK). This creates the R.java and !HelloAndroid.apk.res files. These files are already in the !HelloAndroid.zip. If you don't change the layout, !AndroidManifest.xml or the resources, you do not need to re-create them.
+  # Adjust where needed the paths in all .bsh files in the toplevel directory of !HelloAndroid
 
-The rest of the build process can now be done on your Android device with scripts started in the !BeanShell tab of JavaIDEdroid.
 
+Build the !HelloAndroid.APK with the scripts started in the !BeanShell tab of JavaIDEdroid:
+  # Run 1_aapt.bsh to create R.java and !HelloAndroid.apk.res
   # Run 2_compile-main.bsh to compile the Java sources.
   # Run 3_dx.bsh to create the classes.dex file
   # Run 4_apkbuilder.bsh to create the unsigned APK file. Signing with apkbuilder does *not* work, because a lot of proprietary Sun classes are called.
   # Run 5_signjar.bsh to create the final signed APK.
   # Install the APK with a Package Manager like ASTRO or Linda Manager and test the !HelloAndroid app.
 
-Alternatively, you can run 0_build.bsh which performs the compilation, dx, apkbuilder and signing tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
+Alternatively, you can run 0_build.bsh which performs the above tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
