@@ -41,7 +41,8 @@ protected Void doInBackground(String... args)
     Log.i(G.stProgramName, "doInBackground");
     swos = new StringWriterOutputStream();
     G.ide.fnRedirectOutput(swos);
-    if (args[0].equals("ECJ")) G.ide.fnCompile(params);
+    if (args[0].equals("AAPT")) G.ide.fnAapt(params);
+    else if (args[0].equals("ECJ")) G.ide.fnCompile(params);
     else if (args[0].equals("DX")) G.ide.fnDx(params);
     else if (args[0].equals("ApkBuilder")) G.ide.fnApkBuilder(params);
     else if (args[0].equals("ZipSigner")) G.ide.fnSignApk(params);

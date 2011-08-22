@@ -173,6 +173,7 @@ libutils_C_INCLUDES += $(LOCAL_PATH)/libutils/jni/include
 # aapt definitions
 #############################################################################
 aapt_SRC_FILES := \
+  JNImain.c 	\
 	aapt/jni/StringPool.cpp \
   aapt/jni/ZipFile.cpp \
   aapt/jni/ZipEntry.cpp \
@@ -217,7 +218,7 @@ LOCAL_CFLAGS += $(aapt_CFLAGS)
 LOCAL_LDLIBS += -lz -llog
 
 # Building a commandline executable for Android
-include $(BUILD_EXECUTABLE)
+# include $(BUILD_EXECUTABLE)
 
 # Building a shared library for Android
-#include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_SHARED_LIBRARY)

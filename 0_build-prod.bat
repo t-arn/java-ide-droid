@@ -10,6 +10,9 @@ echo.
 rem setting java home
 set JSDK=u:\programs\jdk6
 
+rem set android sdk tool dir
+set ASDK=u:\Programs\android-sdk
+
 rem setting keystore and key
 set KS=v:\!Daten\Privat\EN\keystore.ks
 set KEY=sw@t-arn.com
@@ -21,9 +24,6 @@ set OUTDIR=%PDIR%out\production\%PNAME%
 
 rem change to project directory
 cd /d %PDIR%
-
-rem set android sdk tool dir
-set ASDK=u:\Programs\android-sdk
 
 echo 0: clear old output files
 echo 1: generate resources
@@ -86,8 +86,8 @@ if not %ERRORLEVEL%==0 pause
 rem package resources and dex files together
 rem Use -u for unsigned builds.
 echo ***** Creating APK file *****
-CALL %ASDK%\tools\apkbuilder.bat %OUTDIR%\%PNAME%.apk.unsigned -u -z %OUTDIR%\%PNAME%.apk.res -f %OUTDIR%\classes.dex -rf %PDIR%src -rj %PDIR%libs 
-rem CALL %ASDK%\tools\apkbuilder.bat %OUTDIR%\%PNAME%.apk -z %OUTDIR%\%PNAME%.apk.res -f %OUTDIR%\classes.dex -rf %PDIR%src -rj %PDIR%libs 
+CALL %ASDK%\tools\apkbuilder.bat %OUTDIR%\%PNAME%.apk.unsigned -u -z %OUTDIR%\%PNAME%.apk.res -f %OUTDIR%\classes.dex -rf %PDIR%src -rj %PDIR%libs -nf %PDIR%libs
+rem CALL %ASDK%\tools\apkbuilder.bat %OUTDIR%\%PNAME%.apk -z %OUTDIR%\%PNAME%.apk.res -f %OUTDIR%\classes.dex -rf %PDIR%src -rj %PDIR%libs -nf %PDIR%libs
 echo Errorlevel: %ERRORLEVEL%
 if not "%ACTION%"=="a" goto end
 if not %ERRORLEVEL%==0 pause

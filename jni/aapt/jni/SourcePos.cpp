@@ -1,3 +1,5 @@
+// modified by Tom Arn, www.t-arn.com <ta>
+
 #include "SourcePos.h"
 
 #include <stdarg.h>
@@ -167,5 +169,11 @@ SourcePos::printErrors(FILE* to)
     }
 }
 
-
-
+// <ta>
+// clears the errors vectors
+void
+SourcePos::clear()
+{
+    g_errors.clear();
+}
+// </ta>

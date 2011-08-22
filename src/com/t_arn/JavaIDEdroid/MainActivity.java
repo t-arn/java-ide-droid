@@ -1,3 +1,26 @@
+/*
+Copyright (C) 2011 t-arn.com
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details. 
+*/
+
+/* Use following code to call this app from another app:
+   ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
+   Intent intent = new Intent();
+   intent.setComponent(cn);
+   intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
+   intent.putExtra("android.intent.extra.minExitCode", "0");
+   startActivity(intent);
+*/
+
 package com.t_arn.JavaIDEdroid;
 
 import android.app.TabActivity;
@@ -61,6 +84,20 @@ public class MainActivity extends TabActivity
       
       // load and set global application variables and settings
       G.fnInit(this);
+      
+      // get passed data
+      Bundle extras = getIntent().getExtras();
+      Log.i(G.stProgramName, "getting extras");
+      if (extras != null)
+      {
+        Log.i(G.stProgramName, "getting extra values");
+        String stScript = extras.getString("android.intent.extra.ScriptPath");
+        if (stScript!=null)
+        {
+          tabBeanshell_etScript.setText(stScript);
+          tabBeanshell_btnRun (null);
+        }
+      }
       super.onCreate(savedInstanceState);
     }
     catch (Throwable t) { G.fnToast("Exception in onCreate!\n"+t.toString(),10000); }

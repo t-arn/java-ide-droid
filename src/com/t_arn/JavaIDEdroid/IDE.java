@@ -21,6 +21,51 @@ public IDE ()
   
 }
 //===================================================================
+public int fnAapt (String commandLine)
+//===================================================================
+{
+  return fnAapt(fnTokenize(commandLine));
+} //
+//===================================================================
+public int fnAapt (String[] args)
+//===================================================================
+{
+  long start=0;
+  int i, rc = 99, apiLevel;
+  String stCommandLine;
+  Aapt oAapt;
+  try
+  {
+    // check API level
+    apiLevel = android.os.Build.VERSION.SDK_INT;
+    if (apiLevel < 9)
+    {
+      System.out.println("Warning: Aapt was built for Android API level 9 or higher.");
+      System.out.println("Your API level is "+apiLevel);
+      System.out.println("Aapt might not work correctly on your device!");
+    }
+    
+    // show arguments
+    start = System.currentTimeMillis();
+    stCommandLine="aapt";
+    for (i=0;i<args.length;i++) stCommandLine += "\t"+args[i];
+    System.out.println("");
+    // start aapt
+    oAapt = new Aapt ();
+    if (!oAapt.isInitialized()) return 2;
+    rc=oAapt.fnExecute(stCommandLine);
+  }
+  catch (Throwable t)
+  {
+    rc = 99;
+    System.err.println("Error occurred!\n");
+    t.printStackTrace();
+  }
+  System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
+  System.out.println("ExitValue: "+rc);
+  return rc;
+} //fnAapt
+//===================================================================
 public int fnApkBuilder (String commandLine) 
 //===================================================================
 {

@@ -3,6 +3,9 @@
 //
 // Android Asset Packaging Tool main entry point.
 //
+
+// modified by Tom Arn, www.t-arn.com <ta>
+
 #include "Main.h"
 #include "Bundle.h"
 #include "ResourceTable.h"
@@ -25,8 +28,11 @@ int doVersion(Bundle* bundle)
 {
     if (bundle->getFileSpecCount() != 0)
         printf("(ignoring extra arguments)\n");
-    printf("Android Asset Packaging Tool, v0.2\n");
-
+/* <ta>
+        printf("Android Asset Packaging Tool, v0.2\n");
+*/
+        printf("Android Asset Packaging Tool, v0.2 (ta 1.0.0)\n");
+// </ta>
     return 0;
 }
 
@@ -1354,6 +1360,11 @@ int doPackage(Bundle* bundle)
     sp<AaptAssets> assets;
     int N;
 
+    // <ta>
+    // clear old error messages 
+    SourcePos::clear();
+    // </ta>
+    
     // -c zz_ZZ means do pseudolocalization
     ResourceFilter filter;
     err = filter.parse(bundle->getConfigurations());

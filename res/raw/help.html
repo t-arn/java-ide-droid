@@ -44,14 +44,15 @@ kbd {
 <h2>1. Introduction</h2>
 <p>JavaIDEdroid is an Android application that aims to be an integrated development environment for creating native Android applications. Ideally, it will allow you to create APK files completely on Android devices, without the need to use the Android SDK on Windows or Linux.</p>
 <table>
-<tr><td>Version:</td><td>0.7.3</td>
-<tr><td>Date: </td><td>2011-08-12</td>
+<tr><td>Version:</td><td>1.0.0</td>
+<tr><td>Date: </td><td>2011-08-22</td>
 <tr><td>Author:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
 <tr><td>Contributions by: </td><td>Ken Ellinwood</td>
 <tr><td>Project home page:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
 </table>
 <p>Currently, following tools are integrated into JavaIDEdroid:</p>
 <ul>
+<li>Aapt tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>BeanShell (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
 <li>Eclipse Java Compiler (<a href="http://www.eclipse.org">www.eclipse.org</a>)</li>
 <li>Dx tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
@@ -67,6 +68,8 @@ kbd {
 <li>MainActivity class: G.main </li>
 <li>IDE class: G.ide </li>
 <li>BeanShellTask class: G.bshTask </li>
+<li>int G.ide.fnAapt (String arguments)</li>
+<li>int G.ide.fnAapt (String[] arguments)</li>
 <li>int G.ide.fnCompile (String arguments)</li>
 <li>int G.ide.fnCompile (String[] arguments)</li>
 <li>int G.ide.fnDx (String arguments)</li>
@@ -83,8 +86,9 @@ kbd {
 <p>Meaning of the return value: <br>
    <pre>
    0:   OK
-   >0:  warning or error
-   255: no defined return value
+   1:   warning
+   >1:  error
+   99:  no defined return value / exception
    </pre>
 <p>
 <p>Example for calling ecj:<br><kbd>int rc = G.ide.fnCompile("--version");</kbd></p>
@@ -95,7 +99,19 @@ kbd {
 <h2>3. Tools</h2>
 <p>This tab provides a direct access to the built-in tools without the need for a BeanShell script. All arguments need to be entered in the edit field.</p>
 
-<h2>4. Legal issues</h2>
+<h2>4. Using with other applications</h2>
+<p>JavaIDEdroid supports the "android.intent.action.SEND" intent action and can be called from other applications using following code:<br>
+<pre>
+ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
+Intent intent = new Intent();
+intent.setComponent(cn);
+intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
+intent.putExtra("android.intent.extra.minExitCode", "0");
+startActivity(intent);
+</pre>
+<p>The path of the BeanShell script can be passed in the Extra Bundle. When JavaIDEdroid starts, it will execute this script.</p>
+
+<h2>5. Legal issues</h2>
 <p>Thank you for choosing this SOFTWARE! You may only use this SOFTWARE if you agree with the conditions listed further below:</p>
 
 <p><b>COPYRIGHT</b><br>

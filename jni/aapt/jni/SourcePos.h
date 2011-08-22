@@ -1,3 +1,5 @@
+// modified by Tom Arn, www.t-arn.com <ta>
+
 #ifndef SOURCEPOS_H
 #define SOURCEPOS_H
 
@@ -22,6 +24,10 @@ public:
 
     static bool hasErrors();
     static void printErrors(FILE* to);
+    
+    //ta
+    static void clear();
+    // </ta>
 };
 
 
