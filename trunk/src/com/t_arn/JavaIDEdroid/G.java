@@ -40,6 +40,25 @@ import android.widget.Toast;
     if (t!=null) t.printStackTrace();
   } //fnError
 //===================================================================
+  public static int fnParseInt (String s, int defaultValue)
+//===================================================================
+  {
+	  int i;
+	  try
+	  {
+	  	if ( s == null )
+	  	{
+		  	i = defaultValue;
+	  	}  // if
+	  	else i=Integer.parseInt(s);
+	  }  // try
+	  catch (NumberFormatException e)
+	  {
+		  i = defaultValue;
+	  }  // catch
+	  return i;
+  }  // fnParseInt 
+//===================================================================
   public static void fnToast (int msg_id, int msec)
 //===================================================================
   {

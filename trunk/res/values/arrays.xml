@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <array name="ar_tools">
+    <item>AAPT</item>
     <item>ECJ</item>
     <item>DX</item>
     <item>ApkBuilder</item>
