@@ -15,13 +15,13 @@
 
 <H2> version 0.7.2 (08.08.2011) </H2>
 <UL>
-<LI> New: Added G.class which provides access to global variables and methods 
-<BR> NOTE: Due to this change you will nee to adjust your !BeanShell Scripts! See the built-in help to learn more
+<LI> New: Added G.class which provides access to global variables and methods. NOTE: Due to this change you will nee to adjust your !BeanShell Scripts! See the built-in help to learn more </LI>
 <LI> New: Made new build batch files for production and test </LI>
 <LI> Modified: Removed IntelliJ project files </LI>
 <LI> New: APK is now signed with proper certificate </LI>
 <LI> New: Added disclaimer to help </LI>
 <LI> Bugfix: Output was deleted on screen orientation change. Fixed now.</LI>
+</UL>
 
 <H2> version 0.7.1 (30.06.2011) </H2>
 <UL>
