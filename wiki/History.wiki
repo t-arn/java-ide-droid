@@ -21,8 +21,7 @@
 <LI> Modified: Removed IntelliJ project files </LI>
 <LI> New: APK is now signed with proper certificate </LI>
 <LI> New: Added disclaimer to help </LI>
-<LI> Bugfix: Output was deleted on screen orientation change. Fixed now.  </LI>
-</UL>
+<LI> Bugfix: Output was deleted on screen orientation change. Fixed now.</LI>
 
 <H2> version 0.7.1 (30.06.2011) </H2>
 <UL>
