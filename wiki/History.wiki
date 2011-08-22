@@ -1,6 +1,12 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 1.0.0 (22.08.2011) </H2>
+<UL>
+<LI> New: Aapt native lib integrated. </LI>
+<LI> New: Added intent action 'android.intent.action.SEND' so that JavaIDEdroid's BeanShell scripts can be started from other apps.</LI>
+</UL>
+
 <H2> version 0.7.3 (12.08.2011) </H2>
 <UL>
 <LI> New: Modified dx.jar and sdklib.jar to not call System.exit() anymore </LI>
