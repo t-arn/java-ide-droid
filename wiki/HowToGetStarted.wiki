@@ -1,7 +1,7 @@
 #summary This is how you get started with JavaIDEdroid
 #labels Featured
 
-  # Dowload and install the latest version of JavaIDEdroid
+  # Get the latest version of JavaIDEdroid from the Android Market and install it
   # Download !HelloAndroid and unzip it to a directory of your choice
   # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the compilation task. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
   # Adjust where needed the paths in all .bsh files in the toplevel directory of !HelloAndroid
