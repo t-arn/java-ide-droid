@@ -1,6 +1,11 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 1.0.1 (25.08.2011) </H2>
+<UL>
+<LI> Bugfix: Corrected help file. </LI>
+</UL>
+
 <H2> version 1.0.0 (22.08.2011) </H2>
 <UL>
 <LI> New: Aapt native lib integrated. </LI>
