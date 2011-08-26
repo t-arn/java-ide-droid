@@ -42,10 +42,10 @@ kbd {
 
 <h1>JavaIDEdroid</h1>
 <h2>1. Introduction</h2>
-<p>JavaIDEdroid is an Android application that aims to be an integrated development environment for creating native Android applications. Ideally, it will allow you to create APK files completely on Android devices, without the need to use the Android SDK on Windows or Linux.</p>
+<p>JavaIDEdroid is an integrated development environment which runs on Android and allows to create native Android applications without the need to use the Android SDK on Windows or Linux. It should run on Android 1.6 or higher.</p>
 <table>
-<tr><td>Version:</td><td>1.0.0</td>
-<tr><td>Date: </td><td>2011-08-22</td>
+<tr><td>Version:</td><td>1.1.0</td>
+<tr><td>Date: </td><td>2011-08-26</td>
 <tr><td>Author:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
 <tr><td>Contributions by: </td><td>Ken Ellinwood</td>
 <tr><td>Project home page:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
@@ -53,12 +53,14 @@ kbd {
 <p>Currently, following tools are integrated into JavaIDEdroid:</p>
 <ul>
 <li>Aapt tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
-<li>BeanShell (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
 <li>Eclipse Java Compiler (<a href="http://www.eclipse.org">www.eclipse.org</a>)</li>
 <li>Dx tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>ApkBuilder tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>Zipsigner-lib from Ken Ellinwood (<a href="http://code.google.com/p/zip-signer/">http://code.google.com/p/zip-signer</a>)</li>
+<li>BeanShell Interpreter (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
 </ul>
+
+<p>Aapt is integrated as native shared library (arm). It uses external libraries which require Android 2.3 or later and therefore, the aapt shared library has been built for Android 2.3. Despite this fact, it also seems to work an older Android versions (it ran ok on my Android 2.2.1).</p>
 
 <h2>2. BeanShell</h2>
 <p>The integrated BeanShell interpreter allows you to automate the build process by writing your own BeanShell scripts.</p>
@@ -66,8 +68,7 @@ kbd {
 <p>BeanShell scripts can access the functionality built into JavaIDEdroid by using the pre-defined variable <kbd>G</kbd>. This variable references G.class with following accessible variables and methods:</p>
 <ul>
 <li>MainActivity class: G.main </li>
-<li>IDE class: G.ide </li>
-<li>BeanShellTask class: G.bshTask </li>
+<li>IDE class: G.ide provides access to the development tools</li>
 <li>int G.ide.fnAapt (String arguments)</li>
 <li>int G.ide.fnAapt (String[] arguments)</li>
 <li>int G.ide.fnCompile (String arguments)</li>
@@ -79,9 +80,17 @@ kbd {
 <li>int G.ide.fnSignApk (String arguments)</li>
 <li>int G.ide.fnSignApk (String[] arguments)</li>
 <li>String[] G.ide.fnTokenize (String commandline) // tokenizes the commandline arguments</li>
+<li>BeanShellTask class: G.bshTask provides methods for screen output</li>
 <li>void G.bshTask.fnClear () // clears BeanShell output</li>
 <li>void G.bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
 <li>void G.bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
+<li>Settings class: G.oSet provides variables that can be used in BeanShell scripts</li>
+<li>G.oSet.stAndroidJarPath</li>
+<li>G.oSet.stBshVar1</li>
+<li>G.oSet.stBshVar2</li>
+<li>G.oSet.stBshVar3</li>
+<li>G.oSet.stBshVar4</li>
+<li>G.oSet.stBshVar5</li>
 </ul>
 <p>Meaning of the return value: <br>
    <pre>
@@ -106,7 +115,6 @@ ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaID
 Intent intent = new Intent();
 intent.setComponent(cn);
 intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
-intent.putExtra("android.intent.extra.minExitCode", "0");
 startActivity(intent);
 </pre>
 <p>The path of the BeanShell script can be passed in the Extra Bundle. When JavaIDEdroid starts, it will execute this script.</p>
