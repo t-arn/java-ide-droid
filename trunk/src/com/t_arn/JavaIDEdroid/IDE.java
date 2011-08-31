@@ -13,7 +13,8 @@ import com.t_arn.lib.io.StringWriterOutputStream;
 public class IDE
 //##################################################################
 {
-
+  private StringWriterOutputStream lastSwos;
+  
 //===================================================================
 public IDE () 
 //===================================================================
@@ -40,9 +41,9 @@ public int fnAapt (String[] args)
     apiLevel = android.os.Build.VERSION.SDK_INT;
     if (apiLevel < 9)
     {
-      System.out.println("Warning: Aapt was built for Android API level 9 or higher.");
-      System.out.println("Your API level is "+apiLevel);
-      System.out.println("Aapt might not work correctly on your device!");
+      System.out.println(G.Rstring(R.string.msg_aapt_build));
+      System.out.println(G.Rstring(R.string.msg_aapt_your_api)+" "+apiLevel);
+      System.out.println(G.Rstring(R.string.msg_aapt_warning));
     }
     
     // show arguments
@@ -58,7 +59,7 @@ public int fnAapt (String[] args)
   catch (Throwable t)
   {
     rc = 99;
-    System.err.println("Error occurred!\n");
+    System.err.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
@@ -90,7 +91,7 @@ public int fnApkBuilder (String[] args)
   catch (Throwable t)
   {
     rc = 99;
-    System.out.println("Error occurred!\n");
+    System.out.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
@@ -130,7 +131,7 @@ public int fnCompile (String[] args)
   catch (Throwable t)
   {
     rc = 99;
-    System.out.println("Error occurred!\n");
+    System.out.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
@@ -162,7 +163,7 @@ public int fnDx (String[] args)
   catch (Throwable t)
   {
     rc = 99;
-    System.out.println("Error occurred!\n");
+    System.out.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");
@@ -170,12 +171,43 @@ public int fnDx (String[] args)
   return rc;
 } //fnDx
 //===================================================================
+public synchronized void fnLogOutput ()
+//===================================================================
+{
+  boolean ok;
+  FileWriter fw;
+  String stOut;
+  
+  try
+  {
+    ok = G.fnMakeLogDir();
+    if (!ok)
+    {
+      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stLogDir);
+      return;
+    }
+    fw = new FileWriter (G.stLogDir+"/LogOutput.txt",false);
+    stOut = lastSwos.toString().replace("\n", "\r\n");
+    fw.write(stOut);
+    if (G.stPw1.length()+G.stPw2.length()>0)
+    {
+      fw.write("\r\n"+G.Rstring(R.string.msg_logpw)+"\r\n");
+    }
+    fw.close();
+  }//try
+  catch (Throwable t)
+  {
+    System.out.println("Error while saving output:\n"+t.getMessage());
+  }//catch
+} // fnLogOutput
+//===================================================================
 public void fnRedirectOutput (StringWriterOutputStream swos) 
 //===================================================================
 {
   // redirect stdout and stderr
   System.setOut(new PrintStream(swos));
   System.setErr(new PrintStream(swos));
+  lastSwos = swos;
 }
 //===================================================================
 public void fnRunBeanshellScript (bsh.Interpreter i, String script) 
@@ -191,14 +223,14 @@ public void fnRunBeanshellScript (bsh.Interpreter i, String script)
   }
   catch (Throwable t)
   {
-    System.out.println("Error occurred!\n");
+    System.out.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   finally
   {
     System.out.println("\nTotal script run time: "+(System.currentTimeMillis()-start)/1000+" sec.\n");
   }
-}//fnRunBeanshellScript
+}// fnRunBeanshellScript
 //===================================================================
 public int fnSignApk (String commandLine)
 //===================================================================
@@ -224,7 +256,7 @@ public int fnSignApk (String[] args)
   catch (Throwable t)
   {
     rc = 99;
-    System.out.println("Error occurred!\n");
+    System.out.println("Error occurred!\n"+t.getMessage());
     t.printStackTrace();
   }
   System.out.println("\nDone in "+(System.currentTimeMillis()-start)/1000+" sec.\n");

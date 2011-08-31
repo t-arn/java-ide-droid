@@ -8,7 +8,6 @@ public class Aapt
 //##################################################################
 {
   private static boolean bInitialized = false;
-  private static String stOutputDir = "/sdcard/.JavaIDEdroid";
   private native int JNImain(String args);
 
 //===================================================================
@@ -21,12 +20,10 @@ public class Aapt
   private static boolean fnInit ()
 //===================================================================
   {
-    boolean ok = false;
-    File dir = new File(stOutputDir);
-    if (!dir.exists()) dir.mkdir();
-    if (!dir.isDirectory())
+    boolean ok = G.fnMakeLogDir();
+    if (!ok)
     {
-      System.err.println("Could not create directory /sdcard/.JavaIDEdroid");
+      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stLogDir);
       return false;
     }
     try
@@ -44,7 +41,7 @@ public class Aapt
     return ok;
   } // fnInit
 //===================================================================
-  public int fnExecute (String args)
+  public synchronized int fnExecute (String args)
 //===================================================================
   {
     int rc=99;
@@ -64,7 +61,7 @@ public class Aapt
     
     try
     {
-      lnr = new LineNumberReader(new FileReader(stOutputDir+"/native_stdout.txt"));
+      lnr = new LineNumberReader(new FileReader(G.stLogDir+"/native_stdout.txt"));
       st="";
       while(st!=null)
       {
@@ -73,7 +70,7 @@ public class Aapt
       }// while
       lnr.close();
       
-      lnr = new LineNumberReader(new FileReader(stOutputDir+"/native_stderr.txt"));
+      lnr = new LineNumberReader(new FileReader(G.stLogDir+"/native_stderr.txt"));
       st="";
       while(st!=null)
       {
