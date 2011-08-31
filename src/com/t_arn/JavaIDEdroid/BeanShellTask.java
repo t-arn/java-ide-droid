@@ -25,8 +25,8 @@ protected void onPreExecute()
   // show progress dialog
   progressDialog = new ProgressDialog(G.main);
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-  progressDialog.setTitle("BeanShell Task");
-  progressDialog.setMessage("Task running...");
+  progressDialog.setTitle(G.Rstring(R.string.tit_bshtask));
+  progressDialog.setMessage(G.Rstring(R.string.msg_taskrunning));
   progressDialog.setIndeterminate(true);
   progressDialog.show();
 }
@@ -43,6 +43,7 @@ protected Void doInBackground(String... args)
     swos = new StringWriterOutputStream();
     G.ide.fnRedirectOutput(swos);
     G.ide.fnRunBeanshellScript(i, args[0]);
+    if (G.oSet.bLogOutput) G.ide.fnLogOutput();
   }
   catch (Throwable t)
   {
@@ -77,7 +78,7 @@ protected void onProgressUpdate(String... progress)
 protected void onPostExecute(Void unused) 
 //===================================================================
 { 
-  publishProgress("Task finished");
+  publishProgress(G.Rstring(R.string.msg_taskfinished));
   G.tabBeanshell_tvOutput.append(swos.toString());
   if (progressDialog.isShowing()) progressDialog.dismiss();
 } 

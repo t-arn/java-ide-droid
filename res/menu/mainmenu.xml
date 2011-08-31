@@ -8,6 +8,11 @@
     android:icon="@android:drawable/ic_menu_preferences"
   />
   <item
+    android:id="@+id/opt_passwords"
+    android:title="@string/mnu_passwords"
+    android:icon="@drawable/ic_menu_login"
+  />
+  <item
     android:id="@+id/opt_help"
     android:title="@string/mnu_help"
     android:icon="@android:drawable/ic_menu_help"

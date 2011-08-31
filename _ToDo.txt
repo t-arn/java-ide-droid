@@ -1,7 +1,2 @@
 ToDo
 ====
-
-- input in console
-- options for:
-  -- start dir for browsing
-  -- Log files for output

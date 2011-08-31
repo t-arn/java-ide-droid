@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>JavaIDEdroid - help</title>
+<meta name="author" content="Tom Arn">
+
+<style type="text/css">
+body { 
+  background-color:#000000; 
+  color: #FFFFFF;
+  font-weight:normal; 
+  font-family: verdana, arial, sans-serif; 
+  font-size: small; 
+}
+a {
+  color: #FFFF00;
+  text-decoration:underline;
+}
+h1 {
+  font-size: 120%;
+  font-weight: bold;
+  color: #00FF00;
+}
+h2 {
+  font-size: 110%;
+  font-weight: bold;
+  color: #00FF00;
+  border-bottom: 1px dotted #aaa;
+}
+h3 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #00FF00;
+}
+kbd {
+  font-size: small;
+}
+</style>
+
+</head>
+<body>
+
+<h1>JavaIDEdroid</h1>
+<h2>1. Einleitung</h2>
+<p>JavaIDEdroid ist eine integrierte Softwareentwicklungsumgebung (IDE), welche auf Android Ger&auml;ten l&auml;uft und es erm&ouml;glicht, native Android Anwendungen zu erstellen, ohne den Android SDK auf Windows oder Linux verwenden zu m&uuml;ssen. Der IDE sollte auf Android 1.6 oder h&ouml;her lauff&auml;hig sein.</p>
+
+<table>
+<tr><td>Version:</td><td>1.1.0</td>
+<tr><td>Datum: </td><td>2011-08-31</td>
+<tr><td>Autor:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
+<tr><td>Beitr&auml;ge von: </td><td>Ken Ellinwood</td>
+<tr><td>Projekt Webseite:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
+</table>
+
+<p>Zurzeit sind folgende Tools in JavaIDEdroid integriert:</p>
+<ul>
+<li>Aapt Tool aus dem Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
+<li>Eclipse Java Compiler (<a href="http://www.eclipse.org">www.eclipse.org</a>)</li>
+<li>Dx Tool aus dem Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
+<li>ApkBuilder Tool aus dem Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
+<li>Zipsigner-lib von Ken Ellinwood (<a href="http://code.google.com/p/zip-signer/">http://code.google.com/p/zip-signer</a>)</li>
+<li>BeanShell Interpreter (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
+</ul>
+
+<p>Aapt ist integriert als native Shared Library (arm). Es verwendet externe Libraries, welche Android 2.3 oder h&ouml;her ben&ouml;tigen, weshalb die aapt Shared Library f&uuml;r Android 2.3 erstellt wurde. Trotzdem scheint aapt auch auf &auml;lteren Android Versionen zu laufen (es lief problemlos auf meinem Android 2.2.1).</p>
+
+<h2>2. BeanShell</h2>
+<p>Mit dem integrierten BeanShell Interpreter k&ouml;nnen BeanShell Skripts ausgef&uuml;hrt werden, um den Prozess der Anwendungserstellung zu automatisieren.</p>
+
+<h3>2.1 Skripts erstellen</h3>
+<p>BeanShell Skripts haben &uuml;ber die vordefinierte Variable <kbd>G</kbd> Zugriff auf die in JavaIDEdroid eingebaute Funktionalit&auml;t. Die vordefinierte Variable G referenziert G.class, welche &uuml;ber folgende Variablen und Methoden verf&uuml;gt:</p>
+<ul>
+<li>MainActivity Klasse: G.main </li>
+<li>Tempor&auml;re Passw&ouml;rter: G.stPw1, G.stPw2</li> 
+<li>IDE Klasse: G.ide erlaubt den Zugriff auf die Entwicklungstools</li>
+<li>int G.ide.fnAapt (String arguments)</li>
+<li>int G.ide.fnAapt (String[] arguments)</li>
+<li>int G.ide.fnCompile (String arguments)</li>
+<li>int G.ide.fnCompile (String[] arguments)</li>
+<li>int G.ide.fnDx (String arguments)</li>
+<li>int G.ide.fnDx (String[] arguments)</li>
+<li>int G.ide.fnApkBuilder (String arguments)</li>
+<li>int G.ide.fnApkBuilder (String[] arguments)</li>
+<li>int G.ide.fnSignApk (String arguments)</li>
+<li>int G.ide.fnSignApk (String[] arguments)</li>
+<li>String[] G.ide.fnTokenize (String commandline) // zerlegt die Befehlszeilen Argumente</li>
+<li>BeanShellTask Klasse: G.bshTask erlaubt den Zugriff auf die Methoden f&uuml;r die Bildschirmausgabe</li>
+<li>void G.bshTask.fnClear () // l&ouml;scht die BeanShell Ausgabe</li>
+<li>void G.bshTask.fnPublishProgress (String msg) // aktualisiert den Dialog mit der Fortschrittsanzeige</li>
+<li>void G.bshTask.fnToast (String msg, int milliseconds) // zeigt eine Toast Meldung an</li>
+<li>Setting Klasse: G.oSet erlaubt den Zugriff auf Variablen, die in BeanShell Skripts verwendet werden k&ouml;nnen:</li>
+<li>G.oSet.stAndroidJarPath</li>
+<li>G.oSet.stBshVar1</li>
+<li>G.oSet.stBshVar2</li>
+<li>G.oSet.stBshVar3</li>
+<li>G.oSet.stBshVar4</li>
+<li>G.oSet.stBshVar5</li>
+</ul>
+<p>Bedeutung des R&uuml;ckgabewerts: <br>
+   <pre>
+   0:   OK
+   1:   Warnung
+   >1:  Fehler
+   99:  undefinierter R&uuml;ckgabewert / 	Exception
+   </pre>
+<p>
+<p>Beispiel um ecj zu starten:<br><kbd>int rc = G.ide.fnCompile("--version");</kbd></p>
+
+<h3>2.2 Skripts ausf&uuml;hren</h3>
+<p>BeanShell Skripts m&uuml;ssen irgendwo auf der Speicherkarte gespeichert werden. Der Pfad zum Skript kann im Eingabefeld eingegeben oder &uuml;ber die Schaltfl&auml;che ausgew&auml;hlt werden. Damit die Schaltfl&auml;che funktioniert, muss der OI File Manager installiert sein. Die Schaltfl&auml;che <kbd>"Starte Skript!"</kbd> startet das angegebene  BeanShell Skript.</p>
+
+<h2>3. Tools</h2>
+<p>Dieser Reiter gibt einen direkten Zugriff auf die eingebauten Tools, ohne dass ein BeanShell Skript ben&ouml;tigt wird. Alle Argumente m&uuml;ssen im Eingabefeld eingegeben werden.</p>
+
+<h2>4. Verwendung aus anderen Anwendungen</h2>
+<p>JavaIDEdroid unterst&uuml;tzt die Intent Aktion "android.intent.action.SEND" und kann aus anderen Anwendungen mittels folgendem Code gestartet werden:<br>
+<pre>
+ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
+Intent intent = new Intent();
+intent.setComponent(cn);
+intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
+startActivity(intent);
+</pre>
+<p>Der Pfad des BeanShell Skripts kann im Extra Bundle &uuml;bergeben werden. Wenn JavaIDEdroid startet, f&uuml;hrt es dieses Skript aus.</p>
+
+<h2>5. Rechtliches</h2>
+<p>Vielen Dank, dass Sie sich f&uuml;r diese SOFTWARE entschieden haben! Sie d&uuml;rfen die SOFTWARE nur nutzen, wenn Sie mit den nachfolgenden Bestimmungen einverstanden sind:</p>
+
+<p><b>URHEBERRECHT</b><br>
+Diese SOFTWARE wurde durch Tom Arn, www.t-arn.com, (im folgenden AUTOR genannt) entwickelt und ist frei nutzbar unter der GNU General Public License.</p>
+
+<p><b>KEINE GEW&Auml;HRLEISTUNG</b><br>
+Die SOFTWARE wird im Ist-Zustand ausgeliefert. Der AUTOR lehnt jede Haftung ab, ob ausdr&uuml;cklich oder gesetzlich, einschliesslich der Garantien der Handelbarkeit und der Eignung f&uuml;r einen bestimmten Zweck. Der AUTOR &uuml;bernimmt keine Garantie daf&uuml;r, dass die Software ausfallsicher oder fehlerfrei ist. Der Benutzer muss bei der Verwendung der SOFTWARE s&auml;mtliches Risiko &uuml;bernehmen.</p>
+
+<p><b>KEINE SCHADENHAFTUNG</b><br>
+Der AUTOR &uuml;bernimmt keine Haftung f&uuml;r Sch&auml;den oder Folgesch&auml;den, direkt oder indirekt, die aufgrund der Verwendung (oder der Unm&ouml;glichkeit der Verwendung) der SOFTWARE entstehen k&ouml;nnten, auch wenn der AUTOR &uuml;ber die M&ouml;glichkeit solcher Sch&auml;den in Kenntnis gesetzt worden ist.</p>
+
+</body>
+</html>

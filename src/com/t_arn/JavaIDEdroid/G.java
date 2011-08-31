@@ -1,8 +1,10 @@
 package com.t_arn.JavaIDEdroid;
 
+import android.content.res.Resources;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.io.*;
 
 //##################################################################
 /** 
@@ -18,6 +20,9 @@ import android.widget.Toast;
   public static BeanShellTask bshTask;
   public static TextView tabBeanshell_tvOutput, tabTools_tvOutput;
   public static SettingActivity oSet;
+  public static String stLogDir = "/sdcard/."+stProgramName;
+  public static String stPw1, stPw2;
+  private static Resources res;
   
 //===================================================================
 // Global static methods
@@ -28,6 +33,8 @@ import android.widget.Toast;
     G.main = mainActivity;
     G.oSet = new SettingActivity();
     G.oSet.fnApplySettings();
+    G.stPw1 = G.stPw2 = "";
+    G.res = G.main.getResources();
  } //fnInit
 //===================================================================
   public static void fnError (String where, Throwable t)
@@ -36,9 +43,27 @@ import android.widget.Toast;
     String errMsg="";
     if (t!=null) errMsg=t.toString();
     Log.e(G.stProgramName, errMsg);
-    fnToast("Error in "+where+"!\n"+errMsg,10000);
+    fnToast(G.Rstring(R.string.err_errorIn)+" "+where+"!\n"+errMsg,10000);
     if (t!=null) t.printStackTrace();
   } //fnError
+//===================================================================
+  public static boolean fnMakeLogDir ()
+//===================================================================
+  {
+    File dir;
+    boolean ok = false;
+    try
+    {
+      dir = new File(stLogDir);
+      if (!dir.exists()) dir.mkdir();
+      if (dir.isDirectory()) ok = true;
+    }
+    catch (Exception e)
+    {
+      ok = false;
+    }
+    return ok;
+  } // fnMakeLogDir
 //===================================================================
   public static int fnParseInt (String s, int defaultValue)
 //===================================================================
@@ -70,6 +95,12 @@ import android.widget.Toast;
   {
     Toast.makeText(G.main,msg,msec).show();
   } 
+//===================================================================
+  public static String Rstring (int id)
+//===================================================================
+  {
+    return res.getString(id);
+  } // 
 //===================================================================
 }
 //##################################################################

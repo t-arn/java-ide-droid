@@ -16,8 +16,16 @@ import android.util.TypedValue;
 public class SettingActivity extends PreferenceActivity 
 //##################################################################
 {
-  public static String stFontSize;
-  public static String stFontType;
+  public String stFontSize;
+  public String stFontType;
+  public String stDefaultStartDir;
+  public boolean bLogOutput;
+  public String stAndroidJarPath;
+  public String stBshVar1;
+  public String stBshVar2;
+  public String stBshVar3;
+  public String stBshVar4;
+  public String stBshVar5;
 
 //===================================================================
   /** Called when the activity is first created. */
@@ -51,15 +59,28 @@ public class SettingActivity extends PreferenceActivity
    try { fFontSize = Float.parseFloat(stFontSize); } catch (NumberFormatException e1) { fFontSize=12; }
 
    // load the preferences
-   prefs = PreferenceManager.getDefaultSharedPreferences(G.main);
-   try { stFontSize = prefs.getString("font_size", stFontSize); }
-   catch (ClassCastException e2) { Log.e(G.stProgramName, "ClassCastException on getting 'font_size'"); }
-   try { stFontType = prefs.getString("font_type",stFontType); }
-   catch (ClassCastException e3) { Log.e(G.stProgramName, "ClassCastException on getting 'font_type'"); }
-   try { fFontSize = Float.parseFloat(stFontSize); }
-   catch (NumberFormatException e4) { Log.e(G.stProgramName, "NumberFormatException on parsing 'font_size'"); }
-   Log.i(G.stProgramName, "Setting font size to "+fFontSize);
-   Log.i(G.stProgramName, "Setting font type to "+stFontType);
+   try
+   {
+     prefs = PreferenceManager.getDefaultSharedPreferences(G.main);
+     stFontSize = prefs.getString("font_size", stFontSize);
+     stFontType = prefs.getString("font_type",stFontType);
+     try { fFontSize = Float.parseFloat(stFontSize); }
+     catch (NumberFormatException e1) { Log.e(G.stProgramName, "NumberFormatException on parsing 'font_size'"); }
+     Log.i(G.stProgramName, "Setting font size to "+fFontSize);
+     Log.i(G.stProgramName, "Setting font type to "+stFontType);
+     stDefaultStartDir=prefs.getString("start_dir",stDefaultStartDir);
+     bLogOutput=prefs.getBoolean("log_output",false);
+     stAndroidJarPath=prefs.getString("android_jar_path",stAndroidJarPath);
+     stBshVar1=prefs.getString("bsh_var1",stBshVar1);
+     stBshVar2=prefs.getString("bsh_var2",stBshVar2);
+     stBshVar3=prefs.getString("bsh_var3",stBshVar3);
+     stBshVar4=prefs.getString("bsh_var4",stBshVar4);
+     stBshVar5=prefs.getString("bsh_var5",stBshVar5);
+   }
+   catch (ClassCastException e) 
+   { 
+     G.fnError("SettingActivity", e); 
+   }
    
    // apply the settings
    G.tabBeanshell_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
@@ -83,6 +104,14 @@ public class SettingActivity extends PreferenceActivity
 {
   stFontSize="12";     // this must be a string representation of a float
   stFontType="Normal"; // set to "Normal" or "Monospace"
+  stDefaultStartDir="/sdcard/";
+  bLogOutput=false;
+  stAndroidJarPath="";
+  stBshVar1="";
+  stBshVar2="";
+  stBshVar3="";
+  stBshVar4="";
+  stBshVar5="";
 } // fnSetDefaults
 //===================================================================
 } // SettingActivity

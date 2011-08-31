@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">Java IDE on Android</string>
+  <string name="err_errorIn">Error in</string>
+  <string name="err_mkdir">Could not create directory</string>
+  <string name="err_no_oifm">OI Filemanager needs to be installed</string>
+  <string name="lbl_temp_pw">Here you can enter temporary passwords which can then be used in BeanShell scripts. The passwords are not stored persistently. Exiting JavaIDEdroid with the \'Exit\' button will clear the passwords.\n</string>
+  <string name="lbl_pw1">Password 1 (G.stPw1)</string>
+  <string name="lbl_pw2">Password 2 (G.stPw2)</string>
+  <string name="msg_aapt_build">WARNING: Aapt was built for Android API level 9 or higher.</string>
+  <string name="msg_aapt_your_api">Your API level is</string>
+  <string name="msg_aapt_warning">Aapt might not work correctly on your device!</string>
+  <string name="msg_choose_script">Choose Beanshell script</string>
+  <string name="msg_logpw">WARNING: Passwords might have been logged to the log file.</string>
+  <string name="msg_taskfinished">Task finished</string>
+  <string name="msg_taskrunning">Task running...</string>
   <string name="mnu_options">Options</string>
   <string name="mnu_help">Help</string>
   <string name="mnu_exit">Exit</string>
+  <string name="mnu_passwords">Passwords</string>
   <string name="tabBeanshell_btnRun">Run script!</string>
+  <string name="prefcat_display">Display</string>
+  <string name="pref_font_size">Font size</string>
+  <string name="pref_font_type">Font type</string>
+  <string name="prefcat_filesystem">Filesystem</string>
+  <string name="pref_log_output">Log output to file</string>
+  <string name="pref_start_dir">Default script dir</string>
+  <string name="prefsum_start_dir">Default dir when browsing for scripts.</string>
+  <string name="prefcat_global_vars">Global script variables</string>
+  <string name="pref_android_jar_path">Full path of android.jar</string>
+  <string name="pref_bsh_var1">Custom variable 1</string>
+  <string name="pref_bsh_var2">Custom variable 2</string>
+  <string name="pref_bsh_var3">Custom variable 3</string>
+  <string name="pref_bsh_var4">Custom variable 4</string>
+  <string name="pref_bsh_var5">Custom variable 5</string>
   <string name="tipBeanshell_etScript">Script path and filename</string>
   <string name="tabTools_btnRun">Run!</string>
   <string name="tipTools_etArgs">arguments</string>
+  <string name="tit_bshtask">BeanShell Task</string>
+  <string name="tit_tooltask">Tool Task</string>
 </resources>

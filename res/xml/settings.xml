@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
   <PreferenceCategory
-    android:title="Display">
+    android:title="@string/prefcat_display">
     <EditTextPreference
       android:key="font_size"
-      android:title="Font size"
+      android:title="@string/pref_font_size"
     />
     <ListPreference
       android:key="font_type"
-      android:title="Font type"
+      android:title="@string/pref_font_type"
       android:entries="@array/ar_font_type"
       android:entryValues="@array/ar_font_type" 
+    />
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="@string/prefcat_filesystem">
+    <CheckBoxPreference
+      android:key="log_output"
+      android:title="@string/pref_log_output"
+      android:summary="/sdcard/.JavaIDEdroid/LogOutput.txt"
+    />
+    <EditTextPreference
+      android:key="start_dir"
+      android:title="@string/pref_start_dir"
+      android:summary="@string/prefsum_start_dir"
+    />
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="@string/prefcat_global_vars">
+    <EditTextPreference
+      android:key="android_jar_path"
+      android:title="@string/pref_android_jar_path"
+      android:summary="G.oSet.stAndroidJarPath"
+    />
+    <EditTextPreference
+      android:key="bsh_var1"
+      android:title="@string/pref_bsh_var1"
+      android:summary="G.oSet.stBshVar1"
+    />
+    <EditTextPreference
+      android:key="bsh_var2"
+      android:title="@string/pref_bsh_var2"
+      android:summary="G.oSet.stBshVar2"
+    />
+    <EditTextPreference
+      android:key="bsh_var3"
+      android:title="@string/pref_bsh_var3"
+      android:summary="G.oSet.stBshVar3"
+    />
+    <EditTextPreference
+      android:key="bsh_var4"
+      android:title="@string/pref_bsh_var4"
+      android:summary="G.oSet.stBshVar4"
+    />
+    <EditTextPreference
+      android:key="bsh_var5"
+      android:title="@string/pref_bsh_var5"
+      android:summary="G.oSet.stBshVar5"
     />
   </PreferenceCategory>
 </PreferenceScreen>

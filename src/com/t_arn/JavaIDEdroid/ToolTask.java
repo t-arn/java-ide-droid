@@ -25,8 +25,8 @@ protected void onPreExecute()
   // show progress dialog
   progressDialog = new ProgressDialog(G.main);
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-  progressDialog.setTitle("Tool Task");
-  progressDialog.setMessage("Task running...");
+  progressDialog.setTitle(G.Rstring(R.string.tit_tooltask));
+  progressDialog.setMessage(G.Rstring(R.string.msg_taskrunning));
   progressDialog.setIndeterminate(true);
   progressDialog.show();
 }
@@ -46,6 +46,7 @@ protected Void doInBackground(String... args)
     else if (args[0].equals("DX")) G.ide.fnDx(params);
     else if (args[0].equals("ApkBuilder")) G.ide.fnApkBuilder(params);
     else if (args[0].equals("ZipSigner")) G.ide.fnSignApk(params);
+    if (G.oSet.bLogOutput) G.ide.fnLogOutput();
   }
   catch (Throwable t)
   {
@@ -66,7 +67,7 @@ protected void onProgressUpdate(String... progress)
 protected void onPostExecute(Void unused) 
 //===================================================================
 { 
-  publishProgress("Task finished");
+  publishProgress(G.Rstring(R.string.msg_taskfinished));
   G.tabTools_tvOutput.append(swos.toString());
   if (progressDialog.isShowing()) progressDialog.dismiss();
 } 

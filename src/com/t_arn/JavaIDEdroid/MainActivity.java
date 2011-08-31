@@ -17,7 +17,6 @@ See the GNU General Public License for more details.
    Intent intent = new Intent();
    intent.setComponent(cn);
    intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
-   intent.putExtra("android.intent.extra.minExitCode", "0");
    startActivity(intent);
 */
 
@@ -141,20 +140,31 @@ public class MainActivity extends TabActivity
     return super.onCreateOptionsMenu(menu);
   }
 //===================================================================
+  @Override
+  protected void onDestroy() 
+//===================================================================
+  {
+    G.stPw1 = G.stPw2 = "";
+    super.onDestroy();
+  }
+//===================================================================
   @Override 
   public boolean onOptionsItemSelected (MenuItem item)
 //===================================================================
   {
     switch (item.getItemId())
     {
-      case R.id.opt_options:
-        startActivityForResult(new Intent(this, SettingActivity.class), REQUEST_CODE_SETTINGS);
+      case R.id.opt_exit:
+        finish();
         return true;
       case R.id.opt_help:
         fnHelp ();
         return true;
-      case R.id.opt_exit:
-        finish();
+      case R.id.opt_options:
+        startActivityForResult(new Intent(this, SettingActivity.class), REQUEST_CODE_SETTINGS);
+        return true;
+      case R.id.opt_passwords:
+        startActivity(new Intent (this, PasswordActivity.class));
         return true;
       default:
         return super.onOptionsItemSelected(item);
@@ -165,19 +175,23 @@ public class MainActivity extends TabActivity
   public void tabBeanShell_btnBrowse (final View view)
 //===================================================================
   { 
+    String startDir;
+    
     try
     {
+      startDir = tabBeanshell_etScript.getText().toString();
+      if (startDir.equals("")) startDir=G.oSet.stDefaultStartDir;
       Intent intent = new Intent ("org.openintents.action.PICK_FILE");
-      intent.setData(Uri.parse("file://"+tabBeanshell_etScript.getText().toString()));
+      intent.setData(Uri.parse("file://"+startDir));
       // Set fancy title and button (optional)
-      intent.putExtra("org.openintents.extra.TITLE", "Choose Beanshell script");
+      intent.putExtra("org.openintents.extra.TITLE", G.Rstring(R.string.msg_choose_script));
       intent.putExtra("org.openintents.extra.BUTTON_TEXT", "OK");
       startActivityForResult(intent, REQUEST_CODE_PICK_FILE_OR_DIRECTORY);
     } 
     catch (ActivityNotFoundException e) 
     {
       // No compatible file manager was found.
-      G.fnToast("OI Filemanager needs to be installed", 10000);
+      G.fnToast(G.Rstring(R.string.err_no_oifm), 10000);
     }
     catch (Throwable t) { G.fnError("tabBeanshell_btnBrowse", t); }
   }//tabBeanshell_btnBrowse
