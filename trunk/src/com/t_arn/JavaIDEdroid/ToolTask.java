@@ -46,7 +46,7 @@ protected Void doInBackground(String... args)
     else if (args[0].equals("DX")) G.ide.fnDx(params);
     else if (args[0].equals("ApkBuilder")) G.ide.fnApkBuilder(params);
     else if (args[0].equals("ZipSigner")) G.ide.fnSignApk(params);
-    if (G.oSet.bLogOutput) G.ide.fnLogOutput();
+    if (G.oSet.bLogOutput) G.ide.fnLogOutput(swos);
   }
   catch (Throwable t)
   {
@@ -69,6 +69,7 @@ protected void onPostExecute(Void unused)
 { 
   publishProgress(G.Rstring(R.string.msg_taskfinished));
   G.tabTools_tvOutput.append(swos.toString());
+  swos = null;
   if (progressDialog.isShowing()) progressDialog.dismiss();
 } 
 //===================================================================

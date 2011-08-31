@@ -12,6 +12,7 @@
   <string name="msg_aapt_warning">Aapt funktioniert auf diesem Geraet moeglicherweise nicht korrekt!</string>
   <string name="msg_choose_script">Auswahl Beanshell Skript</string>
   <string name="msg_logpw">WARNUNG: Die Passwoerter wurden moeglicherweise in die Logdatei geschrieben.</string>
+  <string name="msg_logpwgui">WARNUNG: Die Passwörter wurden möglicherweise in die Logdatei geschrieben.</string>
   <string name="msg_taskfinished">Prozess beendet</string>
   <string name="msg_taskrunning">Prozess läuft...</string>
   <string name="mnu_options">Optionen</string>
