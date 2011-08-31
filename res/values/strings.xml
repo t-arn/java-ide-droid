@@ -12,6 +12,7 @@
   <string name="msg_aapt_warning">Aapt might not work correctly on your device!</string>
   <string name="msg_choose_script">Choose Beanshell script</string>
   <string name="msg_logpw">WARNING: Passwords might have been logged to the log file.</string>
+  <string name="msg_logpwgui">WARNING: Passwords might have been logged to the log file.</string>
   <string name="msg_taskfinished">Task finished</string>
   <string name="msg_taskrunning">Task running...</string>
   <string name="mnu_options">Options</string>

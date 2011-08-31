@@ -43,7 +43,6 @@ protected Void doInBackground(String... args)
     swos = new StringWriterOutputStream();
     G.ide.fnRedirectOutput(swos);
     G.ide.fnRunBeanshellScript(i, args[0]);
-    if (G.oSet.bLogOutput) G.ide.fnLogOutput();
   }
   catch (Throwable t)
   {
@@ -78,9 +77,21 @@ protected void onProgressUpdate(String... progress)
 protected void onPostExecute(Void unused) 
 //===================================================================
 { 
+  boolean bWarn = false;
   publishProgress(G.Rstring(R.string.msg_taskfinished));
+  if (G.oSet.bLogOutput) 
+  {
+    if (G.stPw1.length()+G.stPw2.length()>0)
+    {
+      System.err.println("\n"+G.Rstring(R.string.msg_logpw)+"\n");
+      bWarn = true;
+    }
+    G.ide.fnLogOutput(swos);
+  }
   G.tabBeanshell_tvOutput.append(swos.toString());
+  swos=null;
   if (progressDialog.isShowing()) progressDialog.dismiss();
+  if (bWarn) G.fnToast(R.string.msg_logpwgui,10000);
 } 
 //===================================================================
 public void fnClear()

@@ -13,7 +13,6 @@ import com.t_arn.lib.io.StringWriterOutputStream;
 public class IDE
 //##################################################################
 {
-  private StringWriterOutputStream lastSwos;
   
 //===================================================================
 public IDE () 
@@ -171,7 +170,7 @@ public int fnDx (String[] args)
   return rc;
 } //fnDx
 //===================================================================
-public synchronized void fnLogOutput ()
+public synchronized void fnLogOutput (StringWriterOutputStream swos)
 //===================================================================
 {
   boolean ok;
@@ -180,6 +179,7 @@ public synchronized void fnLogOutput ()
   
   try
   {
+    if (swos==null) return;
     ok = G.fnMakeLogDir();
     if (!ok)
     {
@@ -187,12 +187,8 @@ public synchronized void fnLogOutput ()
       return;
     }
     fw = new FileWriter (G.stLogDir+"/LogOutput.txt",false);
-    stOut = lastSwos.toString().replace("\n", "\r\n");
+    stOut = swos.toString().replace("\n", "\r\n");
     fw.write(stOut);
-    if (G.stPw1.length()+G.stPw2.length()>0)
-    {
-      fw.write("\r\n"+G.Rstring(R.string.msg_logpw)+"\r\n");
-    }
     fw.close();
   }//try
   catch (Throwable t)
@@ -207,7 +203,6 @@ public void fnRedirectOutput (StringWriterOutputStream swos)
   // redirect stdout and stderr
   System.setOut(new PrintStream(swos));
   System.setErr(new PrintStream(swos));
-  lastSwos = swos;
 }
 //===================================================================
 public void fnRunBeanshellScript (bsh.Interpreter i, String script) 
