@@ -1,6 +1,16 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 1.1.1 (31.08.2011) </H2>
+<UL>
+<LI> New: Password Activity allows to set temporary passwords which can be accessed in BeanShell scripts</LI>
+<LI> New: Option to log output to a file</LI>
+<LI> New: Option for default directory when browsing for scripts</LI>
+<LI> New: Options for variables that can be used in scripts: stAndroidJarPath, stBshVar1, stBshVar2, stBshVar3, stBshVar4, stBshVar5</LI>
+<LI> New: Added german language files</LI> 
+<LI> Bugfix: Intent example in help file corrected. </LI>
+</UL>
+
 <H2> version 1.0.1 (25.08.2011) </H2>
 <UL>
 <LI> Bugfix: Corrected help file. </LI>
