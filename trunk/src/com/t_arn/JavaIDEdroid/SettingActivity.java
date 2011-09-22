@@ -26,6 +26,7 @@ public class SettingActivity extends PreferenceActivity
   public String stBshVar3;
   public String stBshVar4;
   public String stBshVar5;
+  public int iLogLevel;
 
 //===================================================================
   /** Called when the activity is first created. */
@@ -50,52 +51,60 @@ public class SettingActivity extends PreferenceActivity
  */
   public void fnApplySettings()
 //===================================================================
-{
-   final SharedPreferences prefs;
-   float fFontSize;
+  {
+    final SharedPreferences prefs;
+    float fFontSize;
+    String stLogLevel="VERBOSE";
+    String [] ar_log_level;
 
-   // set default values
-   fnSetDefaults();
-   try { fFontSize = Float.parseFloat(stFontSize); } catch (NumberFormatException e1) { fFontSize=12; }
+    // set default values
+    fnSetDefaults();
+    try { fFontSize = Float.parseFloat(stFontSize); } catch (NumberFormatException e1) { fFontSize=12; }
 
-   // load the preferences
-   try
-   {
-     prefs = PreferenceManager.getDefaultSharedPreferences(G.main);
-     stFontSize = prefs.getString("font_size", stFontSize);
-     stFontType = prefs.getString("font_type",stFontType);
-     try { fFontSize = Float.parseFloat(stFontSize); }
-     catch (NumberFormatException e1) { Log.e(G.stProgramName, "NumberFormatException on parsing 'font_size'"); }
-     Log.i(G.stProgramName, "Setting font size to "+fFontSize);
-     Log.i(G.stProgramName, "Setting font type to "+stFontType);
-     stDefaultStartDir=prefs.getString("start_dir",stDefaultStartDir);
-     bLogOutput=prefs.getBoolean("log_output",false);
-     stAndroidJarPath=prefs.getString("android_jar_path",stAndroidJarPath);
-     stBshVar1=prefs.getString("bsh_var1",stBshVar1);
-     stBshVar2=prefs.getString("bsh_var2",stBshVar2);
-     stBshVar3=prefs.getString("bsh_var3",stBshVar3);
-     stBshVar4=prefs.getString("bsh_var4",stBshVar4);
-     stBshVar5=prefs.getString("bsh_var5",stBshVar5);
-   }
-   catch (ClassCastException e) 
-   { 
-     G.fnError("SettingActivity", e); 
-   }
-   
-   // apply the settings
-   G.tabBeanshell_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
-   G.tabTools_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
-   if (stFontType.equals("Monospace") )
-   {
-     G.tabBeanshell_tvOutput.setTypeface(Typeface.MONOSPACE);
-     G.tabTools_tvOutput.setTypeface(Typeface.MONOSPACE);
-   }
-   else
-   {
-     G.tabBeanshell_tvOutput.setTypeface(Typeface.DEFAULT);
-     G.tabTools_tvOutput.setTypeface(Typeface.DEFAULT);
-   }
-} // fnApplySettings
+    // load the preferences
+    try
+    {
+      prefs = PreferenceManager.getDefaultSharedPreferences(G.main);
+      stFontSize = prefs.getString("font_size", stFontSize);
+      stFontType = prefs.getString("font_type",stFontType);
+      try { fFontSize = Float.parseFloat(stFontSize); }
+      catch (NumberFormatException e1) { G.fnLog("e", "NumberFormatException on parsing 'font_size'"); }
+      G.fnLog("d","Setting font size to "+fFontSize);
+      G.fnLog("d","Setting font type to "+stFontType);
+      stDefaultStartDir=prefs.getString("start_dir",stDefaultStartDir);
+      bLogOutput=prefs.getBoolean("log_output",false);
+      stAndroidJarPath=prefs.getString("android_jar_path",stAndroidJarPath);
+      stBshVar1=prefs.getString("bsh_var1",stBshVar1);
+      stBshVar2=prefs.getString("bsh_var2",stBshVar2);
+      stBshVar3=prefs.getString("bsh_var3",stBshVar3);
+      stBshVar4=prefs.getString("bsh_var4",stBshVar4);
+      stBshVar5=prefs.getString("bsh_var5",stBshVar5);
+      stLogLevel = prefs.getString("log_level",stLogLevel);
+      ar_log_level = G.res.getStringArray(R.array.ar_log_level);
+      iLogLevel = G.fnArrayIndexOf(ar_log_level, stLogLevel);
+      Log.i(G.stProgramName, "setting log level to "+iLogLevel+" ("+ar_log_level[iLogLevel]+")");
+    }
+    catch (ClassCastException e) 
+    { 
+      String msg=G.Rstring(R.string.err_errorIn)+" SettingActivity!\n"+e.toString();
+      Log.e(G.stProgramName, msg);
+      G.fnToast(msg,10000);
+    }
+
+    // apply the settings
+    G.tabBeanshell_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
+    G.tabTools_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
+    if (stFontType.equals("Monospace") )
+    {
+      G.tabBeanshell_tvOutput.setTypeface(Typeface.MONOSPACE);
+      G.tabTools_tvOutput.setTypeface(Typeface.MONOSPACE);
+    }
+    else
+    {
+      G.tabBeanshell_tvOutput.setTypeface(Typeface.DEFAULT);
+      G.tabTools_tvOutput.setTypeface(Typeface.DEFAULT);
+    }
+  } // fnApplySettings
 //===================================================================
 /** Set the defaults for the options
  */
@@ -112,6 +121,7 @@ public class SettingActivity extends PreferenceActivity
   stBshVar3="";
   stBshVar4="";
   stBshVar5="";
+  iLogLevel = 5;
 } // fnSetDefaults
 //===================================================================
 } // SettingActivity

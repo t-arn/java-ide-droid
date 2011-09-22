@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">Java IDE auf Android</string>
+  <string name="app_name">Java IDE (Android)</string>
   <string name="err_errorIn">Fehler in</string>
   <string name="err_mkdir">Verzeichnis konnte nicht erstellt werden.</string>
   <string name="err_no_oifm">OI Filemanager muss installiert sein.</string>
@@ -15,18 +15,21 @@
   <string name="msg_logpwgui">WARNUNG: Die Passwörter wurden möglicherweise in die Logdatei geschrieben.</string>
   <string name="msg_taskfinished">Prozess beendet</string>
   <string name="msg_taskrunning">Prozess läuft...</string>
-  <string name="mnu_options">Optionen</string>
-  <string name="mnu_passwords">Passwörter</string>
+  <string name="mnu_donate">Spende</string>
   <string name="mnu_help">Hilfe</string>
   <string name="mnu_exit">Beenden</string>
+  <string name="mnu_options">Optionen</string>
+  <string name="mnu_passwords">Passwörter</string>
   <string name="tabBeanshell_btnRun">Starte Skript!</string>
   <string name="prefcat_display">Anzeige</string>
   <string name="pref_font_size">Schriftgrösse</string>
   <string name="pref_font_type">Schriftart</string>
-  <string name="prefcat_filesystem">Dateisystem</string>
+  <string name="prefcat_system">System</string>
   <string name="pref_log_output">Protokolliere Ausgabe in Datei</string>
   <string name="pref_start_dir">Standard Skript Verzeichnis</string>
   <string name="prefsum_start_dir">Standardverzeichnis wenn nach Skripts gesucht wird.</string>
+  <string name="pref_log_level">Log Level</string>
+  <string name="prefsum_log_level">Umfang der Informationen in logcat</string>
   <string name="prefcat_global_vars">Globale Skript Variablen</string>
   <string name="pref_android_jar_path">Voller Pfad zu android.jar</string>
   <string name="pref_bsh_var1">Benutzerdefinierte Variable 1</string>

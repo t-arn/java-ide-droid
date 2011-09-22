@@ -1,6 +1,5 @@
 package com.t_arn.JavaIDEdroid;
 
-import android.util.Log;
 import java.io.*;
 
 //##################################################################
@@ -28,7 +27,7 @@ public class Aapt
     }
     try
     {
-      Log.i(G.stProgramName, "Loading native library aaptcomplete...");
+      G.fnLog("i", "Loading native library aaptcomplete...");
       System.loadLibrary("aaptcomplete");
       bInitialized = true;
       ok = true;
@@ -46,9 +45,9 @@ public class Aapt
   {
     int rc=99;
 
-    Log.i(G.stProgramName, "Calling JNImain...");
+    G.fnLog("d", "Calling JNImain...");
     rc = JNImain (args);
-    Log.i(G.stProgramName, "Result from native lib="+rc);
+    G.fnLog("d", "Result from native lib="+rc);
     fnGetNativeOutput();
     return rc;
   } // fnExecute

@@ -13,6 +13,11 @@
     android:icon="@drawable/ic_menu_login"
   />
   <item
+    android:id="@+id/opt_donate"
+    android:title="@string/mnu_donate"
+    android:icon="@drawable/ic_menu_money"
+  />
+  <item
     android:id="@+id/opt_help"
     android:title="@string/mnu_help"
     android:icon="@android:drawable/ic_menu_help"

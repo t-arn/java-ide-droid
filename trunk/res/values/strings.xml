@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">Java IDE on Android</string>
+  <string name="app_name">Java IDE (Android)</string>
   <string name="err_errorIn">Error in</string>
   <string name="err_mkdir">Could not create directory</string>
   <string name="err_no_oifm">OI Filemanager needs to be installed</string>
@@ -15,18 +15,21 @@
   <string name="msg_logpwgui">WARNING: Passwords might have been logged to the log file.</string>
   <string name="msg_taskfinished">Task finished</string>
   <string name="msg_taskrunning">Task running...</string>
-  <string name="mnu_options">Options</string>
+  <string name="mnu_donate">Donation</string>
   <string name="mnu_help">Help</string>
   <string name="mnu_exit">Exit</string>
+  <string name="mnu_options">Options</string>
   <string name="mnu_passwords">Passwords</string>
   <string name="tabBeanshell_btnRun">Run script!</string>
   <string name="prefcat_display">Display</string>
   <string name="pref_font_size">Font size</string>
   <string name="pref_font_type">Font type</string>
-  <string name="prefcat_filesystem">Filesystem</string>
+  <string name="prefcat_system">System</string>
   <string name="pref_log_output">Log output to file</string>
   <string name="pref_start_dir">Default script dir</string>
   <string name="prefsum_start_dir">Default dir when browsing for scripts.</string>
+  <string name="pref_log_level">Log level</string>
+  <string name="prefsum_log_level">Amount of log information in logcat</string>
   <string name="prefcat_global_vars">Global script variables</string>
   <string name="pref_android_jar_path">Full path of android.jar</string>
   <string name="pref_bsh_var1">Custom variable 1</string>

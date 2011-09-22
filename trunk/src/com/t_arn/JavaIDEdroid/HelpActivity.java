@@ -42,8 +42,8 @@ public class HelpActivity extends Activity
     final String encoding = "UTF-8";
     String htmldata;
     
-    final int contextMenueId = R.raw.help;    
-    final InputStream is = context.getResources().openRawResource(contextMenueId);
+    final int pageId = R.raw.help;    
+    final InputStream is = context.getResources().openRawResource(pageId);
 
     try 
     {

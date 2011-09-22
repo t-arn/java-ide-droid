@@ -2,7 +2,6 @@ package com.t_arn.JavaIDEdroid;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.util.Log;
 import com.t_arn.lib.io.StringWriterOutputStream;
 
 //##################################################################
@@ -13,15 +12,17 @@ public class ToolTask
   private ProgressDialog progressDialog;
   private StringWriterOutputStream swos;
   
+//===================================================================
 public ToolTask ()
 //===================================================================
 {
 } //
 //===================================================================
+@Override
 protected void onPreExecute() 
 //===================================================================
 {
-  Log.i(G.stProgramName, "onPreExecute");
+  G.fnLog("d", "onPreExecute()");
   // show progress dialog
   progressDialog = new ProgressDialog(G.main);
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -31,6 +32,7 @@ protected void onPreExecute()
   progressDialog.show();
 }
 //===================================================================
+@Override
 protected Void doInBackground(String... args) 
 //===================================================================
 {
@@ -38,7 +40,7 @@ protected Void doInBackground(String... args)
   {
     String params = "";
     if (args.length>=2) params = args[1];
-    Log.i(G.stProgramName, "doInBackground");
+    G.fnLog("d", "doInBackground()");
     swos = new StringWriterOutputStream();
     G.ide.fnRedirectOutput(swos);
     if (args[0].equals("AAPT")) G.ide.fnAapt(params);
@@ -55,15 +57,18 @@ protected Void doInBackground(String... args)
   return null;
 }
 //===================================================================
+@Override
 protected void onProgressUpdate(String... progress)
+//===================================================================
 {
   try
   {
-    Log.i(G.stProgramName, "onProgressUpdate");
+    G.fnLog("d", "onProgressUpdate()");
     progressDialog.setMessage(progress[0]);
-  } catch (Exception e) { Log.e(G.stProgramName, "onProgressUpdate: "+e.getMessage()); }
+  } catch (Exception e) { G.fnLog("e", "onProgressUpdate(): "+e.getMessage()); }
 } // onProgressUpdate
 //===================================================================
+@Override
 protected void onPostExecute(Void unused) 
 //===================================================================
 { 
@@ -74,6 +79,7 @@ protected void onPostExecute(Void unused)
 } 
 //===================================================================
 public void fnPublishProgress(String progressMessage)
+//===================================================================
 {
   publishProgress(progressMessage);
 }

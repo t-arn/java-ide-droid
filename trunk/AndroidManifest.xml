@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.t_arn.JavaIDEdroid"
-  android:versionCode="16"
-  android:versionName="1.1.1"
+  android:versionCode="19"
+  android:versionName="1.2.0"
 >
-  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="8" />
+  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="10" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="JavaIDEdroid" android:icon="@drawable/icon">
     <activity android:name="MainActivity"
@@ -20,6 +20,11 @@
         <category android:name="android.intent.category.DEFAULT" />
         <data android:mimeType="text/*" />
       </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/x-beanshell" />
+      </intent-filter>
     </activity>
     <activity android:name="HelpActivity" 
       android:configChanges="orientation"
@@ -28,6 +33,9 @@
       android:configChanges="orientation"
     />
     <activity android:name="SettingActivity" 
+      android:configChanges="orientation"
+    />
+    <activity android:name="DonateActivity" 
       android:configChanges="orientation"
     />
   </application>
