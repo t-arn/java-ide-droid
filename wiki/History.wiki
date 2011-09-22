@@ -9,7 +9,7 @@
 <LI> New: intent filter for android.intent.action.VIEW added. Use e.g. ASTRO filemanager to define MIME type text/x-beanshell and associate it with the extension .bsh. Now, clicking on a .bsh file starts JavaIDEdroid and passes the script path.</LI>
 <LI> New: G.iScriptResultCode variable with which the script can report back its result code.</LI>
 <LI> New: Better integration with other Android apps: !ScriptAutoRun, !ScriptAutoExit, !WantResultText extra values for intent filter android.intent.action.SEND; !ScriptResultCode, !ScriptResultText extra values in result intent</LI>
-<LI> New: added !DonateActivity with link to [JavaIDEdroidDonate] https://market.android.com/details?id=com.t_arn.JavaIDEdroidDonate" for those who want to make a donation</LI>
+<LI> New: added !DonateActivity with link to [JavaIDEdroidDonate]https://market.android.com/details?id=com.t_arn.JavaIDEdroidDonate for those who want to make a donation</LI>
 </UL>
 
 <H2> version 1.1.1 (31.08.2011) </H2>
