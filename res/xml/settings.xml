@@ -14,7 +14,7 @@
     />
   </PreferenceCategory>
   <PreferenceCategory
-    android:title="@string/prefcat_filesystem">
+    android:title="@string/prefcat_system">
     <CheckBoxPreference
       android:key="log_output"
       android:title="@string/pref_log_output"
@@ -24,6 +24,13 @@
       android:key="start_dir"
       android:title="@string/pref_start_dir"
       android:summary="@string/prefsum_start_dir"
+    />
+    <ListPreference
+      android:key="log_level"
+      android:title="@string/pref_log_level"
+      android:summary="@string/prefsum_log_level"
+      android:entries="@array/ar_log_level"
+      android:entryValues="@array/ar_log_level"
     />
   </PreferenceCategory>
   <PreferenceCategory

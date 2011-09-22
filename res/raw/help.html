@@ -45,8 +45,7 @@ kbd {
 <p>JavaIDEdroid is an integrated development environment which runs on Android and allows to create native Android applications without the need to use the Android SDK on Windows or Linux. It should run on Android 1.6 or higher.</p>
 
 <table>
-<tr><td>Version:</td><td>1.1.1</td>
-<tr><td>Date: </td><td>2011-08-31</td>
+<tr><td>Version:</td><td>1.2.0</td>
 <tr><td>Author:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
 <tr><td>Contributions by: </td><td>Ken Ellinwood</td>
 <tr><td>Project home page:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
@@ -70,7 +69,8 @@ kbd {
 <p>BeanShell scripts can access the functionality built into JavaIDEdroid by using the pre-defined variable <kbd>G</kbd>. This variable references G.class with following accessible variables and methods:</p>
 <ul>
 <li>MainActivity class: G.main </li>
-<li>Temporary passwords: G.stPw1, G.stPw2</li> 
+<li>G.stPw1, G.stPw2: Temporary passwords to be used by the scripts </li> 
+<li>G.iScriptResultCode: Scripts can return their result value here</li>
 <li>IDE class: G.ide provides access to the development tools</li>
 <li>int G.ide.fnAapt (String arguments)</li>
 <li>int G.ide.fnAapt (String[] arguments)</li>
@@ -88,7 +88,13 @@ kbd {
 <li>void G.bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
 <li>void G.bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
 <li>Setting class: G.oSet provides access to variables that can be used in BeanShell scripts:</li>
-<li>G.oSet.stAndroidJarPath</li><li>G.oSet.stBshVar1</li><li>G.oSet.stBshVar2</li><li>G.oSet.stBshVar3</li><li>G.oSet.stBshVar4</li><li>G.oSet.stBshVar5</li> 
+<li>G.oSet.stAndroidJarPath</li>
+<li>G.oSet.stBshVar1</li>
+<li>G.oSet.stBshVar2</li>
+<li>G.oSet.stBshVar3</li>
+<li>G.oSet.stBshVar4</li>
+<li>G.oSet.stBshVar5</li>
+
 </ul>
 <p>Meaning of the return value: <br>
    <pre>
@@ -107,17 +113,43 @@ kbd {
 <p>This tab provides a direct access to the built-in tools without the need for a BeanShell script. All arguments need to be entered in the edit field.</p>
 
 <h2>4. Using with other applications</h2>
+<p>JavaIDEdroid supports the "android.intent.action.VIEW" intent action for the text/x-beanshell MIME type. If you define this type for the .bsh extension in your file manager (e.g. ASTRO) you can click a .bsh file and JavaIDEdroid will be started and the script path and filename prepopulated in the edit field.</p>
+
 <p>JavaIDEdroid supports the "android.intent.action.SEND" intent action and can be called from other applications using following code:<br>
 <pre>
 ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
-Intent intent = new Intent();
+Intent intent = new Intent("android.intent.action.SEND");
 intent.setComponent(cn);
-intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
-startActivity(intent);
+intent.putExtra("android.intent.extra.ScriptPath", "/mnt/sdcard/!Daten/Android/com/t_arn/HelloAndroid/0_build-debug.bsh");
+intent.putExtra("android.intent.extra.ScriptAutoRun", true);  // default = false
+intent.putExtra("android.intent.extra.ScriptAutoExit", true); // default = false
+intent.putExtra("android.intent.extra.WantResultText", true); // default = false
+startActivityForResult(intent,123);
 </pre>
-<p>The path of the BeanShell script can be passed in the Extra Bundle. When JavaIDEdroid starts, it will execute this script.</p>
+<p>In the Extra Bundle, you can pass following information:</p>
+<ul>
+  <li>ScriptPath: This is the path and filename of the script to be run</li>
+  <li>ScriptAutoRun: Set this to true to make JavaIDEdroid run the script immediately after starting</li>
+  <li>ScriptAutoExit: Set this to true to make JavaIDEdroid shut down after the script ran through</li>
+  <li>WantResultText: Set this to true to get back the script output of the BeanShell tab</li>
+</ul>
+<p>You can get the data returned from JavaIDEdroid in the <kbd>onActivityResult</kbd> method with following code:<br>
+<pre>
+Bundle extras = intent.getExtras();
+if (extras != null) 
+{
+&nbsp;&nbsp; int iScriptResultCode=extras.getInt("android.intent.extra.ScriptResultCode",-1);
+&nbsp;&nbsp; String stResultText=extras.getString("android.intent.extra.ResultText");
+}
+</pre>
+<p>ScriptResultCode is always returned and contains the value of G.iScriptResultCode. If the script sets this variable, its value is returned to the calling app when JavaIDEdroid is finished automatically or by the user.</p>
+<p>You can also get the script output of the BeanShell tab by reading the log file <kbd>/mnt/sdcard/.JavaIDEdroid/LogOutput.txt</kbd>. Of course, this only works if you have checked the option 'Log output to file'</p>
 
-<h2>5. Legal issues</h2>
+<h2>5. Debugging</h2>
+<p>If you have problems with JavaIDEdroid, you can set the <kbd>Log Level</kbd> in the options to analyse them. If you define a value higher than NONE, JavaIDEdroid will log informationen to the logcat. The highest amount of information is written with log level VERBOSE.</p>
+
+
+<h2>6. Legal issues</h2>
 <p>Thank you for choosing this SOFTWARE! You may only use this SOFTWARE if you agree with the conditions listed further below:</p>
 
 <p><b>COPYRIGHT</b><br>

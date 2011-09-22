@@ -2,26 +2,27 @@ package com.t_arn.JavaIDEdroid;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.util.Log;
 import com.t_arn.lib.io.StringWriterOutputStream;
 
 //##################################################################
 public class BeanShellTask 
-  extends AsyncTask<String, String, Void> // android.os.AsyncTask<Params, Progress, Result>
+  extends AsyncTask<String, String, Integer> // android.os.AsyncTask<Params, Progress, Result>
 //##################################################################
 { 
   private ProgressDialog progressDialog;
   private StringWriterOutputStream swos;
   
+//===================================================================
 public BeanShellTask ()
 //===================================================================
 {
-} //
+}
 //===================================================================
+@Override
 protected void onPreExecute() 
 //===================================================================
 {
-  Log.i(G.stProgramName, "onPreExecute");
+  G.fnLog("d", "onPreExecute()");
   // show progress dialog
   progressDialog = new ProgressDialog(G.main);
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -29,34 +30,42 @@ protected void onPreExecute()
   progressDialog.setMessage(G.Rstring(R.string.msg_taskrunning));
   progressDialog.setIndeterminate(true);
   progressDialog.show();
-}
+} // onPreExecute
 //===================================================================
-protected Void doInBackground(String... args) 
+@Override
+protected Integer doInBackground(String... args) 
 //===================================================================
 {
+  int iResult=99;
   try
   {
     final bsh.Interpreter i;
-    Log.i(G.stProgramName, "doInBackground");
+    G.fnLog("d", "doInBackground()");
     i = new bsh.Interpreter();
     i.set("G", new G());
     swos = new StringWriterOutputStream();
     G.ide.fnRedirectOutput(swos);
+    G.fnLog("d", "running script "+args[0]);
     G.ide.fnRunBeanshellScript(i, args[0]);
+    G.fnLog("i", "script result="+G.iScriptResultCode);
+    iResult=G.iScriptResultCode;
   }
   catch (Throwable t)
   {
-  G.fnError("doInBackground", t);
+    G.fnError("doInBackground", t);
+    iResult = 99;
   }
-  return null;
-}
+  return new Integer(iResult);
+} // doInBackground
 //===================================================================
+@Override
 protected void onProgressUpdate(String... progress)
+//===================================================================
 {
   String[] uitask;
   try
   {
-    Log.i(G.stProgramName, "onProgressUpdate");
+    G.fnLog("d", "onProgressUpdate()");
     if (!progress[0].startsWith("~UITASK~")) progressDialog.setMessage(progress[0]);
     else
     {
@@ -71,10 +80,11 @@ protected void onProgressUpdate(String... progress)
         G.fnToast(uitask[2], Integer.parseInt(uitask[3]));
       }
     }//else
-  } catch (Exception e) { Log.e(G.stProgramName, "onProgressUpdate: "+e.getMessage()); }
+  } catch (Exception e) { G.fnLog("e", "onProgressUpdate(): "+e.getMessage()); }
 } // onProgressUpdate
 //===================================================================
-protected void onPostExecute(Void unused) 
+@Override
+protected void onPostExecute(Integer IntResult) 
 //===================================================================
 { 
   boolean bWarn = false;
@@ -92,19 +102,24 @@ protected void onPostExecute(Void unused)
   swos=null;
   if (progressDialog.isShowing()) progressDialog.dismiss();
   if (bWarn) G.fnToast(R.string.msg_logpwgui,10000);
-} 
+  G.main.fnSetResult();
+  if (G.bScriptAutoExit) G.main.finish();
+} // onPostExecute
 //===================================================================
 public void fnClear()
+//===================================================================
 {
   publishProgress("~UITASK~\tCLEAR");
 }
 //===================================================================
 public void fnPublishProgress(String progressMessage)
+//===================================================================
 {
   publishProgress(progressMessage);
 }
 //===================================================================
 public void fnToast(String msg, int ms)
+//===================================================================
 {
   publishProgress("~UITASK~\tTOAST\t"+msg+"\t"+ms);
 }

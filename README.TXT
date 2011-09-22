@@ -11,5 +11,7 @@ How to build JavaIDEdroid
 
 4. Execute 0_build-debug.bat or 0_build-prod.bat and choose "do it all"
    This creates JavaIDEdroid.apk in out/test/JavaIDEdroid/ or out/production/JavaIDEdroid/
+
+The slightly modified source code of dx (libs/dx_ta.jar) and sdklib (libs/sdklib_ta.jar) can be found in /materials/
    
-Tom Arn, 2011-08-22
+Tom Arn, 2011-09-21

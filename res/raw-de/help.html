@@ -45,8 +45,7 @@ kbd {
 <p>JavaIDEdroid ist eine integrierte Softwareentwicklungsumgebung (IDE), welche auf Android Ger&auml;ten l&auml;uft und es erm&ouml;glicht, native Android Anwendungen zu erstellen, ohne den Android SDK auf Windows oder Linux verwenden zu m&uuml;ssen. Der IDE sollte auf Android 1.6 oder h&ouml;her lauff&auml;hig sein.</p>
 
 <table>
-<tr><td>Version:</td><td>1.1.1</td>
-<tr><td>Datum: </td><td>2011-08-31</td>
+<tr><td>Version:</td><td>1.2.0</td>
 <tr><td>Autor:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
 <tr><td>Beitr&auml;ge von: </td><td>Ken Ellinwood</td>
 <tr><td>Projekt Webseite:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
@@ -71,7 +70,8 @@ kbd {
 <p>BeanShell Skripts haben &uuml;ber die vordefinierte Variable <kbd>G</kbd> Zugriff auf die in JavaIDEdroid eingebaute Funktionalit&auml;t. Die vordefinierte Variable G referenziert G.class, welche &uuml;ber folgende Variablen und Methoden verf&uuml;gt:</p>
 <ul>
 <li>MainActivity Klasse: G.main </li>
-<li>Tempor&auml;re Passw&ouml;rter: G.stPw1, G.stPw2</li> 
+<li>G.stPw1, G.stPw2: Tempor&auml;re Passw&ouml;rter welche in Skripts verwendet werden k&ouml;nnen</li> 
+<li>G.iScriptResultCode: Skripts k&ouml;nnen hiermit ihren R&uuml;ckgabewert zur&uuml;ckgeben</li>
 <li>IDE Klasse: G.ide erlaubt den Zugriff auf die Entwicklungstools</li>
 <li>int G.ide.fnAapt (String arguments)</li>
 <li>int G.ide.fnAapt (String[] arguments)</li>
@@ -113,17 +113,42 @@ kbd {
 <p>Dieser Reiter gibt einen direkten Zugriff auf die eingebauten Tools, ohne dass ein BeanShell Skript ben&ouml;tigt wird. Alle Argumente m&uuml;ssen im Eingabefeld eingegeben werden.</p>
 
 <h2>4. Verwendung aus anderen Anwendungen</h2>
+<p>JavaIDEdroid unterst&uuml;tzt die Intent Aktion "android.intent.action.VIEW" f&uuml;r den text/x-beanshell MIME Typ. Wenn Sie in Ihrem Dateimanager (z.B. ASTRO) diesen Typ mit der Extension .bsh assoziieren, k&ouml;nnen Sie .bsh Dateien anklicken, worauf JavaIDEdroid gestartet und das Eingabefeld mit dem Pfad der Skript Datei vorbelegt wird.</p>
+
 <p>JavaIDEdroid unterst&uuml;tzt die Intent Aktion "android.intent.action.SEND" und kann aus anderen Anwendungen mittels folgendem Code gestartet werden:<br>
 <pre>
 ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
-Intent intent = new Intent();
+Intent intent = new Intent("android.intent.action.SEND");
 intent.setComponent(cn);
-intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/build.bsh");
-startActivity(intent);
+intent.putExtra("android.intent.extra.ScriptPath", "/mnt/sdcard/!Daten/Android/com/t_arn/HelloAndroid/0_build-debug.bsh");
+intent.putExtra("android.intent.extra.ScriptAutoRun", true);  // default = false
+intent.putExtra("android.intent.extra.ScriptAutoExit", true); // default = false
+intent.putExtra("android.intent.extra.WantResultText", true); // default = false
+startActivityForResult(intent,123);
 </pre>
-<p>Der Pfad des BeanShell Skripts kann im Extra Bundle &uuml;bergeben werden. Wenn JavaIDEdroid startet, f&uuml;hrt es dieses Skript aus.</p>
+<p>Im Extra Bundle k&ouml;nnen folgende Informationen &uuml;bergeben werden:</p>
+<ul>
+  <li>ScriptPath: Dies ist der Pfad des auszuf&uuml;hrendes Skripts</li>
+  <li>ScriptAutoRun: Wenn Sie dieses auf true setzen, wird das Skript beim Starten JavaIDEdroid sofort ausgef&uuml;hrt</li>
+  <li>ScriptAutoExit: Wenn Sie dieses auf true setzen, wird JavaIDEdroid nach dem Durchlaufen des Skripts automatisch wieder beendet.</li>
+  <li>WantResultText: Wenn Sie dieses auf true setzen, erhalten Sie die Skript Ausgabe des BeanShell Reiters zur&uuml;ck</li>
+</ul>
+<p>Sie k&ouml;nnen die Daten von JavaIDEdroid in der <kbd>onActivityResult</kbd> Methode mit folgendem Code einlesen:<br>
+<pre>
+Bundle extras = intent.getExtras();
+if (extras != null) 
+{
+&nbsp;&nbsp; int iScriptResultCode=extras.getInt("android.intent.extra.ScriptResultCode",-1);
+&nbsp;&nbsp; String stResultText=extras.getString("android.intent.extra.ResultText");
+}
+</pre>
+<p>ScriptResultCode wird immer zur&uuml;ckgegeben und enth&auml;lt den Wert von G.iScriptResultCode. Wenn das Skript diese Variable setzt, wird ihr Wert beim automatischen oder benutzer-initiierten Beenden von JavaIDEdroid an die aufrufende App zur&uuml;ckgegeben.</p>
+<p>Sie k&ouml;nnen die Skript Ausgabe des BeanShell Reiters auch aus der Protokolldatei <kbd>/mnt/sdcard/.JavaIDEdroid/LogOutput.txt</kbd> lesen. Dies geht nat&uuml;rlich nur dann, wenn Sie die Option 'Protokolliere Ausgabe in Datei' aktiviert haben.</p>
 
-<h2>5. Rechtliches</h2>
+<h2>5. Debugging</h2>
+<p>Um Probleme von JavaIDEdroid zu analysieren, k&ouml;nnen Sie in den Optionen den <kbd>Log Level</kbd> einstellen. Wenn ein h&ouml;herer Wert als NONE (nichts) eingestellt ist, schreibt JavaIDEdroid diverse Informationen in die logcat. Am meisten Informationen werden mit dem Wert VERBOSE (geschw&auml;tzig) geschrieben.</p>
+
+<h2>6. Rechtliches</h2>
 <p>Vielen Dank, dass Sie sich f&uuml;r diese SOFTWARE entschieden haben! Sie d&uuml;rfen die SOFTWARE nur nutzen, wenn Sie mit den nachfolgenden Bestimmungen einverstanden sind:</p>
 
 <p><b>URHEBERRECHT</b><br>

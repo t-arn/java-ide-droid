@@ -51,16 +51,16 @@ import java.util.Vector;
  * <BR>
  * </P>
  * 
- * @since 21.05.04 (version 1.0) - 17.05.11
+ * @since 21.05.04 (version 1.0) - 14.09.11
  * @author Tom Arn
- * @version 2.0.4
+ * @version 2.0.5
  */
 public class taGetOpt
 //##################################################################
 {
 	/** Holds the version of the class.
 	 */
-	protected static String stVersion="2.0.4";
+	protected static String stVersion="2.0.5";
 	/** Contains the switches and switch arguments
 	 */
 	protected String[] aOptions;
@@ -69,7 +69,7 @@ public class taGetOpt
 	protected String[] aArgs;
 	/** Contains the standalone parameters
 	 */
-	protected Vector vArgs;
+	protected Vector<String> vArgs;
 	/** Specifies the mandatory switches
 	 */
 	protected String stMandatory;
@@ -106,7 +106,7 @@ public taGetOpt (String[] args,
 {
 	int i;
 	
-	vArgs = new Vector();
+	vArgs = new Vector<String>();
 	aArgs = args;
 	stMandatory = (mandatory==null) ? "" : mandatory;
 	stOptional = (optional==null) ? "": optional;
@@ -128,7 +128,7 @@ public String[] getArguments ()
 {
 	String[] aTmp 	= new String[vArgs.size()];
 
-	for (int i=0;i<aTmp.length;i++) aTmp[i] = (String) vArgs.get(i);
+	for (int i=0;i<aTmp.length;i++) aTmp[i] = vArgs.get(i);
 	return aTmp;
 } // getArguments 
 //===================================================================
