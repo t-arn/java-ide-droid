@@ -16,3 +16,5 @@
   # Install the APK with a Package Manager like ASTRO or Linda Manager and test the !HelloAndroid app.
 
 Alternatively, you can run 0_build.bsh which performs the above tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
+
+ *Make sure you save your files in ANSI (ISO8859-1 / latin-1 / win1252) format!* (except for xml files where you specify the format explicitely)
