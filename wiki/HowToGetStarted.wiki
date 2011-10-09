@@ -2,8 +2,8 @@
 #labels Featured
 
   # Get the latest version of JavaIDEdroid from the Android Market and install it
-  # Download and install a FileManager like ASTRO
-  # Download and install a text editor like TextWarrior or Jota
+  # Download and install a file manager like ASTRO
+  # Download and install a text editor like !TextWarrior or Jota
   # Download !HelloAndroid and unzip it to a directory of your choice
   # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the aapt and compilation tasks. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
   # Start JavaIDEdroid, choose 'Options' in the menu and set the android.jar path to where you copied it, for example /mnt/sdcard/AndroidSDK/android.jar
@@ -19,4 +19,4 @@
 
 Alternatively, you can run 0_build.bsh which performs the above tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
 
-<b>Make sure you save your files in ANSI (ISO8859-1 / latin-1 / win1252) format!</b> (except for xml files where you specify the format explicitely)
+<b>Make sure you save your files in ANSI (iso-8859-1 / latin-1 / win1252) format!</b> For XML files I recommend to also use iso-8859-1 encoding and specify this at the beginning of the files.
