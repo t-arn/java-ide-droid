@@ -2,10 +2,12 @@
 #labels Featured
 
   # Get the latest version of JavaIDEdroid from the Android Market and install it
+  # Download and install a FileManager like ASTRO
+  # Download and install a text editor like TextWarrior or Jota
   # Download !HelloAndroid and unzip it to a directory of your choice
-  # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the compilation task. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
-  # Adjust where needed the paths in all .bsh files in the toplevel directory of !HelloAndroid
-
+  # Download the Android SDK and extract the android.jar for your platform. You need android.jar for the aapt and compilation tasks. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
+  # Start JavaIDEdroid, choose 'Options' in the menu and set the android.jar path to where you copied it, for example /mnt/sdcard/AndroidSDK/android.jar
+  # Read the built-in help, even if you never read manuals :-)
 
 <BR/>Build the !HelloAndroid.APK with the scripts started in the !BeanShell tab of JavaIDEdroid:
   # Run 1_aapt.bsh to create R.java and !HelloAndroid.apk.res
