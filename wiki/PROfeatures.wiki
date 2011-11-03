@@ -1,4 +1,5 @@
 #summary List of the additional features in the PRO version
+#labels Featured
 
 The PRO version supports all features of the free version plus following additional features:
  # *Project definition files:* Allows to define project specific information for every project.
