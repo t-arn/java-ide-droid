@@ -1,4 +1,5 @@
 #summary This is how you get started with JavaIDEdroidPRO
+#labels Featured
 
   # Get the latest version of JavaIDEdroidPRO from the Android Market and install it
   # Download and install a text editor like !TextWarrior or Jota
