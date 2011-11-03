@@ -5,7 +5,7 @@
   # Download and install a file manager like ASTRO
   # Download and install a text editor like !TextWarrior or Jota
   # Download !HelloAndroid and unzip it to a directory of your choice
-  # Download the Android SDK, extract the android.jar for your platform and put it on the storage card of your device. You need android.jar for the aapt and compilation tasks. You can also get the android.jar (for API 8 = Android 2.2) from the JavaIDEdroid download area
+  # Download the Android SDK, extract the android.jar for your platform and put it on the storage card of your device. You need android.jar for the aapt and compilation tasks. You can also get some android.jar from the download area
   # Start JavaIDEdroid, choose 'Options' in the menu and set the android.jar path to where you copied it, for example /mnt/sdcard/AndroidSDK/android.jar
   # Read the built-in help, even if you never read manuals :-)
   # If you are new to Android development, you might want to download 'Android Development Basics', a free App tutorial about Android development
