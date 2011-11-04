@@ -1,0 +1,18 @@
+<H1>JavaIDEdroidPRO history</H1>
+
+<H2> version 1.4.0 (04.11.2011) </H2>
+<P> First PRO release, based on JavaIDEdroid 1.4.0</P>
+<UL>
+<LI> Modified: Replaced OI Filemanager with internal file browser </LI>
+<LI> Modified: Replaced G.oSet.stDefaultStartDir with G.oSet.stDevRootDir</LI>
+<LI> Bugfix: Pressing the back button does not close the app anymore</LI>
+<LI> New: added project definition files to store project specific information </LI>
+<LI> New: added template project zip that is used to create a new skeleton project.</LI>
+<LI> New: added !BeanShell access to project infos through G.oPrj class instance</LI>
+<LI> New: added recent project file list to quickly re-open project definition files</LI>
+<LI> New: added filemanager to browse, view/open, edit and delete project files and run !BeanShell scripts.</LI>
+<LI> New: added customizable, quick change directory to filemanager</LI>
+<LI> New: added default compile and build scripts. They access the infmation in the project file and therefore work for almost every project.</LI>
+<LI> New: added project menu items to start the default scripts. If the default scripts are copied to the project root dir, the menu items will start them from there.</LI>
+<LI> New: added info activity that shows package information</LI>
+</UL>
