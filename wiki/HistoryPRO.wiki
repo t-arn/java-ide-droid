@@ -12,7 +12,7 @@
 <LI> New: added recent project file list to quickly re-open project definition files</LI>
 <LI> New: added filemanager to browse, view/open, edit and delete project files and run !BeanShell scripts.</LI>
 <LI> New: added customizable, quick change directory to filemanager</LI>
-<LI> New: added default compile and build scripts. They access the infmation in the project file and therefore work for almost every project.</LI>
+<LI> New: added default compile and build scripts. They access the information in the project file and therefore work for almost every project.</LI>
 <LI> New: added project menu items to start the default scripts. If the default scripts are copied to the project root dir, the menu items will start them from there.</LI>
 <LI> New: added info activity that shows package information</LI>
 </UL>
