@@ -1,6 +1,20 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 1.4.0 (04.11.2011) </H2>
+<UL>
+<LI> New: Info Activity shows information about the installed package</LI>
+<LI> Modified: Replaced OI filemanager with built-in !FileBrowser Activity</LI>
+<LI> Modified: Replaced Donate Activity with Upgrade Activity</LI>
+<LI> Modified: Common help file for free and PRO version</LI>
+<LI> Modified: Replaced G.oSet.stDefaultStartDir with G.oSet.stDevRootDir</LI>
+<LI> Modified: Replaced some Toast messages with !AlertDialog dialogs</LI>
+<LI> Modified: Changed output directory in scripts from out/ to bin/</LI>
+<LI> Bugfix: Added check for missing working directory (missing sdcard)</LI>
+<LI> Bugfix: Some Error / warning messages referenced already closed or hidden Activities. Fixed now.</LI>
+<LI> Bugfix: Pressing the back button now does not close the app anymore</LI>
+</UL>
+
 <H2> version 1.2.0 (21.09.2011) </H2>
 <UL>
 <LI> New: Option for log level, with which the amount of logcat messages can be controlled </LI>
