@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>JavaIDEdroid - help</title>
+<title>JavaIDEdroid - Hilfe</title>
 <meta name="author" content="Tom Arn">
 
 <style type="text/css">
@@ -42,16 +42,16 @@ kbd {
 
 <h1>JavaIDEdroid</h1>
 <h2>1. Einleitung</h2>
-<p>JavaIDEdroid ist eine integrierte Softwareentwicklungsumgebung (IDE), welche auf Android Ger&auml;ten l&auml;uft und es erm&ouml;glicht, native Android Anwendungen zu erstellen, ohne den Android SDK auf Windows oder Linux verwenden zu m&uuml;ssen. Der IDE sollte auf Android 1.6 oder h&ouml;her lauff&auml;hig sein.</p>
+<p>JavaIDEdroid (im Folgenden die "APP" genannt) ist eine integrierte Softwareentwicklungsumgebung (IDE), welche auf Android Ger&auml;ten l&auml;uft und es erm&ouml;glicht, native Android Anwendungen zu erstellen, ohne den Android SDK auf Windows oder Linux verwenden zu m&uuml;ssen. Der IDE sollte auf Android 1.6 oder h&ouml;her lauff&auml;hig sein.</p>
+
+<p>Es gibt eine freie Version und eine PRO Version der APP. Die PRO Version hat Funktionsmerkmale, welche das Entwickeln viel einfacher und effizienter machen.</p>
 
 <table>
-<tr><td>Version:</td><td>1.2.0</td>
 <tr><td>Autor:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
-<tr><td>Beitr&auml;ge von: </td><td>Ken Ellinwood</td>
-<tr><td>Projekt Webseite:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
+<tr><td>Projekt Webseite <br/>und Support:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
 </table>
 
-<p>Zurzeit sind folgende Tools in JavaIDEdroid integriert:</p>
+<p>Zurzeit sind folgende Tools in die APP integriert:</p>
 <ul>
 <li>Aapt Tool aus dem Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>Eclipse Java Compiler (<a href="http://www.eclipse.org">www.eclipse.org</a>)</li>
@@ -59,43 +59,114 @@ kbd {
 <li>ApkBuilder Tool aus dem Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>Zipsigner-lib von Ken Ellinwood (<a href="http://code.google.com/p/zip-signer/">http://code.google.com/p/zip-signer</a>)</li>
 <li>BeanShell Interpreter (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
+<li>Projekt Verwaltung (nur PRO Version)</li>
 </ul>
 
 <p>Aapt ist integriert als native Shared Library (arm). Es verwendet externe Libraries, welche Android 2.3 oder h&ouml;her ben&ouml;tigen, weshalb die aapt Shared Library f&uuml;r Android 2.3 erstellt wurde. Trotzdem scheint aapt auch auf &auml;lteren Android Versionen zu laufen (es lief problemlos auf meinem Android 2.2.1).</p>
 
-<h2>2. BeanShell</h2>
-<p>Mit dem integrierten BeanShell Interpreter k&ouml;nnen BeanShell Skripts ausgef&uuml;hrt werden, um den Prozess der Anwendungserstellung zu automatisieren.</p>
-
-<h3>2.1 Skripts erstellen</h3>
-<p>BeanShell Skripts haben &uuml;ber die vordefinierte Variable <kbd>G</kbd> Zugriff auf die in JavaIDEdroid eingebaute Funktionalit&auml;t. Die vordefinierte Variable G referenziert G.class, welche &uuml;ber folgende Variablen und Methoden verf&uuml;gt:</p>
+<h2>2. Projekt Verwaltung (nur PRO Version)</h2>
+<p>In der PRO Version k&ouml;nnen Sie Software Projekte definieren und verwalten. Das Projekt Men&uuml; weist folgende Eintr&auml;ge auf:</p>
 <ul>
-<li>MainActivity Klasse: G.main </li>
+  <li>Neues Projekt erstellen</li>
+  <li>Projekt &ouml;ffnen</li>
+  <li>Projekt aus Verlauf &ouml;ffnen</li>
+  <li>Projekt bearbeiten</li>
+  <li>Ressourcen und Source kompilieren</li>
+  <li>Kompilieren und Projekt APK erstellen</li>
+  <li>Projekt schliessen</li>
+</ul>
+
+<h2>2.1 Neues Projekt erstellen</h2>
+<p>Sie k&ouml;nnen zu einem Projekt folgende Informationen erfassen:</p>
+<ul>
+  <li><b>Projekt Name: </b>Sie k&ouml;nnen einen beliebigen Namen w&auml;hlen, aber es macht Sinn, das Projekt (und auch die Projektdefinitionsdatei) gleich zu benennen wie Ihr package, z.B. HelloWorld</li>
+  <li><b>Projekt-Stammverzeichnis: </b>Dies ist das Verzeichnis, in dem Sie alle Projekt Dateien speichern. Die Projektdefinitionsdatei (*.jip) wird immer hier gespeichert.</li>
+  <li><b>Haupt-Activity Java Datei: </b>Der Pfad (relativ zum Projekt-Stammverzeichnis) zur Java Datei, welche die Haupt-Activity enth&auml;lt. Wenn diese Java Datei kompiliert wird, werden automatisch alle anderen Java Sourcen mitkompiliert.</li>
+  <li><b>Pfad zu projekt-spezifischem android.jar: </b>Pfad (relativ zum Entwicklungs-Stammverzeichnis) zum projekt-spezifischen android.jar. Wenn hier kein Wert definiert wird, verwendet die APP das android.jar aus den globalen Einstellungen.</li>
+  <li><b>Library Verzeichnis: </b>Der Pfad (relativ zum Projekt-Stammverzeichnis) zum Library Verzeichnis, z.B. libs/<br>
+Lassen Sie dieses Feld leer, wenn Ihr Projekt keine externen Libraries (.jar oder .so Dateien) verwendet.</li>
+  <li><b>Assets Verzeichnis: </b>Der Pfad (relativ zum Projekt-Stammverzeichnis) zum Assets Verzeichnis, z.B. assets/<br>
+Lassen Sie dieses Feld leer, wenn Ihr Projekt keine Assets verwendet.</li>
+  <li><b>Verzeichnisse ausblenden: </b>Um die 'Verzeichnis Liste' im Projekt-Dateimanager (siehe unten) kurz zu halten, k&ouml;nnen Sie eine Liste von Verzeichnissen definieren, welche Sie ausblenden m&ouml;chten. Jedes Verzeichnis muss auf einer separaten Zeile stehen. Sie k&ouml;nnen die Durchsuchen-Schaltfl&auml;che mehrere Male anw&auml;hlen, um weitere Verzeichnisse hinzuzuf&uuml;gen.</li>
+</ul>
+
+  <p>Nachdem Sie das Projekt-Stammverzeichnis definiert haben, k&ouml;nnen Sie die Schaltfl&auml;che <b>'Erstelle Projektstruktur'</b> anw&auml;hlen, und die APP erstellt aus der Vorlagedatei <kbd>/sdcard/.JavaIDEdroid/project-template.zip</kbd> ein Projekt-Skelett f&uuml;r Sie. Diese Vorlagedatei wird automatisch aus dem App-Paket extrahiert, wenn es auf der Speicherkarte nicht gefunden wird. Sie k&ouml;nnen den Inhalt der Vorlagedatei auf ihre Bed&uuml;rfnisse anpassen.<br>
+  Um nicht unbeabsichtigt bestehende Daten zu &uuml;berschreiben, darf das Projekt-Stammverzeichnis noch NICHT existieren, wenn Sie die Schaltfl&auml;che anw&auml;hlen. Wenn Sie also die Durchsuchen-Schaltfl&auml;che verwenden, m&uuml;ssen Sie das letzte Verzeichnis von Hand eingeben.</p>
+  
+  <p>Wenn Sie die <b>'Speichern'</b> Schaltfl&auml;che anw&auml;hlen, werden die projekt-spezifischen Informationen im Projekt-Stammverzeichnis in die Projekt Definitionsdatei (.jip Datei) gespeichert. Der Pfad des Projekt-Stammverzeichnisses wird nicht in der .jip Datei gespeichert. Wenn Sie eine .jip Datei &ouml;ffnen, wird das Projekt-Stammverzeichnis aufgrund des Speicherorts der .jip Datei gesetzt. Auf diese Weise bleibt Ihr Projektbaum portabel. Wichtig hierbei ist, dass Sie <b>die .jip Datei niemals manuell aus dem Projekt-Stammverzeichnis hinaus verschieben</b>, sonst setzt die APP dann ein falsches Projekt-Stammverzeichnis f&uuml;r dieses Projekt!</p>
+
+<h2>2.2 Projekt &ouml;ffnen</h2>
+<p>Sie k&ouml;nnen ein Projekt &ouml;ffnen, indem Sie Ihren Entwicklungsbaum durchsuchen und eine .jip Datei ausw&auml;hlen. Schneller geht es, wenn Sie ein Projekt aus dem Verlauf (siehe unten) anw&auml;hlen, um ein k&uuml;rzlich ge&ouml;ffnetes Projekt zu &ouml;ffnen. Nach dem &Ouml;ffnen des Projektes wird im 'Projekt' Reiter der Projekt-Dateimanager angezeigt.</p>
+
+<h3>2.2.1 Projekt-Dateimanager</h3>
+<p>Mit dem Projekt-Dateimanager k&ouml;nnen Sie alle Dateien des Projektes anzeigen und bearbeiten. Die Schaltfl&auml;che 'Verzeichnis Liste' erlaubt einen schnellen Wechsel innerhalb der Projekt Unterverzeichnisse. Wenn Sie eine Datei lange dr&uuml;cken wird ein Kontextmen&uuml; mit folgenden Eintr&auml;gen angezeigt:</p>
+<ul>
+  <li><b>Datei &ouml;ffnen: </b>&Ouml;ffnet die Datei &uuml;ber den ACTION_VIEW Intent. Wenn mehrere Apps diesen Intent unterst&uuml;tzen, k&ouml;nnen Sie aus einer Liste ausw&auml;hlen.</li>
+  <li><b>Datei als Text bearbeiten: </b>Bearbeitet die Datei &uuml;ber den ACTION_EDIT Intent. Wenn mehrere Apps diesen Intent unterst&uuml;tzen, k&ouml;nnen Sie aus einer Liste ausw&auml;hlen. <b>Stellen Sie sicher, dass Ihr Editor (nicht in der APP enthalten) die Dateien im ANSI (iso-8859-1 / latin-1 / win1252) Format speichert, sonst werden Sie Kompilierungsfehler erhalten!</b></li>
+  <li><b>Skript starten: </b>Dieser Eintrag ist nur f&uuml;r .bsh Dateien aktiv und startet das angew&auml;hlte BeanShell Skript. Die APP wechselt in den 'BeanShell' Reiter, um das Ergebnis der Skript-Ausf&uuml;hrung anzuzeigen.</li>
+  <li><b>Datei l&ouml;schen: </b>L&ouml;scht die Datei nach einer Best&auml;tigung</li>
+</ul>
+
+<h2>2.3 Projekt Verlauf</h2>
+<p>Sie k&ouml;nnen ein k&uuml;rzlich verwendetes Projekt &ouml;ffnen, indem Sie es im 'Verlauf' anw&auml;hlen. Der Verlauf wird jedes Mal aktualisiert, wenn Sie ein Projekt speichern oder &ouml;ffnen. Der Verlauf ist anhand der letzten Verwendung sortiert, wobei das zuletzt verwendete Projekt im Verlauf zuoberst ist.</p>
+
+<h2>2.4 Projekt kompilieren und erstellen</h2>
+<p>Wenn Sie im Projektmen&uuml; die Eintr&auml;ge f&uuml;r das Kompilieren oder Erstellen des Projektes anw&auml;hlen, wird das Standard BeanShell Skript <kbd>/sdcard/.JavaIDEdroid/compile.bsh</kbd> oder <kbd>/sdcard/.JavaIDEdroid/build.bsh</kbd> gestartet. Diese Skripts funktionieren f&uuml;r fast alle m&ouml;glichen Projekte, weil sie auf die projekt-spezifischen Informationen des aktuell ge&ouml;ffneten Projektes zugreifen k&ouml;nnen. Sie k&ouml;nnen die Standard-Skripts auf Ihre Bed&uuml;rfnisse anpassen.</p>
+
+<p>Wenn Sie ein Projekt haben, welches nicht mit den Standard-Skripts kompiliert/erstellt werden kann, k&ouml;nnen Sie die Standard-Skripts in das Projekt-Stammverzeichis kopieren und dort f&uuml;r das Projekt anpassen. Wenn Sie die Men&uuml;eintr&auml;ge f&uuml;r Kompilieren oder Erstellen anw&auml;hlen, wird die APP dann die projekt-spezifischen Skripts anstelle der Standard-Skripts verwenden.</p>
+
+<h2>3. BeanShell</h2>
+<p>Mit dem integrierten BeanShell Interpreter k&ouml;nnen Sie BeanShell Skripts ausf&uuml;hren, um den Prozess der Anwendungserstellung zu automatisieren und anzupassen.</p>
+
+<h3>3.1 Skripts erstellen</h3>
+<p>BeanShell Skripts haben &uuml;ber die vordefinierte Variable <kbd>G</kbd> Zugriff auf die in die APP eingebaute Funktionalit&auml;t. Die vordefinierte Variable G referenziert G.class, welche &uuml;ber folgende Variablen und Methoden verf&uuml;gt:</p>
+<ul>
+<li>Haupt-Activity Klasse: G.main </li>
 <li>G.stPw1, G.stPw2: Tempor&auml;re Passw&ouml;rter welche in Skripts verwendet werden k&ouml;nnen</li> 
 <li>G.iScriptResultCode: Skripts k&ouml;nnen hiermit ihren R&uuml;ckgabewert zur&uuml;ckgeben</li>
+<li>Projekt Klasse (nur PRO Version): G.oPrj</li>
+  <ul>
+    <li>G.oPrj.stName: Name des Projekts und der Projekt Definitionsdatei (.jip)</li>
+    <li>G.oPrj.stPrjRootDir: Projekt Stammverzeichnis</li>
+    <li>G.oPrj.stAndroidJarPath: Projekt-spezisches android.jar (relativ zu stDevRootDir)</li>
+    <li>G.oPrj.stLibsDir: Verzeichnis mit den Projekt Libraries (relativ zu stPrjRootDir)</li>
+    <li>G.oPrj.stAssetsDir: Verzeichnis mit den Projekt Assets (relativ zu stPrjRootDir)</li>
+  </ul>
+
 <li>IDE Klasse: G.ide erlaubt den Zugriff auf die Entwicklungstools</li>
-<li>int G.ide.fnAapt (String arguments)</li>
-<li>int G.ide.fnAapt (String[] arguments)</li>
-<li>int G.ide.fnCompile (String arguments)</li>
-<li>int G.ide.fnCompile (String[] arguments)</li>
-<li>int G.ide.fnDx (String arguments)</li>
-<li>int G.ide.fnDx (String[] arguments)</li>
-<li>int G.ide.fnApkBuilder (String arguments)</li>
-<li>int G.ide.fnApkBuilder (String[] arguments)</li>
-<li>int G.ide.fnSignApk (String arguments)</li>
-<li>int G.ide.fnSignApk (String[] arguments)</li>
-<li>String[] G.ide.fnTokenize (String commandline) // zerlegt die Befehlszeilen Argumente</li>
+  <ul>
+    <li>int G.ide.fnAapt (String arguments)</li>
+    <li>int G.ide.fnAapt (String[] arguments)</li>
+    <li>int G.ide.fnCompile (String arguments)</li>
+    <li>int G.ide.fnCompile (String[] arguments)</li>
+    <li>int G.ide.fnDx (String arguments)</li>
+    <li>int G.ide.fnDx (String[] arguments)</li>
+    <li>int G.ide.fnApkBuilder (String arguments)</li>
+    <li>int G.ide.fnApkBuilder (String[] arguments)</li>
+    <li>int G.ide.fnSignApk (String arguments)</li>
+    <li>int G.ide.fnSignApk (String[] arguments)</li>
+    <li>String[] G.ide.fnTokenize (String commandline) // zerlegt die Befehlszeilen Argumente</li>
+  </ul>
+  
 <li>BeanShellTask Klasse: G.bshTask erlaubt den Zugriff auf die Methoden f&uuml;r die Bildschirmausgabe</li>
-<li>void G.bshTask.fnClear () // l&ouml;scht die BeanShell Ausgabe</li>
-<li>void G.bshTask.fnPublishProgress (String msg) // aktualisiert den Dialog mit der Fortschrittsanzeige</li>
-<li>void G.bshTask.fnToast (String msg, int milliseconds) // zeigt eine Toast Meldung an</li>
-<li>Setting Klasse: G.oSet erlaubt den Zugriff auf Variablen, die in BeanShell Skripts verwendet werden k&ouml;nnen:</li>
-<li>G.oSet.stAndroidJarPath</li>
-<li>G.oSet.stBshVar1</li>
-<li>G.oSet.stBshVar2</li>
-<li>G.oSet.stBshVar3</li>
-<li>G.oSet.stBshVar4</li>
-<li>G.oSet.stBshVar5</li>
+  <ul>
+    <li>void G.bshTask.fnClear () // l&ouml;scht die BeanShell Ausgabe</li>
+    <li>void G.bshTask.fnPublishProgress (String msg) // aktualisiert den Dialog mit der Fortschrittsanzeige</li>
+    <li>void G.bshTask.fnToast (String msg, int milliseconds) // zeigt eine Toast Meldung an</li>
+  </ul>
+
+  <li>Setting Klasse: G.oSet erlaubt den Zugriff auf Variablen, die in BeanShell Skripts verwendet werden k&ouml;nnen:</li>
+    <ul>
+      <li>G.oSet.stDevRoot: Das Entwicklungs-Stammverzeichnis</li>
+      <li>G.oSet.stAndroidJarPath: Der volle Pfad zum Standard android.jar</li>
+      <li>G.oSet.stBshVar1: Benutzerdefinierte Variable 1</li>
+      <li>G.oSet.stBshVar2: Benutzerdefinierte Variable 2</li>
+      <li>G.oSet.stBshVar3: Benutzerdefinierte Variable 3</li>
+      <li>G.oSet.stBshVar4: Benutzerdefinierte Variable 4</li>
+      <li>G.oSet.stBshVar5: Benutzerdefinierte Variable 5</li>
+    </ul>
 </ul>
+
 <p>Bedeutung des R&uuml;ckgabewerts: <br>
    <pre>
    0:   OK
@@ -106,21 +177,23 @@ kbd {
 <p>
 <p>Beispiel um ecj zu starten:<br><kbd>int rc = G.ide.fnCompile("--version");</kbd></p>
 
-<h3>2.2 Skripts ausf&uuml;hren</h3>
-<p>BeanShell Skripts m&uuml;ssen irgendwo auf der Speicherkarte gespeichert werden. Der Pfad zum Skript kann im Eingabefeld eingegeben oder &uuml;ber die Schaltfl&auml;che ausgew&auml;hlt werden. Damit die Schaltfl&auml;che funktioniert, muss der OI File Manager installiert sein. Die Schaltfl&auml;che <kbd>"Starte Skript!"</kbd> startet das angegebene  BeanShell Skript.</p>
+<h3>3.2 Skripts ausf&uuml;hren</h3>
+<p>BeanShell Skripts m&uuml;ssen irgendwo auf der Speicherkarte gespeichert werden. Der Pfad zum Skript kann im Eingabefeld eingegeben oder &uuml;ber die Schaltfl&auml;che ausgew&auml;hlt werden (oder im 'Projekt Dateimanager' angew&auml;hlt werden). Die Schaltfl&auml;che <kbd>"Starte Skript!"</kbd> startet das angegebene BeanShell Skript.</p>
 
-<h2>3. Tools</h2>
-<p>Dieser Reiter gibt einen direkten Zugriff auf die eingebauten Tools, ohne dass ein BeanShell Skript ben&ouml;tigt wird. Alle Argumente m&uuml;ssen im Eingabefeld eingegeben werden.</p>
+<h2>4. Tools</h2>
+<p>Dieser Reiter gibt einen direkten Zugriff auf die eingebauten Tools, ohne dass ein BeanShell Skript ben&ouml;tigt wird. Alle Argumente m&uuml;ssen im Eingabefeld eingegeben werden. Dieser Reiter dient in erster Linie dazu, die jeweilige Hilfe der Tools auszugeben oder Sachen auszuprobieren.</p>
 
-<h2>4. Verwendung aus anderen Anwendungen</h2>
-<p>JavaIDEdroid unterst&uuml;tzt die Intent Aktion "android.intent.action.VIEW" f&uuml;r den text/x-beanshell MIME Typ. Wenn Sie in Ihrem Dateimanager (z.B. ASTRO) diesen Typ mit der Extension .bsh assoziieren, k&ouml;nnen Sie .bsh Dateien anklicken, worauf JavaIDEdroid gestartet und das Eingabefeld mit dem Pfad der Skript Datei vorbelegt wird.</p>
+<h2>5. Verwendung aus anderen Anwendungen</h2>
+<p>Die APP unterst&uuml;tzt die Intent Aktion "android.intent.action.VIEW" f&uuml;r den text/x-beanshell MIME Typ. Wenn Sie in Ihrem Android Dateimanager (z.B. ASTRO) diesen Typ mit der Extension .bsh assoziieren, k&ouml;nnen Sie .bsh Dateien anklicken, worauf die APP gestartet und das Eingabefeld mit dem Pfad der Skript Datei vorbelegt wird.</p>
 
-<p>JavaIDEdroid unterst&uuml;tzt die Intent Aktion "android.intent.action.SEND" und kann aus anderen Anwendungen mittels folgendem Code gestartet werden:<br>
+<p>Die APP unterst&uuml;tzt die Intent Aktion "android.intent.action.SEND" und kann aus anderen Anwendungen mittels folgendem Code gestartet werden:<br>
 <pre>
 ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
+// PRO version: ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroidPRO", "com.t_arn.JavaIDEdroidPRO.MainActivity");
 Intent intent = new Intent("android.intent.action.SEND");
 intent.setComponent(cn);
-intent.putExtra("android.intent.extra.ScriptPath", "/mnt/sdcard/!Daten/Android/com/t_arn/HelloAndroid/0_build-debug.bsh");
+intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/AndroidDev/mydomain/HelloWorld/build.bsh");
+intent.putExtra("android.intent.extra.ProjectFilePath", "/sdcard/AndroidDev/mydomain/HelloWorld/HelloWorld.jip"); // PRO version only
 intent.putExtra("android.intent.extra.ScriptAutoRun", true);  // default = false
 intent.putExtra("android.intent.extra.ScriptAutoExit", true); // default = false
 intent.putExtra("android.intent.extra.WantResultText", true); // default = false
@@ -129,11 +202,12 @@ startActivityForResult(intent,123);
 <p>Im Extra Bundle k&ouml;nnen folgende Informationen &uuml;bergeben werden:</p>
 <ul>
   <li>ScriptPath: Dies ist der Pfad des auszuf&uuml;hrendes Skripts</li>
-  <li>ScriptAutoRun: Wenn Sie dieses auf true setzen, wird das Skript beim Starten JavaIDEdroid sofort ausgef&uuml;hrt</li>
-  <li>ScriptAutoExit: Wenn Sie dieses auf true setzen, wird JavaIDEdroid nach dem Durchlaufen des Skripts automatisch wieder beendet.</li>
+  <li>ProjectFilePath (nur PRO Version): Der Pfad zur Projekt Definitionsdatei, welche automatisch ge&ouml;ffnet wird</li>
+  <li>ScriptAutoRun: Wenn Sie dieses auf true setzen, wird das Skript beim Starten der APP sofort ausgef&uuml;hrt</li>
+  <li>ScriptAutoExit: Wenn Sie dieses auf true setzen, wird die APP nach dem Durchlaufen des Skripts automatisch wieder beendet.</li>
   <li>WantResultText: Wenn Sie dieses auf true setzen, erhalten Sie die Skript Ausgabe des BeanShell Reiters zur&uuml;ck</li>
 </ul>
-<p>Sie k&ouml;nnen die Daten von JavaIDEdroid in der <kbd>onActivityResult</kbd> Methode mit folgendem Code einlesen:<br>
+<p>Sie k&ouml;nnen die von der APP zur&uuml;ckgegebenen Daten in der <kbd>onActivityResult</kbd> Methode mit folgendem Code einlesen:<br>
 <pre>
 Bundle extras = intent.getExtras();
 if (extras != null) 
@@ -142,17 +216,18 @@ if (extras != null)
 &nbsp;&nbsp; String stResultText=extras.getString("android.intent.extra.ResultText");
 }
 </pre>
-<p>ScriptResultCode wird immer zur&uuml;ckgegeben und enth&auml;lt den Wert von G.iScriptResultCode. Wenn das Skript diese Variable setzt, wird ihr Wert beim automatischen oder benutzer-initiierten Beenden von JavaIDEdroid an die aufrufende App zur&uuml;ckgegeben.</p>
-<p>Sie k&ouml;nnen die Skript Ausgabe des BeanShell Reiters auch aus der Protokolldatei <kbd>/mnt/sdcard/.JavaIDEdroid/LogOutput.txt</kbd> lesen. Dies geht nat&uuml;rlich nur dann, wenn Sie die Option 'Protokolliere Ausgabe in Datei' aktiviert haben.</p>
 
-<h2>5. Debugging</h2>
-<p>Um Probleme von JavaIDEdroid zu analysieren, k&ouml;nnen Sie in den Optionen den <kbd>Log Level</kbd> einstellen. Wenn ein h&ouml;herer Wert als NONE (nichts) eingestellt ist, schreibt JavaIDEdroid diverse Informationen in die logcat. Am meisten Informationen werden mit dem Wert VERBOSE (geschw&auml;tzig) geschrieben.</p>
+<p>ScriptResultCode wird immer zur&uuml;ckgegeben und enth&auml;lt den Wert von G.iScriptResultCode. Wenn das Skript diese Variable setzt, wird ihr Wert beim automatischen oder benutzer-initiierten Beenden der APP an die aufrufende App zur&uuml;ckgegeben.</p>
+<p>Sie k&ouml;nnen die Skript Ausgabe des BeanShell Reiters auch aus der Protokolldatei <kbd>/sdcard/.JavaIDEdroid/LogOutput.txt</kbd> lesen. Dies geht nat&uuml;rlich nur dann, wenn Sie die Einstellung 'Protokolliere Ausgabe in Datei' aktiviert haben.</p>
 
-<h2>6. Rechtliches</h2>
+<h2>6. Debugging</h2>
+<p>Um Probleme der APP zu analysieren, k&ouml;nnen Sie in den Optionen den <kbd>Log Level</kbd> einstellen. Wenn ein h&ouml;herer Wert als NONE (nichts) eingestellt ist, schreibt die APP diverse Informationen in die logcat. Am meisten Informationen werden mit dem Wert VERBOSE (geschw&auml;tzig) geschrieben.</p>
+
+<h2>7. Rechtliches</h2>
 <p>Vielen Dank, dass Sie sich f&uuml;r diese SOFTWARE entschieden haben! Sie d&uuml;rfen die SOFTWARE nur nutzen, wenn Sie mit den nachfolgenden Bestimmungen einverstanden sind:</p>
 
 <p><b>URHEBERRECHT</b><br>
-Diese SOFTWARE wurde durch Tom Arn, www.t-arn.com, (im folgenden AUTOR genannt) entwickelt und ist frei nutzbar unter der GNU General Public License.</p>
+Diese SOFTWARE wurde durch Tom Arn, www.t-arn.com, (im folgenden AUTOR genannt) entwickelt. Alle Rechte vorbehalten.</p>
 
 <p><b>KEINE GEW&Auml;HRLEISTUNG</b><br>
 Die SOFTWARE wird im Ist-Zustand ausgeliefert. Der AUTOR lehnt jede Haftung ab, ob ausdr&uuml;cklich oder gesetzlich, einschliesslich der Garantien der Handelbarkeit und der Eignung f&uuml;r einen bestimmten Zweck. Der AUTOR &uuml;bernimmt keine Garantie daf&uuml;r, dass die Software ausfallsicher oder fehlerfrei ist. Der Benutzer muss bei der Verwendung der SOFTWARE s&auml;mtliches Risiko &uuml;bernehmen.</p>

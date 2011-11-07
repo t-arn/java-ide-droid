@@ -17,7 +17,8 @@ See the GNU General Public License for more details.
     ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
     Intent intent = new Intent("android.intent.action.SEND");
     intent.setComponent(cn);
-    intent.putExtra("android.intent.extra.ScriptPath", "/mnt/sdcard/!Daten/Android/com/t_arn/HelloAndroid/0_build-debug.bsh");
+    intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/AndroidDev/mydomain/HelloWorld/build.bsh");
+    intent.putExtra("android.intent.extra.ProjectFilePath", "/sdcard/AndroidDev/mydomain/HelloWorld/HelloWorld.jip"); // PRO version only
     intent.putExtra("android.intent.extra.ScriptAutoRun", true);  // default = false
     intent.putExtra("android.intent.extra.ScriptAutoExit", true); // default = false
     intent.putExtra("android.intent.extra.WantResultText", true); // default = false
@@ -27,7 +28,6 @@ See the GNU General Public License for more details.
 package com.t_arn.JavaIDEdroid;
 
 import android.app.TabActivity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -41,6 +41,8 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
+import java.io.File;
+
 //##################################################################
 /**
  * This is the main Activity of JavaIDEdroid
@@ -52,8 +54,11 @@ import android.widget.TextView;
 public class MainActivity extends TabActivity
 //##################################################################
 {
-  private EditText tabBeanshell_etScript, tabTools_etArgs;
-  private static final int REQUEST_CODE_PICK_FILE_OR_DIRECTORY = 1;
+  public TextView tabBeanshell_tvOutput, tabTools_tvOutput;
+  public EditText tabBeanshell_etScript, tabTools_etArgs;
+  private boolean bCreated;
+  private TabHost tabHost;
+  private static final int REQUEST_CODE_PICK_BSH_FILE = 1;
   private static final int REQUEST_CODE_SETTINGS = 2;
 
 //===================================================================
@@ -64,29 +69,32 @@ public class MainActivity extends TabActivity
   { 
     try
     {
+      bCreated = false;
+      G.fnInit(this);
       setContentView(R.layout.main);
-      TabHost tabHost=getTabHost();
-      TabSpec tabBeanshell=tabHost.newTabSpec("BeanShell");
+      tabHost=getTabHost();
+      TabSpec tabBeanshell=tabHost.newTabSpec(G.Rstring(R.string.tab_beanshell));
       tabBeanshell.setContent(R.id.tabBeanshell);
-      tabBeanshell.setIndicator("BeanShell");
-      TabSpec tabTools=tabHost.newTabSpec("Tools");
+      tabBeanshell.setIndicator(G.Rstring(R.string.tab_beanshell));
+      TabSpec tabTools=tabHost.newTabSpec(G.Rstring(R.string.tab_tools));
       tabTools.setContent(R.id.tabTools);
-      tabTools.setIndicator("Tools");
+      tabTools.setIndicator(G.Rstring(R.string.tab_tools));
 
       tabHost.addTab(tabBeanshell);
       tabHost.addTab(tabTools);
 
       tabBeanshell_etScript=(EditText)findViewById(R.id.tabBeanshell_etScript);
-      G.tabBeanshell_tvOutput=(TextView)findViewById(R.id.tabBeanshell_tvOutput); // must be set before G.fnInit !!
+      tabBeanshell_tvOutput=(TextView)findViewById(R.id.tabBeanshell_tvOutput);
             
       tabTools_etArgs=(EditText)findViewById(R.id.tabTools_etArgs);
-      G.tabTools_tvOutput=(TextView)findViewById(R.id.tabTools_tvOutput); // must be set before G.fnInit !!
+      tabTools_tvOutput=(TextView)findViewById(R.id.tabTools_tvOutput);
       
       // load and set global application variables and settings
-      G.fnInit(this);
+      G.oSet.fnApplySettings();
       fnGetIntentData();
       
       super.onCreate(savedInstanceState);
+      bCreated = true;
     }
     catch (Throwable t) { G.fnToast("Exception in onCreate!\n"+t.toString(),10000); }
   }//onCreate
@@ -96,21 +104,41 @@ public class MainActivity extends TabActivity
 //===================================================================
   {
     String filename = "";
+    Bundle extras;
 
-    switch (requestCode) 
+    try
     {
-      case REQUEST_CODE_PICK_FILE_OR_DIRECTORY:
-        if (resultCode == RESULT_OK && data != null) filename = fnPickFile(data);
-        break;
-      case REQUEST_CODE_SETTINGS:
-        G.oSet.fnApplySettings();
-        break;
-      default:
-        G.fnLog("e", "ActivityResult not handled: "+requestCode);
-        break;
-    }
-    tabBeanshell_etScript.setText(filename);
-    super.onActivityResult(requestCode, resultCode, data);
+      if (this.bCreated) G.fnSetCurrentActivity(this);
+      switch (requestCode) 
+      {
+        case REQUEST_CODE_PICK_BSH_FILE:
+          if ( (resultCode != RESULT_OK) || (data==null) ) break;
+          extras = data.getExtras();
+          filename = extras.getString("android.intent.extra.chosenFile");
+          tabBeanshell_etScript.setText(filename);
+          break;
+        case REQUEST_CODE_SETTINGS:
+          G.oSet.fnApplySettings();
+          if (!(new File(G.oSet.stDevRootDir).isDirectory()))
+          {
+            G.oSet.stDevRootDir="/sdcard/";
+            G.fnAlertDialog(null, G.DIALOG_INVALID_DEVROOT, R.string.tit_invalid_data, R.string.msg_invalid_devroot, R.string.btnOK, 0);
+          }
+          break;
+        default:
+          G.fnLog("e", "ActivityResult not handled. RequestCode: "+requestCode+", resultCode: "+resultCode);
+          break;
+      } // switch
+      super.onActivityResult(requestCode, resultCode, data);
+    } // try
+    catch (Throwable t) { G.fnError("onActivityResult", t); }
+  } // onActivityResult
+//===================================================================
+  @Override 
+  public void onBackPressed()
+//===================================================================
+  {
+    G.fnLog("d","onBackPressed()");
   }
 //===================================================================
   @Override 
@@ -129,6 +157,40 @@ public class MainActivity extends TabActivity
     return super.onCreateOptionsMenu(menu);
   }
 //===================================================================
+  @Override 
+  public boolean onOptionsItemSelected (MenuItem item)
+//===================================================================
+  {
+    try
+    {
+      switch (item.getItemId())
+      {
+        case R.id.opt_upgrade:
+          fnUpgrade ();
+          return true;
+        case R.id.opt_exit:
+          finish();
+          return true;
+        case R.id.opt_help:
+          fnHelp ();
+          return true;
+        case R.id.opt_infos:
+          startActivity(new Intent (this, InfoActivity.class));
+          return true;
+        case R.id.opt_passwords:
+          startActivity(new Intent (this, PasswordActivity.class));
+          return true;
+        case R.id.opt_settings:
+          fnSettings(); 
+          return true;
+        default:
+          return super.onOptionsItemSelected(item);
+      }//switch
+    }//try
+    catch (Throwable t) { G.fnError("onOptionsItemSelected", t); }
+    return true;
+  } //onOptionsItemSelected
+//===================================================================
   @Override
   protected void onPause() 
 //===================================================================
@@ -143,72 +205,52 @@ public class MainActivity extends TabActivity
   } // onPause
 //===================================================================
   @Override 
-  public boolean onOptionsItemSelected (MenuItem item)
-//===================================================================
-  {
-    switch (item.getItemId())
-    {
-      case R.id.opt_donate:
-        fnDonate ();
-        return true;
-      case R.id.opt_exit:
-        finish();
-        return true;
-      case R.id.opt_help:
-        fnHelp ();
-        return true;
-      case R.id.opt_options:
-        startActivityForResult(new Intent(this, SettingActivity.class), REQUEST_CODE_SETTINGS);
-        return true;
-      case R.id.opt_passwords:
-        startActivity(new Intent (this, PasswordActivity.class));
-        return true;
-      default:
-        return super.onOptionsItemSelected(item);
-    }
-    // return false;
-  } //onOptionsItemSelected
-//===================================================================
-  @Override 
   protected void onResume()
 //===================================================================
   {
     try
     {
-      super.onResume();
       G.fnLog("d", "onResume() start");
-      // run script
-      if (G.bScriptAutoRun)
+      super.onResume();
+      G.fnSetCurrentActivity(this);
+      if (G.fnIsFirstOpen())
       {
-        G.bScriptAutoRun = false;
-        tabBeanshell_btnRun (null);
+        fnUpgrade();
+      }
+      else
+      {
+        // run script
+        if (G.bScriptAutoRun)
+        {
+          G.bScriptAutoRun = false;
+          fnSelectTab(R.id.tabBeanshell);
+          tabBeanshell_btnRun (null);
+        }
       }
       G.fnLog("d", "onResume() end");
     }//try
-    catch (Throwable t) { G.fnToast("Exception in onResume!\n"+t.toString(),10000); }
+    catch (Throwable t) { G.fnError("onResume", t); }
   } // onResume
 //===================================================================
   public void tabBeanShell_btnBrowse (final View view)
 //===================================================================
   { 
     String startDir;
+    int idx;
     
     try
     {
       startDir = tabBeanshell_etScript.getText().toString();
-      if (startDir.equals("")) startDir=G.oSet.stDefaultStartDir;
-      Intent intent = new Intent ("org.openintents.action.PICK_FILE");
-      intent.setData(Uri.parse("file://"+startDir));
-      // Set fancy title and button (optional)
-      intent.putExtra("org.openintents.extra.TITLE", G.Rstring(R.string.msg_choose_script));
-      intent.putExtra("org.openintents.extra.BUTTON_TEXT", "OK");
-      startActivityForResult(intent, REQUEST_CODE_PICK_FILE_OR_DIRECTORY);
+      idx = startDir.lastIndexOf('/');
+      if (idx==-1) startDir=G.oSet.stDevRootDir;
+      else startDir = startDir.substring(0,idx+1);
+      Intent intent = new Intent (this, FileBrowserActivity.class);
+      intent.putExtra("android.intent.extra.Title", G.Rstring(R.string.msg_choose_script));
+      intent.putExtra("android.intent.extra.DirPath", startDir);
+      intent.putExtra("android.intent.extra.Pattern", ".*\\.bsh");
+      startActivityForResult(intent, REQUEST_CODE_PICK_BSH_FILE);
+
     } 
-    catch (ActivityNotFoundException e) 
-    {
-      // No compatible file manager was found.
-      G.fnToast(G.Rstring(R.string.err_no_oifm), 10000);
-    }
     catch (Throwable t) { G.fnError("tabBeanshell_btnBrowse", t); }
   }//tabBeanshell_btnBrowse
 //===================================================================
@@ -219,7 +261,7 @@ public class MainActivity extends TabActivity
     {
       String script;
       G.fnLog("d", "Starting BeanShell script");
-      fnClear(G.tabBeanshell_tvOutput);
+      fnClear(tabBeanshell_tvOutput);
       script=tabBeanshell_etScript.getText().toString();
       G.bshTask = new BeanShellTask();
       G.bshTask.execute(script);
@@ -237,7 +279,7 @@ public class MainActivity extends TabActivity
       String[] ar_tools_values = G.res.getStringArray(R.array.ar_tools);
       String stChosen = ar_tools_values[pos];
       String params = tabTools_etArgs.getText().toString();
-      fnClear(G.tabTools_tvOutput);
+      fnClear(tabTools_tvOutput);
       G.fnLog("d", "Starting "+stChosen);
       new ToolTask().execute(stChosen, params);
     }
@@ -249,7 +291,7 @@ public class MainActivity extends TabActivity
   {
     try
     {
-      G.tabBeanshell_tvOutput.setText("");
+      tabBeanshell_tvOutput.setText("");
     }
     catch (Throwable t) { G.fnError("fnClear", t); }
   }//fnClear
@@ -263,14 +305,6 @@ public class MainActivity extends TabActivity
     }
     catch (Throwable t) { G.fnError("fnClear", t); }
   }//fnClear
-//===================================================================
-  private void fnDonate ()
-//===================================================================
-  {
-    final Intent i = new Intent (this, DonateActivity.class);
-    G.fnLog("d", "Starting donate");
-    startActivity(i);
-  } //fnDonate
 //===================================================================
   private void fnGetIntentData()
 //===================================================================
@@ -299,7 +333,11 @@ public class MainActivity extends TabActivity
         G.bScriptAutoExit = extras.getBoolean("android.intent.extra.ScriptAutoExit", false);
         G.bWantResultText = extras.getBoolean("android.intent.extra.WantResultText", false);
       }
-      if (stScript!=null) tabBeanshell_etScript.setText(stScript);
+      if (stScript!=null) 
+      {
+        tabBeanshell_etScript.setText(stScript);
+        fnSelectTab(R.id.tabBeanshell);
+      }
       G.fnLog("d", "fnGetIntentData done.");
     } catch (Throwable t) { G.fnError("fnGetIntentData", t); }
   } // fnGetIntentData
@@ -312,21 +350,19 @@ public class MainActivity extends TabActivity
     startActivity(i);
   } //fnHelp
 //===================================================================
-  private String fnPickFile (Intent data)
+    public void fnSelectTab (int id)
 //===================================================================
   {
-    String filename;
-    if (data==null) return "";
-    // obtain the filename
-    filename = data.getDataString();
-    if (filename != null) 
+    switch (id)
     {
-      // Get rid of URI prefix:
-      if (filename.startsWith("file://")) filename = filename.substring(7);
+      case R.id.tabBeanshell:
+        tabHost.setCurrentTab (0);
+        break;
+      case R.id.tabTools:
+        tabHost.setCurrentTab (1);
+        break;
     }
-    else filename = "";
-    return filename;
-  } //fnPickFile
+  } // fnSelectTab
 //===================================================================
   protected void fnSetResult() 
 //===================================================================
@@ -337,10 +373,25 @@ public class MainActivity extends TabActivity
     if (G.bWantResultText) 
     {
       G.fnLog("d","setting extra:android.intent.extra.ResultText");
-      intent.putExtra("android.intent.extra.ResultText", G.tabBeanshell_tvOutput.getText().toString());
+      intent.putExtra("android.intent.extra.ResultText", tabBeanshell_tvOutput.getText().toString());
     }
     setResult(RESULT_OK, intent);
   } // fnSetResult
+//===================================================================
+  public void fnSettings ()
+//===================================================================
+  {
+    Intent intent = new Intent(this, SettingActivity.class);
+    startActivityForResult(intent, REQUEST_CODE_SETTINGS);
+  } // fnSettings
+//===================================================================
+  private void fnUpgrade ()
+//===================================================================
+  {
+    final Intent i = new Intent (this, UpgradeActivity.class);
+    G.fnLog("d", "Starting upgrade");
+    startActivity(i);
+  } //fnUpgrade
 //===================================================================
 }//MainActivity
 //##################################################################

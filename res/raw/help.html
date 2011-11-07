@@ -42,16 +42,16 @@ kbd {
 
 <h1>JavaIDEdroid</h1>
 <h2>1. Introduction</h2>
-<p>JavaIDEdroid is an integrated development environment which runs on Android and allows to create native Android applications without the need to use the Android SDK on Windows or Linux. It should run on Android 1.6 or higher.</p>
+<p>JavaIDEdroid (in the following termed "the APP") is an integrated development environment which runs on Android and allows to create native Android applications without the need to use the Android SDK on Windows or Linux. It should run on Android 1.6 or higher.</p>
+
+<p>There is a free version and a PRO version of the APP. The PRO version supports features that makes developing a lot easier and more efficient.</p>
 
 <table>
-<tr><td>Version:</td><td>1.2.0</td>
 <tr><td>Author:</td><td>Tom Arn, <a href="http://www.t-arn.com">www.t-arn.com</a></td>
-<tr><td>Contributions by: </td><td>Ken Ellinwood</td>
-<tr><td>Project home page:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
+<tr><td>Project home page <br/>and support:</td><td><a href="http://code.google.com/p/java-ide-droid/">http://code.google.com/p/java-ide-droid/</a></td>
 </table>
 
-<p>Currently, following tools are integrated into JavaIDEdroid:</p>
+<p>Currently, following tools are integrated into the APP:</p>
 <ul>
 <li>Aapt tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>Eclipse Java Compiler (<a href="http://www.eclipse.org">www.eclipse.org</a>)</li>
@@ -59,44 +59,114 @@ kbd {
 <li>ApkBuilder tool from the Android SDK (<a href="http://developer.android.com">developer.android.com</a>)</li>
 <li>Zipsigner-lib from Ken Ellinwood (<a href="http://code.google.com/p/zip-signer/">http://code.google.com/p/zip-signer</a>)</li>
 <li>BeanShell Interpreter (<a href="http://www.beanshell.org">www.beanshell.org</a>)</li>
+<li>Project Support (PRO version only)</li>
 </ul>
 
 <p>Aapt is integrated as native shared library (arm). It uses external libraries which require Android 2.3 or later and therefore, the aapt shared library has been built for Android 2.3. Despite this fact, it also seems to work an older Android versions (it ran ok on my Android 2.2.1).</p>
 
-<h2>2. BeanShell</h2>
-<p>The integrated BeanShell interpreter allows you to automate the build process by writing your own BeanShell scripts.</p>
-<h3>2.1 Writing scripts</h3>
-<p>BeanShell scripts can access the functionality built into JavaIDEdroid by using the pre-defined variable <kbd>G</kbd>. This variable references G.class with following accessible variables and methods:</p>
+<h2>2. Project Support (PRO version only)</h2>
+<p>In the PRO version you can define and manage software projects. In the project menu you have following options:</p>
 <ul>
+  <li>Create new project</li>
+  <li>Open project</li>
+  <li>Re-open project from recent project list</li>
+  <li>Edit project</li>
+  <li>Compile resources and Java sources</li>
+  <li>Compile and build project APK</li>
+  <li>Close project</li>
+</ul>
+
+<h3>2.1 Create a new project</h3>
+<p>You can define following information for a project:</p>
+<ul>
+  <li><b>Project name: </b>You can choose any name you like, but it makes sense to name the the project (and also the project definition file) the same as your package, e.g. HelloWorld</li>
+  <li><b>Project root directory: </b>This is the directory where you put all your project files. The project definition file (*.jip) is always stored here.</li>
+  <li><b>Main Activity Java file: </b>The path to the Java file containing your main activity, relative to the project root direcory. By compiling this file, all other Java files are also automatically compiled along.</li>
+  <li><b>Android.jar: </b>The path to a project specific android.jar, relative to the development root directory. If left empty, the android.jar from the global settings will be used</li>
+  <li><b>Library directory: </b>The path of the library directory, relative to the project root direcory, e.g. libs/ <br>Leave empty if your project does not use external libraries (.jar or .so files).</li>
+  <li><b>Asset directory: </b>The path of the asset directory, relative to the project root direcory, e.g. assets/ <br>Leave empty if your project does not use assets.</li>
+  <li><b>Exclude direcories: </b>To shorten the 'Directory list' in the 'Project File Manager' (see below), you can define a list of directories you want to exclude. Every directory must be on a separate line. You can use the browse button several times to add more directories.</li>
+</ul>
+
+<p>After defining the project root directory, you can press the <b>'Create dir structure from template'</b> button and have the APP create a skeleton project for you, which is taken from the template file <kbd>/sdcard/.JavaIDEdroid/project-template.zip</kbd>. This template file is automatically extracted from the app package when it is not found on the storage card. You can customize this template to fit your needs. <br>
+The project root directory must NOT exist at the time when you press the button, to avoid existing data from being overwritten. So, if you use the browse button for the project root directory, you need to enter the last directory of the path by hand.</p>
+
+<p>When you press the <b>'Save'</b> button, the project specific information is stored in the project definition file (.jip files) in the root directory of the project. The path of the project root directory is not stored in .jip file. Instead, when opening a .jip file, the project root directory is set to the directory where the .jip file is located. This way, your project tree stays portable. The important thing to keep in mind is, that you must <b>never manually move the .jip file away from the project root directory</b>, or the APP will set a wrong project root directory for this project!</p>
+
+<h2>2.2 Open project</h2>
+<p>You can open a project by browing the development tree and picking the .jip file. You can also quickly open recent projects by picking them from the recent project list (see below). After opening a project, the project file manager is shown in the 'Project' tab of the APP.</p>
+
+<h3>2.2.1 Project file manager</h3>
+<p>The project file manager lets you browse and work with all the files of the opened project. The <b>'Directory list'</b> button lets you quickly change to another directory of the project. When you long-press a file, you get a context menu with following items: </p>
+<ul>
+  <li><b>View/open file: </b>This opens the file by calling the ACTION_VIEW intent. If more than one app can handle this intent, you can choose from a list.</li>
+  <li><b>Edit as textfile: </b>This allows you to edit the file by calling the ACTION_EDIT intent. If more than one app can handle this intent, you can choose from a list. <b>Make sure your editor (not included in the APP) saves the files in ANSI (iso-8859-1 / latin-1 / win1252) format, or you will get compilation errors!</b></li>
+  <li><b>Run script: </b></li>This item is only active for .bsh files and allows you to run the chosen BeanShell script. The APP changes to the 'BeanShell' tab to show the result of the script execution.</li>
+  <li><b>Delete file: </b></li>Deletes the file after a confirmation</li>
+</ul>
+
+<h2>2.3 Recent project list</h2>
+<p>You can open an existing project by picking it from the 'Recent project list'. This list is updated every time you save or open a project. The list is ordered by usage, the last used project is always on top.</p>
+
+<h2>2.4 Compile and build a project</h2>
+<p>When you select the menu items for compiling or building the project, the default BeanShell scripts <kbd>/sdcard/.JavaIDEdroid/compile.bsh</kbd> or <kbd>/sdcard/.JavaIDEdroid/build.bsh</kbd> are executed. These scripts should work for almost every project, because they get the project specific information from the currently opened project. You can customize these scripts to fit your specific needs.</p>
+
+<p>If you have a project that cannot be compiled/built with the default scripts, you can copy the default scripts into the project root directory and customize them there for the specific project. When choosing 'compile' / 'build' from the project menu, the APP will then use these project specific scripts instead of the default scripts.</p>
+
+<h2>3. BeanShell</h2>
+<p>The integrated BeanShell interpreter allows you to automate and customize the build process by writing your own BeanShell scripts.</p>
+<h3>3.1 Writing scripts</h3>
+<p>BeanShell scripts can access the functionality built into the APP by using the pre-defined variable <kbd>G</kbd>. <br>
+This variable references G.class with following accessible variables and methods:</p>
+<ul>
+
 <li>MainActivity class: G.main </li>
 <li>G.stPw1, G.stPw2: Temporary passwords to be used by the scripts </li> 
 <li>G.iScriptResultCode: Scripts can return their result value here</li>
-<li>IDE class: G.ide provides access to the development tools</li>
-<li>int G.ide.fnAapt (String arguments)</li>
-<li>int G.ide.fnAapt (String[] arguments)</li>
-<li>int G.ide.fnCompile (String arguments)</li>
-<li>int G.ide.fnCompile (String[] arguments)</li>
-<li>int G.ide.fnDx (String arguments)</li>
-<li>int G.ide.fnDx (String[] arguments)</li>
-<li>int G.ide.fnApkBuilder (String arguments)</li>
-<li>int G.ide.fnApkBuilder (String[] arguments)</li>
-<li>int G.ide.fnSignApk (String arguments)</li>
-<li>int G.ide.fnSignApk (String[] arguments)</li>
-<li>String[] G.ide.fnTokenize (String commandline) // tokenizes the commandline arguments</li>
-<li>BeanShellTask class: G.bshTask provides methods for screen output</li>
-<li>void G.bshTask.fnClear () // clears BeanShell output</li>
-<li>void G.bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
-<li>void G.bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
-<li>Setting class: G.oSet provides access to variables that can be used in BeanShell scripts:</li>
-<li>G.oSet.stAndroidJarPath</li>
-<li>G.oSet.stBshVar1</li>
-<li>G.oSet.stBshVar2</li>
-<li>G.oSet.stBshVar3</li>
-<li>G.oSet.stBshVar4</li>
-<li>G.oSet.stBshVar5</li>
+<li>Project class (PRO version only): G.oPrj</li>
+  <ul>
+    <li>G.oPrj.stName: The name of the project and the project definition file (.jip)</li>
+    <li>G.oPrj.stPrjRootDir: The project root directory</li>
+    <li>G.oPrj.stAndroidJarPath: Project-specific android.jar (relative to stDevRootDir)</li>
+    <li>G.oPrj.stLibsDir: The directory containing the project libs (relative to stPrjRootDir)</li>
+    <li>G.oPrj.stAssetsDir: The directory containing the project assets (relative to stPrjRootDir)</li>
+  </ul>
 
+<li>IDE class: G.ide provides access to the development tools</li>
+  <ul>
+    <li>int G.ide.fnAapt (String arguments)</li>
+    <li>int G.ide.fnAapt (String[] arguments)</li>
+    <li>int G.ide.fnCompile (String arguments)</li>
+    <li>int G.ide.fnCompile (String[] arguments)</li>
+    <li>int G.ide.fnDx (String arguments)</li>
+    <li>int G.ide.fnDx (String[] arguments)</li>
+    <li>int G.ide.fnApkBuilder (String arguments)</li>
+    <li>int G.ide.fnApkBuilder (String[] arguments)</li>
+    <li>int G.ide.fnSignApk (String arguments)</li>
+    <li>int G.ide.fnSignApk (String[] arguments)</li>
+    <li>String[] G.ide.fnTokenize (String commandline) // tokenizes the commandline arguments</li>
+  </ul>
+
+<li>BeanShellTask class: G.bshTask provides methods for screen output</li>
+  <ul>
+    <li>void G.bshTask.fnClear () // clears BeanShell output</li>
+    <li>void G.bshTask.fnPublishProgress (String msg) // updates progress dialog message</li>
+    <li>void G.bshTask.fnToast (String msg, int milliseconds) // shows a toast message</li>
+  </ul>
+
+<li>Setting class: G.oSet provides access to variables that can be used in BeanShell scripts:</li>
+  <ul>
+    <li>G.oSet.stDevRootDir: The development root directory</li>
+    <li>G.oSet.stAndroidJarPath: The full path to the default android.jar</li>
+    <li>G.oSet.stBshVar1: User defined global variable 1</li>
+    <li>G.oSet.stBshVar2: User defined global variable 2</li>
+    <li>G.oSet.stBshVar3: User defined global variable 3</li>
+    <li>G.oSet.stBshVar4: User defined global variable 4</li>
+    <li>G.oSet.stBshVar5: User defined global variable 5</li>
+  </ul>
 </ul>
-<p>Meaning of the return value: <br>
+
+<p>Meaning of the script return value: <br>
    <pre>
    0:   OK
    1:   warning
@@ -106,21 +176,23 @@ kbd {
 <p>
 <p>Example for calling ecj:<br><kbd>int rc = G.ide.fnCompile("--version");</kbd></p>
 
-<h3>2.2 Running scripts</h3>
-<p>BeanShell scripts must be stored somewhere on the Storage Card. You can enter the path and filename of the script in the edit field or choose the script by tapping the folder icon. To choose a script, the OI File Manager needs to be installed on the device. The <kbd>"Run script!"</kbd> button will start the specified BeanShell script.</p>
+<h3>3.2 Running scripts</h3>
+<p>BeanShell scripts must be stored somewhere on the Storage Card. You can enter the path and filename of the script in the edit field or choose the script by tapping the folder icon (or choose it in the 'Project Filemanager'). The <kbd>"Run script!"</kbd> button will start the specified BeanShell script.</p>
 
-<h2>3. Tools</h2>
-<p>This tab provides a direct access to the built-in tools without the need for a BeanShell script. All arguments need to be entered in the edit field.</p>
+<h2>4. Tools</h2>
+<p>This tab provides a direct access to the built-in tools without the need for a BeanShell script. All arguments need to be entered in the edit field. This tab is primarily used to see the help for the tools and try things out.</p>
 
-<h2>4. Using with other applications</h2>
-<p>JavaIDEdroid supports the "android.intent.action.VIEW" intent action for the text/x-beanshell MIME type. If you define this type for the .bsh extension in your file manager (e.g. ASTRO) you can click a .bsh file and JavaIDEdroid will be started and the script path and filename prepopulated in the edit field.</p>
+<h2>5. Using with other applications</h2>
+<p>The APP supports the "android.intent.action.VIEW" intent action for the text/x-beanshell MIME type. If you define this type for the .bsh extension in your Android file manager (e.g. ASTRO) you can click a .bsh file and the APP will be started and the script path and filename prepopulated in the edit field.</p>
 
-<p>JavaIDEdroid supports the "android.intent.action.SEND" intent action and can be called from other applications using following code:<br>
+<p>The APP supports the "android.intent.action.SEND" intent action and can be called from other applications using following code:<br>
 <pre>
 ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroid", "com.t_arn.JavaIDEdroid.MainActivity");
+// PRO version: ComponentName cn = new ComponentName("com.t_arn.JavaIDEdroidPRO", "com.t_arn.JavaIDEdroidPRO.MainActivity");
 Intent intent = new Intent("android.intent.action.SEND");
 intent.setComponent(cn);
-intent.putExtra("android.intent.extra.ScriptPath", "/mnt/sdcard/!Daten/Android/com/t_arn/HelloAndroid/0_build-debug.bsh");
+intent.putExtra("android.intent.extra.ScriptPath", "/sdcard/AndroidDev/mydomain/HelloWorld/build.bsh");
+intent.putExtra("android.intent.extra.ProjectFilePath", "/sdcard/AndroidDev/mydomain/HelloWorld/HelloWorld.jip"); // PRO version only
 intent.putExtra("android.intent.extra.ScriptAutoRun", true);  // default = false
 intent.putExtra("android.intent.extra.ScriptAutoExit", true); // default = false
 intent.putExtra("android.intent.extra.WantResultText", true); // default = false
@@ -129,11 +201,12 @@ startActivityForResult(intent,123);
 <p>In the Extra Bundle, you can pass following information:</p>
 <ul>
   <li>ScriptPath: This is the path and filename of the script to be run</li>
-  <li>ScriptAutoRun: Set this to true to make JavaIDEdroid run the script immediately after starting</li>
-  <li>ScriptAutoExit: Set this to true to make JavaIDEdroid shut down after the script ran through</li>
+  <li>ProjectFilePath (PRO version only): This is the path and filename of the project definition file which will be opened automatically</li>
+  <li>ScriptAutoRun: Set this to true to make the APP run the script immediately after starting</li>
+  <li>ScriptAutoExit: Set this to true to make the APP shut down after the script ran through</li>
   <li>WantResultText: Set this to true to get back the script output of the BeanShell tab</li>
 </ul>
-<p>You can get the data returned from JavaIDEdroid in the <kbd>onActivityResult</kbd> method with following code:<br>
+<p>You can get the data returned from the APP in the <kbd>onActivityResult</kbd> method with following code:<br>
 <pre>
 Bundle extras = intent.getExtras();
 if (extras != null) 
@@ -143,17 +216,17 @@ if (extras != null)
 }
 </pre>
 <p>ScriptResultCode is always returned and contains the value of G.iScriptResultCode. If the script sets this variable, its value is returned to the calling app when JavaIDEdroid is finished automatically or by the user.</p>
-<p>You can also get the script output of the BeanShell tab by reading the log file <kbd>/mnt/sdcard/.JavaIDEdroid/LogOutput.txt</kbd>. Of course, this only works if you have checked the option 'Log output to file'</p>
+<p>You can also get the script output of the BeanShell tab by reading the log file <kbd>/sdcard/.JavaIDEdroid/LogOutput.txt</kbd>. Of course, this only works if you have checked the setting 'Log output to file'</p>
 
-<h2>5. Debugging</h2>
-<p>If you have problems with JavaIDEdroid, you can set the <kbd>Log Level</kbd> in the options to analyse them. If you define a value higher than NONE, JavaIDEdroid will log informationen to the logcat. The highest amount of information is written with log level VERBOSE.</p>
+<h2>6. Debugging</h2>
+<p>If you have problems with the APP, you can set the <kbd>Log Level</kbd> in the APP settings to analyse them. If you define a value higher than NONE, the APP will log informationen to the logcat. The highest amount of information is written with log level VERBOSE.</p>
 
 
-<h2>6. Legal issues</h2>
+<h2>7. Legal issues</h2>
 <p>Thank you for choosing this SOFTWARE! You may only use this SOFTWARE if you agree with the conditions listed further below:</p>
 
 <p><b>COPYRIGHT</b><br>
-This SOFTWARE has been developed by Tom Arn, www.t-arn.com, (in the following termed AUTHOR) and is free under the terms of the GNU General Public License.</p>
+This SOFTWARE has been developed by Tom Arn, www.t-arn.com, (in the following termed AUTHOR). All rights reserved.</p>
 
 <p><b>NO WARRANTY</b><br>
 The SOFTWARE is provided AS IS without a warranty of any kind. All express, implied or statutory warranties, including any implied warranty of merchantibility or fitness for a particular purpose, are hereby excluded. The AUTHOR does not warrant that the SOFTWARE is fail-safe or error-free. The user must bear all risks when using the SOFTWARE.</p>

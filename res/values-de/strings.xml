@@ -1,33 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <resources>
+<!-- Global -->
   <string name="app_name">Java IDE (Android)</string>
+  <string name="btnOK">OK</string>
+  <string name="btnCancel">Abbrechen</string>
   <string name="err_errorIn">Fehler in</string>
   <string name="err_mkdir">Verzeichnis konnte nicht erstellt werden.</string>
-  <string name="err_no_oifm">OI Filemanager muss installiert sein.</string>
-  <string name="lbl_temp_pw">Hier kÃ¶nnen Sie temporÃ¤re PasswÃ¶rter eingeben, welche dann in den BeanShell Skripts verwendet werden kÃ¶nnen. Die PasswÃ¶rter werden nicht dauerhaft gespeichert. Wird JavaIDEdroid mit der SchaltflÃ¤che \'Beenden\' beendet, werden die PasswÃ¶rter gelÃ¶scht.\n</string>
-  <string name="lbl_pw1">Passwort 1 (G.stPw1)</string>
-  <string name="lbl_pw2">Passwort 2 (G.stPw2)</string> 
+  <string name="msg_foreignSW">Diese App enthält Software von anderen Autoren:</string>
+  <string name="msg_taskfinished">Prozess beendet</string>
+  <string name="msg_taskrunning">Prozess läuft...</string>
   <string name="msg_aapt_build">WARNUNG: Aapt wurde fuer Android API Level 9 oder hoeher erstellt.</string>
   <string name="msg_aapt_your_api">Ihr API Level ist</string>
   <string name="msg_aapt_warning">Aapt funktioniert auf diesem Geraet moeglicherweise nicht korrekt!</string>
-  <string name="msg_choose_script">Auswahl Beanshell Skript</string>
+  <string name="msg_workdir_missing">Zwingend benötigtes Arbeitsverzeichnis /sdcard/.JavaIDEdroid/ nicht vorhanden.</string>
+  <string name="tit_invalid_data">Ungültige Eingabe</string>
+<!-- Passwords -->
+  <string name="lbl_temp_pw">Hier können Sie temporäre Passwörter eingeben, welche dann in den BeanShell Skripts verwendet werden können. Die Passwörter werden nicht dauerhaft gespeichert. Wird JavaIDEdroid mit der Schaltfläche \'Beenden\' beendet, werden die Passwörter gelöscht.\n</string>
+  <string name="lbl_pw1">Passwort 1 (G.stPw1)</string>
+  <string name="lbl_pw2">Passwort 2 (G.stPw2)</string> 
   <string name="msg_logpw">WARNUNG: Die Passwoerter wurden moeglicherweise in die Logdatei geschrieben.</string>
-  <string name="msg_logpwgui">WARNUNG: Die PasswÃ¶rter wurden mÃ¶glicherweise in die Logdatei geschrieben.</string>
-  <string name="msg_taskfinished">Prozess beendet</string>
-  <string name="msg_taskrunning">Prozess lÃ¤uft...</string>
-  <string name="mnu_donate">Spende</string>
-  <string name="mnu_help">Hilfe</string>
+  <string name="msg_logpwgui">WARNUNG: Die Passwörter wurden möglicherweise in die Logdatei geschrieben.</string>
+<!-- Menu -->
   <string name="mnu_exit">Beenden</string>
-  <string name="mnu_options">Optionen</string>
-  <string name="mnu_passwords">PasswÃ¶rter</string>
-  <string name="tabBeanshell_btnRun">Starte Skript!</string>
+  <string name="mnu_help">Hilfe</string>
+  <string name="mnu_infos">Infos</string>
+  <string name="mnu_passwords">Passwörter</string>
+  <string name="mnu_settings">Einstellungen</string>
+  <string name="mnu_upgrade">Upgrade</string>
+<!-- Settings -->
+  <string name="msg_invalid_devroot">Entwicklungs-Stammverzeichnis existiert nicht.</string>
+  <string name="pref_devroot_dir">Entwicklungs-Stammverzeichnis</string>
+  <string name="prefsum_devroot_dir">Verzeichnis, wo Sie alle Ihre Projekte anlegen (G.oSet.stDevRootDir)</string>
   <string name="prefcat_display">Anzeige</string>
-  <string name="pref_font_size">SchriftgrÃ¶sse</string>
+  <string name="pref_font_size">Schriftgrösse</string>
   <string name="pref_font_type">Schriftart</string>
   <string name="prefcat_system">System</string>
   <string name="pref_log_output">Protokolliere Ausgabe in Datei</string>
-  <string name="pref_start_dir">Standard Skript Verzeichnis</string>
-  <string name="prefsum_start_dir">Standardverzeichnis wenn nach Skripts gesucht wird.</string>
   <string name="pref_log_level">Log Level</string>
   <string name="prefsum_log_level">Umfang der Informationen in logcat</string>
   <string name="prefcat_global_vars">Globale Skript Variablen</string>
@@ -37,9 +45,15 @@
   <string name="pref_bsh_var3">Benutzerdefinierte Variable 3</string>
   <string name="pref_bsh_var4">Benutzerdefinierte Variable 4</string>
   <string name="pref_bsh_var5">Benutzerdefinierte Variable 5</string>
+<!-- Beanshell tab -->
+  <string name="msg_choose_script">Auswahl Beanshell Skript</string>
+  <string name="tab_beanshell">BeanShell</string>
+  <string name="tabBeanshell_btnRun">Starte Skript!</string>
   <string name="tipBeanshell_etScript">Skript Pfad</string>
+  <string name="tit_bshtask">BeanShell Prozess</string>
+<!-- Tooks tab -->
+  <string name="tab_tools">Tools</string>
   <string name="tabTools_btnRun">Starte!</string>
   <string name="tipTools_etArgs">Argumente</string>
-  <string name="tit_bshtask">BeanShell Prozess</string>
   <string name="tit_tooltask">Tool Prozess</string>
 </resources>

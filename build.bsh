@@ -1,0 +1,158 @@
+// Beanshell script for JavaIDEdroidPRO
+// to compile and build the APK package.
+
+import java.io.*;
+
+boolean ok = true;
+String msg="";
+String androidJar="";
+String binDir="";
+String args="";
+File d;
+G.iScriptResultCode = 0;
+
+// check for PRO version
+if (!G.stProgramName.equals("JavaIDEdroidPRO"))
+{
+  G.iScriptResultCode = 99;
+  ok = false;
+  msg = "This script only works with JavaIDEdroidPRO!";
+  System.out.println(msg);
+  G.bshTask.fnToast(msg, 10000);
+}
+
+if (ok)
+{
+  // check if the user has opened a project file
+  if (G.oPrj.isClosed())
+  {
+    G.iScriptResultCode = 99;
+    ok = false;
+    msg = "Please open a project file first!";
+    System.out.println(msg);
+    G.bshTask.fnToast(msg, 10000);
+  }
+} 
+
+if (ok)
+{
+  // get the correct SDK jar
+  if (G.oPrj.stAndroidJarPath.equals("")) androidJar = G.oSet.stAndroidJarPath;
+  else androidJar = G.oSet.stDevRootDir+G.oPrj.stAndroidJarPath;
+  
+  // check the directory for the output
+  binDir=G.oPrj.stPrjRootDir+"bin/test/"+G.oPrj.stName+"/";
+  d = new File(binDir);
+  if (! d.isDirectory())
+  {
+    rc = d.mkdirs();
+    if (rc==false)
+    {
+      G.iScriptResultCode = 2;
+      ok = false;
+      msg = "Could not create directory "+binDir;
+      System.out.println(msg);
+      G.bshTask.fnToast(msg, 10000);
+    }
+  }
+}
+
+if (ok)
+{
+  // compile the resources
+  System.out.println("***** Calling Aapt ...");
+  G.bshTask.fnPublishProgress("Running Aapt...");
+  args =  "p -m -J "+G.oPrj.stPrjRootDir+"gen";
+  args += " -M "+G.oPrj.stPrjRootDir+"AndroidManifest.xml";
+  args += " -v -S "+G.oPrj.stPrjRootDir+"res";
+  if (!G.oPrj.stAssetsDir.equals("")) args += " -A "+G.oPrj.stPrjRootDir+G.oPrj.stAssetsDir;
+  args += " -I "+androidJar;
+  args += " -f -F "+binDir+G.oPrj.stName+".apk.res";
+  G.iScriptResultCode = G.ide.fnAapt(args);
+  System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+  if (G.iScriptResultCode>0)
+  {
+    G.bshTask.fnToast("aapt failed!",10000);
+    ok = false;
+  }
+}
+
+if (ok)
+{
+  // compile the Java source files
+  System.out.println("\n***** Calling Compiler ...");
+  System.out.println("Compiling "+G.oPrj.stMainJava+" ...");
+  G.bshTask.fnPublishProgress("Compiling...");
+  args = "-verbose -deprecation -1.5";
+  args += " -bootclasspath "+androidJar;
+  if (!G.oPrj.stLibsDir.equals("")) args += " -extdirs \""+G.oPrj.stPrjRootDir+G.oPrj.stLibsDir+"\"";
+  args += " -classpath "+G.oPrj.stPrjRootDir+"src";
+  args +=":"+G.oPrj.stPrjRootDir+"gen";
+  args += " -d "+binDir;
+  args += " "+G.oPrj.stPrjRootDir+G.oPrj.stMainJava;
+  G.iScriptResultCode = G.ide.fnCompile(args);
+  System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+  if (G.iScriptResultCode>=2) 
+  {
+    G.bshTask.fnToast("Compilation failed!",10000);
+    ok = false;
+  }
+  else if (G.iScriptResultCode==1) G.bshTask.fnToast("Compilation with warnings",10000);
+  else G.bshTask.fnToast("Compilation succeeded.",10000);
+}
+
+if (ok)
+{
+  // running dx
+  System.out.println("\n***** Calling dx ...");
+  G.bshTask.fnPublishProgress("Running dx...");
+  args =  "--dex --output="+binDir+"classes.dex";
+  args += " "+binDir;
+  // if (!G.oPrj.stLibsDir.equals("")) args += " "+G.oPrj.stPrjRootDir+G.oPrj.stLibsDir;
+  G.iScriptResultCode = G.ide.fnDx(args);
+  System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+  if (G.iScriptResultCode>0)
+  {
+    G.bshTask.fnToast("dx failed!",10000);
+    ok = false;
+  }
+}
+
+if (ok)
+{
+  // making APK package
+  System.out.println("\n***** Calling ApkBuilder ...");
+  G.bshTask.fnPublishProgress("Running Apkbuilder...");
+
+  args =  binDir+G.oPrj.stName+".apk.unsigned";
+  args += " -u -z "+binDir+G.oPrj.stName+".apk.res"; // signing is not working with apkbuilder
+  args += " -f "+binDir+"classes.dex";
+  args += " -rf "+G.oPrj.stPrjRootDir+"src";
+  if (!G.oPrj.stLibsDir.equals("")) args += " -rj "+G.oPrj.stPrjRootDir+G.oPrj.stLibsDir;
+  if (!G.oPrj.stLibsDir.equals("")) args += " -nf "+G.oPrj.stPrjRootDir+G.oPrj.stLibsDir;
+  G.iScriptResultCode = G.ide.fnApkBuilder(args);
+  System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+  if (G.iScriptResultCode>0) 
+  {
+    G.bshTask.fnToast("apkbuilder failed!",10000);
+    ok = false;
+  }
+}
+
+if (ok)
+{
+  // sign APK package with TEST key
+  System.out.println("\n***** Calling ZipSigner ...");
+  G.bshTask.fnPublishProgress("Running ZipSigner...");
+  args =  "-M testkey";
+  args += " -I "+binDir+G.oPrj.stName+".apk.unsigned";
+  args += " -O "+binDir+G.oPrj.stName+".apk";
+  G.iScriptResultCode = G.ide.fnSignApk(args);
+  System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+  if (G.iScriptResultCode>0) 
+  {
+    G.bshTask.fnToast("Signing failed!",10000);
+    ok = false;
+  }
+  else G.bshTask.fnToast("Build completed successfully!",10000);
+}

@@ -24,7 +24,7 @@ protected void onPreExecute()
 {
   G.fnLog("d", "onPreExecute()");
   // show progress dialog
-  progressDialog = new ProgressDialog(G.main);
+  progressDialog = new ProgressDialog(G.fnGetCurrentActivity());
   progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
   progressDialog.setTitle(G.Rstring(R.string.tit_tooltask));
   progressDialog.setMessage(G.Rstring(R.string.msg_taskrunning));
@@ -73,7 +73,7 @@ protected void onPostExecute(Void unused)
 //===================================================================
 { 
   publishProgress(G.Rstring(R.string.msg_taskfinished));
-  G.tabTools_tvOutput.append(swos.toString());
+  G.main.tabTools_tvOutput.append(swos.toString());
   swos = null;
   if (progressDialog.isShowing()) progressDialog.dismiss();
 } 

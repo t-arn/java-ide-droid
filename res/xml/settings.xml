@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
   <PreferenceCategory
     android:title="@string/prefcat_display">
@@ -21,9 +21,9 @@
       android:summary="/sdcard/.JavaIDEdroid/LogOutput.txt"
     />
     <EditTextPreference
-      android:key="start_dir"
-      android:title="@string/pref_start_dir"
-      android:summary="@string/prefsum_start_dir"
+      android:key="devroot_dir"
+      android:title="@string/pref_devroot_dir"
+      android:summary="@string/prefsum_devroot_dir"
     />
     <ListPreference
       android:key="log_level"

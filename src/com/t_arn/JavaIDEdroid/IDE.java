@@ -45,6 +45,12 @@ public int fnAapt (String[] args)
       System.out.println(G.Rstring(R.string.msg_aapt_warning));
     }
     
+    if (G.fnCheckWorkDir(false)==false)
+    {
+      System.out.println(G.Rstring(R.string.msg_workdir_missing));
+      return 99;
+    }
+    
     // show arguments
     start = System.currentTimeMillis();
     stCommandLine="aapt";
@@ -180,13 +186,13 @@ public synchronized void fnLogOutput (StringWriterOutputStream swos)
   try
   {
     if (swos==null) return;
-    ok = G.fnMakeLogDir();
+    ok = G.fnMakeLogDir(false);
     if (!ok)
     {
-      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stLogDir);
+      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stWorkDir);
       return;
     }
-    fw = new FileWriter (G.stLogDir+"/LogOutput.txt",false);
+    fw = new FileWriter (G.stWorkDir+"LogOutput.txt",false);
     stOut = swos.toString().replace("\n", "\r\n");
     fw.write(stOut);
     fw.close();

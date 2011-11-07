@@ -19,10 +19,10 @@ public class Aapt
   private static boolean fnInit ()
 //===================================================================
   {
-    boolean ok = G.fnMakeLogDir();
+    boolean ok = G.fnMakeLogDir(false);
     if (!ok)
     {
-      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stLogDir);
+      System.err.println(G.Rstring(R.string.err_mkdir)+" "+G.stWorkDir);
       return false;
     }
     try
@@ -60,7 +60,7 @@ public class Aapt
     
     try
     {
-      lnr = new LineNumberReader(new FileReader(G.stLogDir+"/native_stdout.txt"));
+      lnr = new LineNumberReader(new FileReader(G.stWorkDir+"native_stdout.txt"));
       st="";
       while(st!=null)
       {
@@ -69,7 +69,7 @@ public class Aapt
       }// while
       lnr.close();
       
-      lnr = new LineNumberReader(new FileReader(G.stLogDir+"/native_stderr.txt"));
+      lnr = new LineNumberReader(new FileReader(G.stWorkDir+"native_stderr.txt"));
       st="";
       while(st!=null)
       {

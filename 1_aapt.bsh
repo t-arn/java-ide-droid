@@ -5,8 +5,8 @@
 stScriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
 stScriptPath=stScriptPath.replace('\\','/'); 
 
-name = "JavaIDEdroid";
-outdir=stScriptPath+"out/test/"+name;
+source (stScriptPath+"0_setname.bsh");
+outdir=stScriptPath+"bin/test/"+name;
 System.out.println("***** Calling Aapt ...");
 G.bshTask.fnPublishProgress("Running Aapt...");
 
@@ -15,6 +15,6 @@ args += " -M "+stScriptPath+"AndroidManifest.xml";
 args += " -v -S "+stScriptPath+"res";
 args += " -I /sdcard/!Programme/win32/Programs/android-sdk/platforms/android-8/android.jar";
 args += " -f -F "+outdir+"/"+name+".apk.res";
-iResult = G.ide.fnAapt(args);
+G.iScriptResultCode = G.ide.fnAapt(args);
 
-if (iResult>0) G.bshTask.fnToast("aapt failed!",10000);
+if (G.iScriptResultCode>0) G.bshTask.fnToast("aapt failed!",10000);
