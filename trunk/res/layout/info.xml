@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+>
+  <ScrollView
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+  >
+    <HorizontalScrollView
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+    >
+      <TextView
+        android:id ="@+id/vwInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:typeface="monospace"
+        android:textSize="10sp"
+      />
+    </HorizontalScrollView>
+  </ScrollView>
+</LinearLayout>
+

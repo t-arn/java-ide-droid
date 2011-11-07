@@ -5,22 +5,24 @@
 // mapped to the bsh variable G
 //	
 
-stSourcePath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
-stSourcePath = stSourcePath.replace('\\','/');
+stScriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+stScriptPath = stScriptPath.replace('\\','/');
 
-stJavafile = "src/com/t_arn/JavaIDEdroid/MainActivity.java";
+source (stScriptPath+"0_setname.bsh");
+outdir=stScriptPath+"bin/test/"+name;
+stJavafile = "src/com/t_arn/"+name+"/MainActivity.java";
 
-System.out.println("Compiling "+stJavafile+" ...");
+System.out.println("***** Compiling "+stJavafile+" ...");
 G.bshTask.fnPublishProgress("Compiling...");
 
 args = "-verbose -deprecation -extdirs \"\" -1.5";
-args += " -bootclasspath "+G.oSet.stAndroidJarPath+":"+stSourcePath+"libs/ecj.jar:"+stSourcePath+"libs/dx_ta.jar:"+stSourcePath+"libs/bsh.jar:"+stSourcePath+"libs/sdklib_ta.jar:"+stSourcePath+"libs/androidprefs.jar:"+stSourcePath+"libs/zipsigner-lib_all.jar";
-args += " -classpath "+stSourcePath+"src";
-args +=":"+stSourcePath+"gen";
-args += " -d "+stSourcePath+"out/test/JavaIDEdroid";
-args += " "+stSourcePath+stJavafile;
+args += " -bootclasspath "+G.oSet.stAndroidJarPath+":"+stScriptPath+"libs/ecj.jar:"+stScriptPath+"libs/dx_ta.jar:"+stScriptPath+"libs/bsh.jar:"+stScriptPath+"libs/sdklib_ta.jar:"+stScriptPath+"libs/androidprefs.jar:"+stScriptPath+"libs/zipsigner-lib_all.jar";
+args += " -classpath "+stScriptPath+"src";
+args +=":"+stScriptPath+"gen";
+args += " -d "+outdir;
+args += " "+stScriptPath+stJavafile;
+G.iScriptResultCode = G.ide.fnCompile(args);
 
-iResult = G.ide.fnCompile(args);
-if (iResult>=2) G.bshTask.fnToast("Compilation failed!",10000);
-else if (iResult==1) G.bshTask.fnToast("Compilation with warnings",10000);
+if (G.iScriptResultCode>=2) G.bshTask.fnToast("Compilation failed!",10000);
+else if (G.iScriptResultCode==1) G.bshTask.fnToast("Compilation with warnings",10000);
 else G.bshTask.fnToast("Compilation succeeded.",10000);

@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.webkit.WebView;
 
 //##################################################################
-public class HelpActivity extends Activity 
+public class UpgradeActivity extends Activity 
 //##################################################################
 {
 
@@ -20,9 +20,9 @@ public class HelpActivity extends Activity
 //===================================================================
   {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.help);
+    setContentView(R.layout.upgrade);
 
-    final WebView view = (WebView) findViewById(R.id.vwHelp);
+    final WebView view = (WebView) findViewById(R.id.vwUpgrade);
     view.getSettings().setJavaScriptEnabled(true);
     initWebKit(view, this);
     view.bringToFront();
@@ -35,14 +35,6 @@ public class HelpActivity extends Activity
     super.onConfigurationChanged(config);
   }
 //===================================================================
-  @Override
-  protected void onResume()
-//===================================================================
-  {
-    super.onResume();
-    G.fnSetCurrentActivity(this);
-  } // onResume
-//===================================================================
   private void initWebKit(final WebView view, final Context context) 
 //===================================================================
   {
@@ -50,7 +42,7 @@ public class HelpActivity extends Activity
     final String encoding = "UTF-8";
     String htmldata;
     
-    final int pageId = R.raw.help;    
+    final int pageId= R.raw.upgrade;    
     final InputStream is = context.getResources().openRawResource(pageId);
 
     try 

@@ -18,7 +18,7 @@ public class SettingActivity extends PreferenceActivity
 {
   public String stFontSize;
   public String stFontType;
-  public String stDefaultStartDir;
+  public String stDevRootDir;
   public boolean bLogOutput;
   public String stAndroidJarPath;
   public String stBshVar1;
@@ -44,6 +44,14 @@ public class SettingActivity extends PreferenceActivity
   {
     super.onConfigurationChanged(config);
   }
+//===================================================================
+  @Override
+  protected void onResume()
+//===================================================================
+  {
+    super.onResume();
+    G.fnSetCurrentActivity(this);
+  } // onResume
 //===================================================================
 /** Load, parse and apply the settings
  *
@@ -71,7 +79,8 @@ public class SettingActivity extends PreferenceActivity
       catch (NumberFormatException e1) { G.fnLog("e", "NumberFormatException on parsing 'font_size'"); }
       G.fnLog("d","Setting font size to "+fFontSize);
       G.fnLog("d","Setting font type to "+stFontType);
-      stDefaultStartDir=prefs.getString("start_dir",stDefaultStartDir);
+      stDevRootDir=prefs.getString("devroot_dir",stDevRootDir);
+      if (!stDevRootDir.endsWith("/")) stDevRootDir+="/";
       bLogOutput=prefs.getBoolean("log_output",false);
       stAndroidJarPath=prefs.getString("android_jar_path",stAndroidJarPath);
       stBshVar1=prefs.getString("bsh_var1",stBshVar1);
@@ -92,17 +101,17 @@ public class SettingActivity extends PreferenceActivity
     }
 
     // apply the settings
-    G.tabBeanshell_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
-    G.tabTools_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
+    G.main.tabBeanshell_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
+    G.main.tabTools_tvOutput.setTextSize(TypedValue.COMPLEX_UNIT_SP, fFontSize);
     if (stFontType.equals("Monospace") )
     {
-      G.tabBeanshell_tvOutput.setTypeface(Typeface.MONOSPACE);
-      G.tabTools_tvOutput.setTypeface(Typeface.MONOSPACE);
+      G.main.tabBeanshell_tvOutput.setTypeface(Typeface.MONOSPACE);
+      G.main.tabTools_tvOutput.setTypeface(Typeface.MONOSPACE);
     }
     else
     {
-      G.tabBeanshell_tvOutput.setTypeface(Typeface.DEFAULT);
-      G.tabTools_tvOutput.setTypeface(Typeface.DEFAULT);
+      G.main.tabBeanshell_tvOutput.setTypeface(Typeface.DEFAULT);
+      G.main.tabTools_tvOutput.setTypeface(Typeface.DEFAULT);
     }
   } // fnApplySettings
 //===================================================================
@@ -113,7 +122,7 @@ public class SettingActivity extends PreferenceActivity
 {
   stFontSize="12";     // this must be a string representation of a float
   stFontType="Normal"; // set to "Normal" or "Monospace"
-  stDefaultStartDir="/sdcard/";
+  stDevRootDir="/sdcard/";
   bLogOutput=false;
   stAndroidJarPath="";
   stBshVar1="";

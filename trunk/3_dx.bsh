@@ -1,0 +1,22 @@
+
+// BeanShell compile script for JavaIDEdroid
+//
+// The global class G of JavaIDEdroid is
+// mapped to the bsh variable G
+//
+
+stScriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+stScriptPath=stScriptPath.replace('\\','/'); 
+
+source (stScriptPath+"0_setname.bsh");
+outdir=stScriptPath+"bin/test/"+name;
+    
+System.out.println("***** Calling dx ...");
+G.bshTask.fnPublishProgress("Running dx...");
+
+args =  "--dex --output="+outdir+"/classes.dex";
+args += " "+outdir;
+args += " "+stScriptPath+"libs";
+G.iScriptResultCode = G.ide.fnDx(args);
+
+if (G.iScriptResultCode>0) G.bshTask.fnToast("dx failed!",10000);

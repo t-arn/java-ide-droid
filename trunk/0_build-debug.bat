@@ -20,7 +20,7 @@ set KEY=sw@t-arn.com
 rem set project name and directory and output directory
 set PNAME=JavaIDEdroid
 set PDIR=%~dp0
-set OUTDIR=%PDIR%out\test\%PNAME%
+set OUTDIR=%PDIR%bin\test\%PNAME%
 
 rem change to project directory
 cd /d %PDIR%

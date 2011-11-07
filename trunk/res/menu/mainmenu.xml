@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android"
 >
   <item
-    android:id="@+id/opt_options"
-    android:title="@string/mnu_options"
+    android:id="@+id/opt_settings"
+    android:title="@string/mnu_settings"
     android:icon="@android:drawable/ic_menu_preferences"
   />
   <item
@@ -13,9 +13,14 @@
     android:icon="@drawable/ic_menu_login"
   />
   <item
-    android:id="@+id/opt_donate"
-    android:title="@string/mnu_donate"
+    android:id="@+id/opt_upgrade"
+    android:title="@string/mnu_upgrade"
     android:icon="@drawable/ic_menu_money"
+  />
+  <item
+    android:id="@+id/opt_infos"
+    android:title="@string/mnu_infos"
+    android:icon="@android:drawable/ic_menu_info_details"
   />
   <item
     android:id="@+id/opt_help"

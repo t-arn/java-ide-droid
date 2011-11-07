@@ -14,14 +14,14 @@ import java.io.StringWriter;
  * @since 01.06.2011
  * @author Tom Arn
  * @author www.t-arn.com
- * @version 1.0
+ * @version 1.0.0
  */
 public class StringWriterOutputStream 
   extends OutputStream 
 //##################################################################
 {
   private StringWriter stringWriter;
-  public static final String stVersion = "1.0";
+  public static final String stVersion = "1.0.0";
  
 //===================================================================
 public StringWriterOutputStream() 
