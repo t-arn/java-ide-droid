@@ -1,6 +1,11 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<H2> version 1.4.1 (23.12.2011) </H2>
+<UL>
+<LI> Modified: Updated zipsigner-lib to 1.11 to make it work again on Android 2.3.6 </LI>
+</UL>
+
 <H2> version 1.4.0 (04.11.2011) </H2>
 <UL>
 <LI> New: Info Activity shows information about the installed package</LI>
