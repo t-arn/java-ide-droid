@@ -1,5 +1,10 @@
 #labels Featured
 <H1>JavaIDEdroidPRO history</H1>
 
+<H2> version 1.4.1 (23.12.2011) </H2>
+<UL>
+<LI> Modified: Updated zipsigner-lib to 1.11 to make it work again on Android 2.3.6 </LI>
+</UL>
+
 <H2> version 1.4.0 (04.11.2011) </H2>
 <P> First PRO release, based on JavaIDEdroid 1.4.0</P>
