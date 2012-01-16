@@ -7,5 +7,6 @@ The PRO version supports all features of the free version plus following additio
  # *Project templates:* When creating a new project definition files, you can tell the app to create a skeleton project for you, based on one of your templates.
  # *Recent project list:* Allows to quickly re-open recent projects
  # *Project filemanager:* Allows you to browse all your project files and open, edit, rename, delete and run (only .bsh files) them. There is a 'Directory list' button that lets you quickly change to another subdirectory of the project. You can also create, rename and delete directories here.
+ # *Project menu:* Allows you compile/build the project and install the APK directly from a menu option
 
 For more details see the online version of the built-in help file: http://java-ide-droid.googlecode.com/files/help-en_1-5-0.html
