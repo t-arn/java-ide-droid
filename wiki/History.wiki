@@ -5,13 +5,13 @@
 <UL>
 <LI>New (PRO): dx now supports merging of dex files. This will help with the out-of-memory exceptions when dexing large jar libraries because too large libraries can now be dexed on the PC and then merged on the Android device.</LI>
 <LI>Modified (PRO): The default scripts have been modified to support dex merging</LI>
-<LI>New (PRO): DexMerger tool and G.ide.fnDexMerger method</LI>
+<LI>New (PRO): !DexMerger tool and G.ide.fnDexMerger method</LI>
 <LI>New: History activity</LI>
 <LI>New: After the first installation of the app the help activity is shown, after updates, the history activity is shown</LI>
 <LI>New: App can now be installed on sdcard </LI>
-<LI>New: Screen (device) stays on during execution of BeanShell and Tool tasks</LI>
+<LI>New: Screen (device) stays on during execution of !BeanShell and Tool tasks</LI>
 <LI>Bugfix: Default settings were not shown when Setting activity was displayed for the first time. Fixed now.</LI>
-<LI>Bugfix: Background tasks can now be properly cancelled by checking G.bshTask.isCancelled() in the BeanShell scripts</LI>
+<LI>Bugfix: Background tasks can now be properly cancelled by checking G.bshTask.isCancelled() in the !BeanShell scripts</LI>
 </UL>
 
 <H2> version 1.5.0 (12.01.2012) </H2>
@@ -22,18 +22,18 @@
 <LI> New (PRO): Create dir in project file manager </LI>
 <LI> New (PRO): Delete dir in project file manager </LI>
 <LI> New (PRO): Rename file/dir in project file manager </LI>
-<LI> New: Context menu in BeanShell and Tools tab (Top, Bottom, Copy to clipboard) </LI>
+<LI> New: Context menu in !BeanShell and Tools tab (Top, Bottom, Copy to clipboard) </LI>
 <LI> New: Option for auto-scroll-to-bottom after script execution </LI>
 <LI> New: Option for fullscreen mode </LI>
 <LI> Modified: Made several layout changes to gain space on screen (tab height, fullscreen, run script button) </LI>
 <LI> Modified: On errors, the complete stack trace is now logged to catlog. </LI>
-<LI> Modified: Refactoring of SettingActivity </LI>
+<LI> Modified: Refactoring of !SettingActivity </LI>
 <LI> Modified (PRO): Default scripts are now in /sdcard/.JavaIDEdroid/xx/ where xx is the version code (see Infos activity)</LI>
-<LI> Modified: FileBrowser now only accepts matching picks</LI>
-<LI> Modified: Removed deprecated message from ApkBuilder</LI>
+<LI> Modified: !FileBrowser now only accepts matching picks</LI>
+<LI> Modified: Removed deprecated message from !ApkBuilder</LI>
 <LI> Bugfix: Fixed potential crash in background processes </LI>
-<LI> Bugfix: Added fillViewport in InfoActivity </LI>
-<LI> Bugfix: Added catch for ActivityNotFoundException </LI>
+<LI> Bugfix: Added fillViewport in !InfoActivity </LI>
+<LI> Bugfix: Added catch for !ActivityNotFoundException </LI>
 <LI> Bugfix: Fixed a display bug in the recent file list</LI>
 </UL>
 
@@ -48,16 +48,16 @@
 <LI> New: added info activity that shows package information</LI>
 <LI> New (PRO): added project definition files to store project specific information </LI>
 <LI> New (PRO): added template project zip that is used to create a new skeleton project.</LI>
-<LI> New (PRO): added BeanShell access to project infos through G.oPrj class instance</LI>
+<LI> New (PRO): added !BeanShell access to project infos through G.oPrj class instance</LI>
 <LI> New (PRO): added recent project file list to quickly re-open project definition files</LI>
-<LI> New (PRO): added filemanager to browse, view/open, edit and delete project files and run BeanShell scripts.</LI>
+<LI> New (PRO): added filemanager to browse, view/open, edit and delete project files and run !BeanShell scripts.</LI>
 <LI> New (PRO): added customizable, quick change directory to filemanager</LI>
 <LI> New (PRO): added default compile and build scripts. They access the information in the project file and therefore work for almost every project.</LI>
 <LI> New (PRO): added project menu items to start the default scripts. If the default scripts are copied to the project root dir (and then possibly modified), the menu items will start them from there.</LI>
 <LI> Modified: Replaced OI Filemanager with internal file browser </LI>
 <LI> Modified: Replaced G.oSet.stDefaultStartDir with G.oSet.stDevRootDir</LI>
 <LI> Modified: Common help file for free and PRO version</LI>
-<LI> Modified: Replaced some Toast messages with AlertDialog dialogs</LI>
+<LI> Modified: Replaced some Toast messages with !AlertDialog dialogs</LI>
 <LI> Modified: Changed output directory in scripts from out/ to bin/</LI>
 <LI> Modified (STD): Replaced Donate Activity with Upgrade Activity</LI>
 <LI> Bugfix: Added check for missing working directory (missing sdcard)</LI>
@@ -73,7 +73,7 @@
 <LI> New: intent filter for android.intent.action.VIEW added. Use e.g. ASTRO filemanager to define MIME type text/x-beanshell and associate it with the extension .bsh. Now, clicking on a .bsh file starts JavaIDEdroid and passes the script path.</LI>
 <LI> New: G.iScriptResultCode variable with which the script can report back its result code.</LI>
 <LI> New: Better integration with other Android apps: !ScriptAutoRun, !ScriptAutoExit, !WantResultText extra values for intent filter android.intent.action.SEND; !ScriptResultCode, !ScriptResultText extra values in result intent</LI>
-<LI> New: added !DonateActivity with link to [https://market.android.com/details?id=com.t_arn.JavaIDEdroidDonate JavaIDEdroidDonate] for those who want to make a donation</LI>
+<LI> New: added !DonateActivity with link to [https://market.android.com/details?id=com.t_arn.JavaIDEdroidDonate !JavaIDEdroidDonate] for those who want to make a donation</LI>
 </UL>
 
 <H2> version 1.1.1 (31.08.2011) </H2>
