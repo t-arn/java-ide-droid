@@ -8,6 +8,6 @@ The PRO version supports all features of the free version plus following additio
  # *Recent project list:* Allows to quickly re-open recent projects
  # *Project filemanager:* Allows you to browse all your project files and open, edit, rename, delete and run (only .bsh files) them. There is a 'Directory list' button that lets you quickly change to another subdirectory of the project. You can also create, rename and delete directories here.
  # *Project menu:* Allows you compile/build the project and install the APK directly from a menu option
- # *DexMerger:* Allows you to pre-dex large jar libraries on the PC and then only merge the dex files on the Android device. This prevents out-of-memory exceptions during dexing of large libs.
+ # *!DexMerger:* Allows you to pre-dex large jar libraries on the PC and then only merge the dex files on the Android device. This prevents out-of-memory exceptions during dexing of large libs.
 
 For more details see the online version of the built-in help file: http://java-ide-droid.googlecode.com/files/help-en_1-6-0.html
