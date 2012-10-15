@@ -1,5 +1,4 @@
 #summary The logic behind my release numbers
-#labels Featured
 
 = Release number logic =
 
