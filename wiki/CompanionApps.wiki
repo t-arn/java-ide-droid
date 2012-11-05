@@ -24,7 +24,7 @@ I use a bunch of useful 3rd Party APPs along with JavaIDEdroid/PRO. The list bel
     ** Show line numbers
     ** Recent file list
     ** Color picker
-  * DroidEdit PRO
+  * !DroidEdit PRO
     ** Multiple files, switch through pane list
     ** Auto indent
     ** Search and replace
