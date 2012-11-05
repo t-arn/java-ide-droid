@@ -3,7 +3,7 @@
 
   # Get the latest version of JavaIDEdroid from the Android Market and install it
   # Download and install a file manager like ASTRO
-  # Download and install a text editor like Jota
+  # Download and install a text editor like Jota+ or 920editor
   # Download !HelloAndroid and unzip it to a directory of your choice
   # Download the Android SDK, extract the android.jar for your platform and put it on the storage card of your device. You need android.jar for the aapt and compilation tasks. You can also get some android.jar from the download area
   # Start JavaIDEdroid, choose 'Options' in the menu and set the android.jar path to where you copied it, for example /mnt/sdcard/AndroidSDK/android.jar
