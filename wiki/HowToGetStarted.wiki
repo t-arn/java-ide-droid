@@ -16,7 +16,7 @@
   # Run 3_dx.bsh to create the classes.dex file
   # Run 4_apkbuilder.bsh to create the unsigned APK file. Signing with apkbuilder does *not* work, because a lot of proprietary Sun classes are called.
   # Run 5_signjar.bsh to create the final signed APK.
-  # Install the APK with a Package Manager like ASTRO or Linda Manager and test the !HelloAndroid app.
+  # Install the APK and test the !HelloAndroid app.
 
 Alternatively, you can run 0_build.bsh which performs the above tasks all at once. On errors, the 0_build.bsh stops and does not do any following tasks.
 
