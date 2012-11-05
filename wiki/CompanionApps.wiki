@@ -1,0 +1,39 @@
+#summary Recommended APPs to use together with JavaIDEdroid/PRO
+
+= Companion APPs =
+
+Here's a list of useful APPs I use together with JavaIDEdroid/PRO and their best features:
+
+*Editors:*
+  * Jota+
+    ** Multiple files, switch through tabs
+    ** External file systems ( Dropbox, Google Drive, Box, SkyDrive etc )
+    ** Auto indent
+    ** Search and replace
+    ** Customizable toolbar
+    ** Customizable syntax highlighting
+    ** Customizable keyboard shortcuts
+    ** Show line numbers, jump to line
+    ** Recent file list
+  * 920 Editor
+    ** Multiple files, switch through tabs
+    ** Auto indent
+    ** Search and replace
+    ** Syntax highlighting
+    ** Show line numbers
+    ** Recent file list
+    ** Color picker
+*Keyboards:*
+  * !BrightKeyboard
+    ** Fully customizable keyboard layouts!
+    ** Customizable keyboard height for portrait / landscape
+    ** Templates: keyboard replaces keywords with customizable text
+
+*File Managers:*
+  * Total Commander
+    ** Two panes
+    ** Customizable toolbar
+    ** Plugin architecture
+    ** LAN plugin, WebDAV plugin, FTP plugin
+    ** Built-in editor
+    ** ZIP support with password
