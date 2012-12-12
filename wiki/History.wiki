@@ -3,7 +3,7 @@
 
 <h2> version 1.7.1 (28.11.2012) </h2>
 <ul>
-<li>New: VIEW Intent filter for files with extension .jip</li>
+<li>New (PRO): VIEW Intent filter for files with extension .jip</li>
 <li>Modified: Replaced VIEW Intent filter text/x-beanshell with VIEW Intent filter for files with extension .bsh. The MIME type text/x-beanshell is no longer needed and no longer supported.</li>
 <li>Bugfix: Fixed bug in VIEW Intent processing</li>
 <li>Bugfix: SavedInstanceState is now handled properly. The SEND Intent is no longer executed on re-create.</li>
