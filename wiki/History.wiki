@@ -1,6 +1,22 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 1.7.1 (28.11.2012) </h2>
+<ul>
+<li>New: VIEW Intent filter for files with extension .jip</li>
+<li>Modified: Replaced VIEW Intent filter text/x-beanshell with VIEW Intent filter for files with extension .bsh. The MIME type text/x-beanshell is no longer needed and no longer supported.</li>
+<li>Bugfix: Fixed bug in VIEW Intent processing</li>
+<li>Bugfix: SavedInstanceState is now handled properly. The SEND Intent is no longer executed on re-create.</li>
+</ul>
+
+<h2> version 1.7.0 (15.11.2012) </h2>
+<ul>
+<li>New (PRO): Option for automatically re-open the last used project on program start</li>
+<li>Modified: Projects can now be opened without closing the current project first</li>
+<li>Bugfix: In BeanShell scripts you can now also use accented characters (e.g. german umlauts). Scripts must be saved with UTF-8 encoding.</li>
+<li>Bugfix: When user aborts a task the script output was not shown. Fixed now.</li>
+</ul>
+
 <H2> version 1.6.0 (11.10.2012) </H2>
 <UL>
 <LI>New (PRO): dx now supports merging of dex files. This will help with the out-of-memory exceptions when dexing large jar libraries because too large libraries can now be dexed on the PC and then merged on the Android device.</LI>
