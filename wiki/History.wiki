@@ -1,6 +1,16 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 2.0.0 (20.02.2013) </h2>
+<ul>
+<li>New: Starting with this version the free and the PRO version have been merged. The PRO features are available if you have installed the old PRO version (1.x) or the new PRO key 2.x</li>
+<li>New: Very small projects are now also supported in the free version. You can also use the project templates to create a new project.</li>
+<li>New: Time log can be activated for a project, so you can see how much time you spent developing the project. The current elapsed time is shown in the project tab and the time log is written to the storage card when the project is closed.</li>
+<li>New (PRO): APKs can now be signed with a certificate from your truststore (JKS or BKS)</li>
+<li>New (PRO): dx now supports the 'incremental' option</li>
+<li>Bugfix: The field 'Project APK' was not saved persistently. Now fixed.</li>
+</ul>
+
 <h2> version 1.7.1 (28.11.2012) </h2>
 <ul>
 <li>New (PRO): VIEW Intent filter for files with extension .jip</li>
