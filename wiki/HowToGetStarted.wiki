@@ -1,4 +1,5 @@
 #summary This is how you get started with JavaIDEdroid 2.0.0
+#labels Featured
 
   # Get the latest version of JavaIDEdroid from the Android Market and install it
   # Download and install a text editor like Jota+ or 920editor
