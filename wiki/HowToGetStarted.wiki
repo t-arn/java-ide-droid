@@ -1,0 +1,22 @@
+#summary This is how you get started with JavaIDEdroid 2.0.0
+
+  # Get the latest version of JavaIDEdroid from the Android Market and install it
+  # Download and install a text editor like Jota+ or 920editor
+  # Download the Android SDK, extract the android.jar for your platform and put it on the storage card of your device. You need android.jar for the aapt and compilation tasks. You can also get some android.jar from the download area of this site
+  # Start JavaIDEdroid, choose 'Settings' in the menu and set the develop root directory
+  # In the 'Settings' set the android.jar path to where you copied it, for example /sdcard/AndroidSDK/android.jar
+  # Read the built-in help, even if you never read manuals :-)
+  # If you are new to Android development, you might want to download 'Android Development Basics', a free App tutorial about Android development
+
+<BR/>Create your first Android app:
+  # Choose 'Create new project' in the Project Menu
+  # Enter the name of the project
+  # Enter or choose the path of the project root directory. If you use the browse button, you will have to enter the last directory of the path manually.
+  # Click on 'Create dir structure from template'
+  # Choose your main Activity Java file.
+  # Click on 'Save'
+  # Choose 'Compile and build project APK' from the Project Menu
+  # Change to the directory where your .apk file was created
+  # Long-click the .apk file, choose 'View/open file', install it with the offered package manager and run it.
+
+<b>Make sure you save your files in ANSI (iso-8859-1 / latin-1 / win1252) format!</b> For XML files I recommend to also use iso-8859-1 encoding and specify this at the beginning of the files.
