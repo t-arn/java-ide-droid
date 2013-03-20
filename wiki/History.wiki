@@ -1,6 +1,12 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 2.0.2 (20.03.2013) </h2>
+<ul>
+<li>Bugfix: On some devices the title of the tabs was not or not completely shown. Now fixed.</li>
+<li>Bugfix: In the help the description of the dex library directory was missing. Now fixed.</li>
+</ul>
+
 <h2> version 2.0.1 (14.03.2013) </h2>
 <ul>
 <li>New: Starting with this version the free and the PRO version have been merged. The PRO features are available if you have installed the old PRO version (1.x) or the new PRO key 2.x</li>
