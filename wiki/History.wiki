@@ -1,6 +1,21 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+version 2.1.0 (05.06.2013) 
+*CAUTION*: The default scripts have been heavily modified. Please check your own scripts! Before using the new scripts you should clear the directory bin/test/ of your projects.
+  * New: JavaRunner allows to run any binary Java commandline application (.jar file) without recompilation! 
+  * Modified: All functionality which can be accessed from BeanShell scripts are now in the class JID. The default scripts have been adjusted accordingly. 
+  * Modified: The output in the BeanShell and Tools tab is now already visible during execution. The current state is shown at the top. 
+  * Modified: JID.fnPublishProgress() no longer updates the script state. It now writes output to the console. The state is now updated with JID.fnPublishStatus() 
+  * New: Data can now be read from stdin. To enter data there is an entry in the context menu of the console. 
+  * New: Permission INTERNET added, so that Java console applications can access the Internet. JavaIDEdroid itself does not need the Internet access. 
+  * Bugfix: Workaround for Android bug, which causes AsyncTask.onCancelled() to be called before doInBackground() has ended. The task status can now be checked with JID.fnIsCancelled() 
+  * Modified: When the user exits the APP the complete Android process is killed at the end, so that the APP can recover from out-of-memory conditions. 
+  * Modified: The directory exclude list of the project is now relative to the project root dir. So now you can move the project without the need to change the exclude list. 
+  * New: Shortcut Intent to place a shortcut on Android Home Screen. 
+  * New: The logcat information can now be stored to a file, because on Android 4.1 (Jelly Bean) the logcat is protected. 
+  * Bugfix: Fixed a bug in Recent Project List 
+
 <h2> version 2.0.2 (20.03.2013) </h2>
 <ul>
 <li>Bugfix: On some devices the title of the tabs was not or not completely shown. Now fixed.</li>
