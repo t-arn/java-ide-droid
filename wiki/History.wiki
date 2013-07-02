@@ -8,7 +8,7 @@
 <li>Bugfix: Occasionally the PRO license check was unsuccessful with NO_REASON_AVAILABLE. Hopefully fixed now.</li>
 </ul>
 
-h2> version 2.1.0 (05.06.2013) </h2>
+<h2> version 2.1.0 (05.06.2013) </h2>
 <p><font color="red">CAUTION: The default scripts have been heavily modified. Please check your own scripts! Before using the new scripts you should clear the directory bin/test/ of your projects.</font></p>
 
 <ul>
