@@ -4,7 +4,7 @@
 <h2> version 2.1.1 (20.06.2013) </h2>
 <ul>
 <li>New: Added support for Samsung's Multi Window functionality</li>
-<li>Bugfix: If the free APP was started by an intent then ScriptAutoRun did not work. Fixed now.</li>
+<li>Bugfix: If the free APP was started by an intent then !ScriptAutoRun did not work. Fixed now.</li>
 <li>Bugfix: Occasionally the PRO license check was unsuccessful with NO_REASON_AVAILABLE. Hopefully fixed now.</li>
 </ul>
 
