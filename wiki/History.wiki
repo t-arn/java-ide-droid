@@ -1,6 +1,13 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 2.1.2 (05.08.2013) </h2>
+<ul>
+<li>Bugfix: Fixed a problem in !JavaRunner where dynamically loaded classes were not found</li>
+<li>Bugfix: Variables JID.stBshVar3, JID.stBshVar4 and JID.stBshVar5 were mapped incorrectly. Fixed now.</li>
+<li>Bugfix: Corrected a fault in the help</li>
+</ul>
+
 <h2> version 2.1.1 (20.06.2013) </h2>
 <ul>
 <li>New: Added support for Samsung's Multi Window functionality</li>
