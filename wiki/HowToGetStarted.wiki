@@ -21,3 +21,7 @@
   # Long-click the .apk file, choose 'View/open file', install it with the offered package manager and run it.
 
 <b>Make sure you save your files in ANSI (iso-8859-1 / latin-1 / win1252) format!</b> For XML files I recommend to also use iso-8859-1 encoding and specify this at the beginning of the files.
+
+<BR/>If you need more help to get started, get yourself a tutorial app, for example:
+  * https://play.google.com/store/apps/details?id=com.widevision.android
+  * https://play.google.com/store/apps/details?id=com.aviyehuda.androidcard2
