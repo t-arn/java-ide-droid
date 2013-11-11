@@ -13,7 +13,7 @@
   # Enter the name of the project
   # Enter or choose the path of the project root directory. If you use the browse button, you will have to enter the last directory of the path manually.
   # Click on 'Create dir structure from template'
-  # Choose the !HelloWorld.zip template
+  # Choose the !HelloWorld.zip template and tap on 'OK'
   # Choose your main Activity Java file.
   # Click on 'Save'
   # Choose 'Compile and build project APK' from the Project Menu
