@@ -7,13 +7,13 @@
   # Start JavaIDEdroid, choose 'Settings' in the menu and set the develop root directory
   # In the 'Settings' set the android.jar path to where you copied it, for example /sdcard/AndroidSDK/android.jar
   # Read the built-in help, even if you never read manuals :-)
-  # If you are new to Android development, you might want to download 'Android Development Basics', a free App tutorial about Android development
 
 <BR/>Create your first Android app:
   # Choose 'Create new project' in the Project Menu
   # Enter the name of the project
   # Enter or choose the path of the project root directory. If you use the browse button, you will have to enter the last directory of the path manually.
   # Click on 'Create dir structure from template'
+  # Choose the HelloWorld.zip template
   # Choose your main Activity Java file.
   # Click on 'Save'
   # Choose 'Compile and build project APK' from the Project Menu
