@@ -9,4 +9,4 @@ The PRO key adds following additional features:
  # APK signing with user certificate
  # Unlimited !JavaRunner (the free version only supports very small .jar files and only 1 module at a time)
 
-For more details see the online version of the built-in help file: http://www.tanapro.ch/products/JavaIDEdroid/history-en.html
+For more details see the online version of the built-in help file: http://www.tanapro.ch/products/JavaIDEdroid/help-en.html
