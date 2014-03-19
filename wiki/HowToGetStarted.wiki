@@ -1,4 +1,4 @@
-#summary This is how you get started with JavaIDEdroid 2.0.0
+#summary This is how you get started with JavaIDEdroid 2.x
 #labels Featured
 
   # Get the latest version of JavaIDEdroid from the Android Market and install it
