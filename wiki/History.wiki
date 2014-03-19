@@ -5,10 +5,10 @@
 <ul>
 <li>Modified: aapt has been updated to the version included in Android 4.4.2</li>
 <li>New: aapt versions for x86 and mips devices</li>
-<li>New (PRO): JavaRunner now supports loading of several modules. This allows running Ant with custom Ant Tasks.</li>
+<li>New (PRO): !JavaRunner now supports loading of several modules. This allows running Ant with custom Ant Tasks.</li>
 <li>New: Now includes android-api8.jar and a (very) simple text editor, so you can use JavaIDEdroid right out of they box without installing further things.</li>
 <li>New: New files can be created based on file templates</li>
-<li>New: LogCat Activity</li>
+<li>New: !LogCat Activity</li>
 <li>Modified: Now uses the Android 4.x look and feel</li>
 <li>Some minor bugs have been fixed.</li>
 </ul>
