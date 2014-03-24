@@ -1,13 +1,6 @@
 #summary How to use Ant on Android
 
-= Introduction =
-
-This is how to use Ant on Android (needs JavaIDEdroid PRO)
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
+This is how to use Ant on Android (needs JavaIDEdroid PRO):
+  # Get JavaIDEdroid v2.5.0 or later from Google Play
+  # Get ant_1-9-1_openjdk6-javac.jar.dex.zip from the external Download area and copy it to the storage card of your Android device
   * Automatic links to other wiki pages
