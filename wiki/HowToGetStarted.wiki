@@ -19,7 +19,7 @@ Create your first Android app:
 
 <b>Make sure you save your files in ANSI (iso-8859-1 / latin-1 / win1252) format!</b> For XML files I recommend to also use iso-8859-1 encoding and specify this at the beginning of the files.
 
-The built-in editor is a very, very simple editor only. Also, the android.jar that comes together with JavaIDEdroid supports only API level 8. So, you might want to download some more stuff from the Internet:
+<BR/>The built-in editor is a very, very simple editor only. Also, the android.jar that comes together with JavaIDEdroid supports only API level 8. So, you might want to download some more stuff from the Internet:
  # Download and install a text editor like Jota+ or !DroidEdit
  # Download the Android SDK, extract the android.jar for all platforms you need and put them on the storage card of your device. You can also get some android.jar from the external download area of this site
  # In the 'Settings' set the default android.jar path to where you copied it, for example /sdcard/AndroidSDK/android-17.jar
