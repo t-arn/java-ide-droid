@@ -1,5 +1,4 @@
 #summary This explains how to build the JavaIDEdroid APK
-#labels Featured
 
   # Adjust ndk-build-aaptcomplete.sh to call the ndk-build script of the Android NDK
   # Execute ndk-build-aaptcomplete.sh<br>This step creates the shared library libaaptcomplete.so in libs/armeabi
