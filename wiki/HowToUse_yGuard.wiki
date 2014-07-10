@@ -8,7 +8,7 @@ First, you need to create the yGuard module which includes a bugfix for Android'
  # Download yguard-2.5.1.zip from http://www.yworks.com/
  # Extract yguard.jar from yguard-2.5.1.zip/yguard-2.5.1/lib/ and save it as /sdcard/.JavaIDEdroid/yguard_2-5-1.jar
  # Open the !HelloJava project and run the script 'create_yguard_module.bsh' in the project root
- # Move the created module yguard_2-5-1_androidFix.jar.dex.zip to where you want it, e.g. the JavaIDEdroid_modules/ subdirectory of your development root
+ # Move the created module yguard_2-5-1_androidFix.jar.dex.zip to where you want it, e.g. the JavaIDEdroid_modules/ subdirectory of your development root (which is where I store my modules)
 
 To use yGuard, you need to get Ant running on your Android device, since yGuard is implemented as Ant Custom Task:
  # Get the Ant module: HowToUseAnt
