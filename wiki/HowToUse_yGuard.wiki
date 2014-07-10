@@ -12,5 +12,5 @@ First, you need to create the yGuard module which includes a bugfix for Android'
 
 To use yGuard, you need to get Ant running on your Android device, since yGuard is implemented as Ant Custom Task:
  # Get the Ant module: HowToUseAnt
- # Open the !HelloJava project and edit the build.bsh: Set bUseYguard=true at the beginning of the script. Adjust the paths in the script to fit your environment.
+ # Open the !HelloJava project and edit the build.bsh: Set `bUseYguard=true` at the beginning of the script. Adjust the paths in the script to fit your environment.
  # Run the build.bsh script. This will create the !HelloJava.jar and its obfuscated version !HelloJava_obf.jar in the project root directory
