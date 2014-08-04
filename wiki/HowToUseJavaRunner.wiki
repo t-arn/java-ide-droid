@@ -3,7 +3,7 @@
 
 This is how to run Java console applications on Android. To fully use !JavaRunner, you need the PRO version of JavaIDEdroid. But the demo '!HelloJava' also works with the free version.
 
- # Download !HelloJava_1-2-0.zip from the external Download area and unzip it to a subdirectory of your development root on your Android device
+ # Download !HelloJava_2-0-0.zip from the external Download area and unzip it to a subdirectory of your development root on your Android device
  # Go to the Tools tab of JavaIDEdroid, choose '!JavaRunner', enter the path to !HelloJava.jar and press OK
  # JavaIDEdroid now creates !HelloJava.jar.dex.zip and runs it. To enter data, long press on the prompt message and choose 'Input to stdin'
 
