@@ -3,6 +3,8 @@
 
  # Get the latest version of JavaIDEdroid from the Google Play and install it
  # Start JavaIDEdroid, choose 'Settings' in the menu and set the develop root directory
+ # Define "Module salt" in the Settings to make the module hashes unique for you
+ # Define "Script salt" in the Settings if you want to activate the 'Protected Script Mode'
  # Read the built-in help, even if you never read manuals :-)
 
 Create your first Android app:
