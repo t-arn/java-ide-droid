@@ -1,6 +1,29 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 2.6.0 (20.06.2014) </h2>
+<ul>
+<li>New: 'Module salt' option in Settings enables the user to create user-specific hash values when creating !JavaRunner modules. This makes sure nobody else (and this includes other JavaIDEdroid users) can modify these modules undetected. <font color="orange">INFO: Due to the new algorithm, module hashes that were created with older versions of JavaIDEdroid will not be accepted anymore and must be updated. See the help section 'Modules and !JavaRunner' to learn how to do this.</font></li>
+<li>New: 'Script salt' option in Settings activates the Protected Script Mode</li>
+<li>New: Protected Script Mode: In this mode JavaIDEdroid executes only scripts which are approved by the user. Approval is done by saving the !BeanShell script in the internal editor. This adds a hash value to the script which will then be checked every time the script is started.</li>
+<li>New: Added option menu items for editing the default scripts with the internal editor</li>
+<li>New: Added button in !BeanShell tab to allow editing the chosen !BeanShell script with the internal editor</li>
+<li>New: Updated ECJ to latest version</li>
+<li>New: ECJ can now be used in Ant javac tasks. See the wiki page on the project website for more information.</li>
+<li>New: Added script commands `fnGetVersionCode` and `fnGetVersionName`</li>
+<li>New: The added script command `fnAddToLocallyLoadedClasses` allows !JavaRunner to use custom versions of classes from the Java classpath. This allows the user to use newer versions of these classes than those installed on the device.</li>
+<li>New: !JavaRunner now supports optional dx parameters</li>
+<li>New: In free version small !JavaRunner modules are now supported. They don't need to be created on every run anymore.</li>
+<li>New: Modules and jarFiles can now be run from the project filemanager</li>
+<li>New (PRO): The free Java obfuscator yGuard can now be used as custom Ant task. See the wiki page on the project website for more information.</li>
+<li>New (PRO): `JID.iMaxDexSize` option in Settings to define maximum dex size used when dexing incrementally.</li>
+<li>New (PRO): Script command `JID.fnDexJarArchiveIncrementally` will dex jarFiles incrementally in chunks of `JID.iMaxDexSize` KB to prevent out-of-memory errors.</li>
+<li>New (PRO): !JavaRunner now uses incremental dexing.</li>
+<li>New (PRO): !JavaRunner task can be stopped during the incremental modul creation</li>
+<li>Bug fixed: The process status !TextView disappeared when device was rotated while task was running</li>
+<li>Bug fixed: Some minor bug fixes</li>
+</ul>
+
 <h2> version 2.5.0 (01.03.2014) </h2>
 <ul>
 <li>Modified: aapt has been updated to the version included in Android 4.4.2</li>
