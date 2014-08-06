@@ -23,7 +23,7 @@ Create your first Android app:
 
 <BR/>The built-in editor is a very, very simple editor only. Also, the android.jar that comes together with JavaIDEdroid supports only API level 8. So, you might want to download some more stuff from the Internet:
  # Download and install a text editor like Jota+ or !DroidEdit
- # Download the Android SDK, extract the android.jar for all platforms you need and put them on the storage card of your device. You can also get some android.jar from the external download area of this site
+ # Download the Android SDK, extract the android.jar for all platforms you need and put them on the storage card of your device. You can also get some android.jar from the download area of this site
  # In the 'Settings' set the default android.jar path to where you copied it, for example /sdcard/AndroidSDK/android-17.jar
  # Download the Ant module if you want use Ant. See the HowToUseAnt to learn how to use it on Android
 
