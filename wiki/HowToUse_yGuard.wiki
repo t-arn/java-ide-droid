@@ -3,8 +3,8 @@
 This wiki explains how to use the free Java obfuscator yGuard on Android (needs JavaIDEdroid PRO).
 First, you need to create the yGuard module which includes a bugfix for Android's !JarOutputStream class:
  # Get JavaIDEdroid v2.6.0 or later from Google Play
- # Get !HelloJava_2-0-0.zip from the external Download area and unzip it to a subdirectory of your development root on the storage card of your Android device
- # Get !JarOutputStreamFix_1-0-0.zip from the external Download area and save it as /sdcard/.JavaIDEdroid/!JarOutputStreamFix_1-0-0.zip
+ # Get !HelloJava_2-0-0.zip from the Download area and unzip it to a subdirectory of your development root on the storage card of your Android device
+ # Get !JarOutputStreamFix_1-0-0.zip from the Download area and save it as /sdcard/.JavaIDEdroid/!JarOutputStreamFix_1-0-0.zip
  # Download yguard-2.5.1.zip from http://www.yworks.com/
  # Extract yguard.jar from yguard-2.5.1.zip/yguard-2.5.1/lib/ and save it as /sdcard/.JavaIDEdroid/yguard_2-5-1.jar
  # Open the !HelloJava project and run the script 'create_yguard_module.bsh' in the project root
