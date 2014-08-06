@@ -4,8 +4,8 @@
 This is how to use Ant on Android (needs JavaIDEdroid PRO):
   # Get JavaIDEdroid v2.6.0 or later from Google Play
   # Get ant_1-9-1.jar.dex.zip from the external Download area and copy it to the storage card of your Android device
-  # Get ecj_ant-adapter_3-8-3.jar.dex.zip from the external Download area and copy it to the storage card of your Android device
-  # Get !HelloJava_2-0-0.zip from the external Download area and unzip it to a subdirectory of your development root on the storage card of your Android device
+  # Get ecj_ant-adapter_3-8-3.jar.dex.zip from Download area and copy it to the storage card of your Android device
+  # Get !HelloJava_2-0-0.zip from the Download area and unzip it to a subdirectory of your development root on the storage card of your Android device
 
 In the project root of !HelloJava, you now have following files:
   * build.bsh: This !BeanShell script is used to configure and start Ant on Android
