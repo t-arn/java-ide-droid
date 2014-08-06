@@ -1,4 +1,4 @@
-#summary How to use !JavaRunner to run 3rd party console applications
+#summary How to use JavaRunner to run 3rd party console applications
 #labels Featured
 
 This is how to run Java console applications on Android. To fully use !JavaRunner, you need the PRO version of JavaIDEdroid. But the demo '!HelloJava' also works with the free version.
