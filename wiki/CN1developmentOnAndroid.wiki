@@ -33,6 +33,6 @@ The current solution to Point 1 to 3 is to still use the binary src/theme.res fi
 
 For creating GUIs there is Steve Hannah's [http://sjhannah.com/blog/?p=345 CN1ML Parser] which will use cn1ml files to create GUIs in Java source code. cn1ml files are HTML files with additional CN1ML elements.
 
-For Localization, you can use the standard res/theme.xml along with the utility class com.t_arn.lib.ui.util.taResources which offers the same localization Interface as com.codename1.ui.util.Resources
+For Localization, you can use the standard res/theme.xml along with the utility class com.t_arn.lib.ui.util.taResources which offers the same localization interface as com.codename1.ui.util.Resources
 
 More information on how to set up the CN1 tool chain on Android and how to use it will follow shortly, along with a demo project.
