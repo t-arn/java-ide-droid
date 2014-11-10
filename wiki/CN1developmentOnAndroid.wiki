@@ -29,4 +29,4 @@ With Designer, you create binary resource files which handle following things:
 
 The current solution to Point 1 to 3 is to still use the binary theme.res file which you will still need to create on the PC. But since you don't need these things very often, you can work most of the time without your PC.
 
-For creating GUIs there is Steve Hannah's CN1ML Parser which will use files to create GUIs in Java source code. CN1ML files are HTML files with additional CN1ML elements.
+For creating GUIs there is Steve Hannah's [http://http://sjhannah.com/blog/?p=345 CN1ML Parser] which will use files to create GUIs in Java source code. CN1ML files are HTML files with additional CN1ML elements.
