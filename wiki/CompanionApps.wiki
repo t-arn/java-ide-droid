@@ -1,5 +1,4 @@
 #summary Recommended APPs to use together with JavaIDEdroid
-#labels Featured
 
 = Companion APPs =
 
