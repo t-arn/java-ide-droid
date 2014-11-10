@@ -15,7 +15,7 @@ Why would you want to develop on Android devices?<br>
 For me, Android tablets are better portable development devices than Windows based Notebooks because:
   * I especially like the instant ON / OFF feature on Android. Since apps are designed for this, you'll more likely not loose information due to instant OFF (for example, when I have to run off a train or bus at a stop)
   * The battery runtime is longer on Android
-  * The performance of light Windows tablets is normally not so great
+  * The performance of light Windows tablets is normally not so great, especially when you run applications that are meant to run on high-performance desktops
   * Android tablets are cheaper
   * With an Android tablet you can test your builds right on the real device
 
