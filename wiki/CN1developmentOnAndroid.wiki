@@ -19,9 +19,11 @@ But now, you can also develop CN1 apps on an Android device!
 
 *What is not (yet) working on Android ?*
   * CN1 Designer
-  * creating binary resource files
+  * CN1 Simulator
 
 *How to work around the limitations:*<br>
+For the Simulator, unfortunately, there is no good alternative. Of course, you can use your Android development device to test a build, but for this you need to go through the build servers and then, you can only test the Android platform.
+
 With Designer, you create binary resource files which handle following things:
   # Themes
   # Images
