@@ -11,10 +11,15 @@ But now, you can also develop CN1 apps on an Android device!
 
 = Details =
 *Motivation*<br>
-Why would you want to develop on Android?<br>
-For me, 
+Why would you want to develop on Android devices?<br>
+For me, Android tablets are better portable development devices than Windows based Notebooks because:
+  * I especially like the instant ON / OFF feature on Android. Since apps are designed for this, you'll more likely not loose information due to instant OFF (for example, when I have to run off a train or bus at a stop)
+  * The battery runtime is longer on Android
+  * The performance of light Windows tablets is normally not so great
+  * Android tablets are cheaper
+  * With an Android tablet you can test your builds right on the real device
 
-*What is working on Android ?*
+*So, what is working on Android ?*
   * Editing CN1 source code: Use any text editor or any IDE (e.g. AIDE)
   * Building CN1 projects: !JavaRunner feature of JavaIDEdroid
   * Sending CN1 builds to the CN1 build server: !JavaRunner feature of JavaIDEdroid
