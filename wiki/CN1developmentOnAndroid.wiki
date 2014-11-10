@@ -30,7 +30,7 @@ For me, Android tablets are better portable development devices than Windows bas
   * CN1 Simulator
 
 *How to work around the limitations:*<br>
-For the Simulator, unfortunately, there is no good alternative. Of course, you can use your Android development device to test a build, but for this you need to go through the build servers and then, you can only test the Android platform.
+For the Simulator, unfortunately, there is no good alternative. Of course, you can use your Android development device to test a build. You have the real device to test, but you need to go through the build servers and you can only test the Android platform.
 
 With Designer, you create binary resource files which handle following things:
   # Themes
