@@ -1,0 +1,32 @@
+#summary How to develop CN1 apps on Android devices
+
+= Introduction =
+
+!CodeNameOne (CN1) development normally is done on the PC using Eclipse, !NetBeans or IntelliJ with the !CodeNameOne plugin. 
+
+But now, you can also develop CN1 apps on Android! This wiki explains how this is done.
+
+
+= Details =
+
+*What is working on Android ?*
+  * Editing CN1 source code
+  * Building CN1 projects
+  * Sending CN1 builds to the CN1 build Server
+  * Downloading and testing the builds
+
+*What is not (yet) working on Android ?*
+  * CN1 Designer
+  * creating binary resource files
+
+*How to work around the limitations:*
+With Designer, you create binary resource files which handle following things:
+  # Themes
+  # Images
+  # Data files
+  # GUIs
+  # Localization
+
+The current solution to Point 1 to 3 is to still use the binary theme.res file which you will still need to create on the PC. But since you don't need these things very often, you can work most of the time without your PC.
+
+For creating GUIs there is Steve Hannah's CN1ML Parser which will use files to create GUIs in Java source code. CN1ML files are HTML files with additional CN1ML elements.
