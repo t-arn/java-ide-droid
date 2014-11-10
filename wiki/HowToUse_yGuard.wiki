@@ -1,4 +1,5 @@
 #summary How to use the yGuard on Android
+#labels Featured
 
 This wiki explains how to use the free Java obfuscator yGuard on Android (needs JavaIDEdroid PRO).
 First, you need to create the yGuard module which includes a bugfix for Android's !JarOutputStream class:
