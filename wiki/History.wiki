@@ -4,7 +4,7 @@
 <h2> version 2.7.0 (03.12.2014) </h2>
 <ul>
 <li>New: Updated dx to version 1.10 (Android 5.0.0 r7)</li>
-<li>New (PRO): JavaIDEdroid can now be used to compile and build CodenameOne apps.</li>
+<li>New (PRO): JavaIDEdroid can now be used to compile and build !CodenameOne apps.</li>
 </ul>
  
 <h2> version 2.6.0 (20.06.2014) </h2>
