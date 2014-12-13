@@ -1,6 +1,12 @@
 #labels Featured
 <H1>JavaIDEdroid history</H1>
 
+<h2> version 2.7.0 (03.12.2014) </h2>
+<ul>
+<li>New: Updated dx to version 1.10 (Android 5.0.0 r7)</li>
+<li>New (PRO): JavaIDEdroid can now be used to compile and build CodenameOne apps.</li>
+</ul>
+ 
 <h2> version 2.6.0 (20.06.2014) </h2>
 <ul>
 <li>New: 'Module salt' option in Settings enables the user to create user-specific hash values when creating !JavaRunner modules. This makes sure nobody else (and this includes other JavaIDEdroid users) can modify these modules undetected. <font color="orange">INFO: Due to the new algorithm, module hashes that were created with older versions of JavaIDEdroid will not be accepted anymore and must be updated. See the help section 'Modules and !JavaRunner' to learn how to do this.</font></li>
