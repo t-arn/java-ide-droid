@@ -32,7 +32,7 @@ And, of course, I like to drive JavaIDEdroid to its limits :-)
   * CN1 Designer
 
 == How to work around the limitations: ==
-For the *Simulator*, unfortunately, there is no good alternative. Of course, you can use your Android development device to test a build. You have the real device to test, but you need to go through the build servers and you can only test the Android platform.
+For the *Simulator*, unfortunately, there is no fully equivalent alternative. Of course, you can use your Android development device to create a build (even offline!) and test the build. You have the real device to test, but you can only test the Android platform. There's no way to test the other platforms like iPhone or Windows Phone.
 
 With *Designer*, you create binary resource files which handle following things:
   # Themes
