@@ -25,8 +25,9 @@ And, of course, I like to drive JavaIDEdroid to its limits :-)
   * Editing CN1 source code: Use any IDE (e.g. AIDE or BrightMIDE) or text editor (e.g. Quoda or Jota+)
   * Building CN1 projects: !JavaRunner feature of JavaIDEdroid
   * Sending CN1 builds to the CN1 build server: !JavaRunner feature of JavaIDEdroid
+  * Downloading the builds: Web Browser on your Android device
   * Creating CN1 builds offline on your Android device: !JavaRunner feature of JavaIDEdroid
-  * Downloading and testing the builds: Web Browser, built-in package manager
+  * Testing the builds: built-in Android package manager
 
 == What is not (yet) working on Android ? ==
   * CN1 Simulator
