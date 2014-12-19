@@ -74,27 +74,25 @@ With this, you can create GUIs using Steve Hannah's CN1ML parser.
 
 8. The !BeanShell script build.bsh
 
-The script controls the JID build process and passes data to the Ant build process. You will need to adjust the variables at the beginning of the script to fit your environment. Use the JID *internal* editor for this because all BeanShell scripts are protected with a hash which will be missing/wrong when you use an external editor.
+The script controls the JID build process and passes data to the Ant build process. You will need to adjust the variables at the beginning of the script to fit your environment. Use the JID *internal* editor for this because all !BeanShell scripts are protected with a hash which will be missing/wrong when you use an external editor.
 
-9. The Android offline build template AndroidTemplate_SB20141206.zip
+9. The Android offline build template !AndroidTemplate_SB20141206.zip
    
 This archive contains the CN1 Android port, the !AndroidStub, an !AndroidManifest.xml template and other files needed to create an APK offline on your device.
 
 You will need to copy the build.bsh script to the root directory of every CN1 project. The other tools you only need once - I put them in the 'JavaIDEdroid_modules' subdirectory of my development root directory.
 
-You can get the modules from the JavaIDEdroid download area at<br>
-https://code.google.com/p/java-ide-droid/ --> Downloads
+You can get the modules from the JavaIDEdroid download area at https://code.google.com/p/java-ide-droid/ --> Downloads<br>
 JID modules normally are protected with a hash for security reasons.
 Since the hash contains the developer's personal salt, I cannot distribute modules with hashes - you wouldn't be able to use them.
 So, the modules in the download area do not contain a hash and you will
 need to approve the modules once at first run time.
 
 Of course, you can also build all the modules by yourself. 
-Follow the instructions in the JID help about "Modules and JavaRunner".
+Follow the instructions in the JID help about "Modules and !JavaRunner".
 
 To get a working copy of the build.bsh script, download the source code 
-of the sample project *AndroidDevDemo.zip* from the JavaIDEdroid download area. In this project, you'll also find the Ant build file build-jid.xml which is a customized version of the standard build file build.xml. The file build-jid.xml needs to be present in the root Directory of every CN1 project.
+of the sample project *!AndroidDevDemo.zip* from the JavaIDEdroid download area. In this project, you'll also find the Ant build file build-jid.xml which is a customized version of the standard build file build.xml. The file build-jid.xml needs to be present in the root Directory of every CN1 project.
 
 If you have questions, please post them in the JID support forum at
 https://groups.google.com/forum/#!forum/java-ide-droid
-
