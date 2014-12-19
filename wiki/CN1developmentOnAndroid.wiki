@@ -26,7 +26,8 @@ And, of course, I like to drive JavaIDEdroid to its limits :-)
   * Sending CN1 builds to the CN1 build server: !JavaRunner feature of JavaIDEdroid
   * Downloading the builds: Web Browser on your Android device
   * Creating CN1 builds offline on your Android device: !JavaRunner feature of JavaIDEdroid
-  * Testing the builds: built-in Android package manager
+  * Installing the builds: built-in Android package Manager
+  * Testing the builds: use your real Android device
 
 == What is not (yet) working on Android ? ==
   * CN1 Simulator
