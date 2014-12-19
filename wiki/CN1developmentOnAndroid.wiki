@@ -3,7 +3,7 @@
 
 = Introduction =
 
-!CodenameOne (CN1) development normally is done on the deskop computer using Eclipse, !NetBeans or IntelliJ with the !CodenameOne plugin. 
+[https://code.google.com/p/codenameone/ CodenameOne] (CN1) development normally is done on the deskop computer using Eclipse, !NetBeans or IntelliJ with the !CodenameOne plugin. 
 
 But now, you can also develop CN1 apps on an Android device! 
 
