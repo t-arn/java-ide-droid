@@ -101,7 +101,7 @@ of the sample project *!AndroidDevDemo.zip* from the JavaIDEdroid download area.
 
 
 = How to develop CN1 applications on Android =
-Download the source code of the sample app !AndroidDevDemo from the JavaIDEdroid download area and you'll find the instructions in the help file in /res/theme/help-en.html. 
+Download the source code of the sample app !AndroidDevDemo from the JavaIDEdroid download area and you'll find the instructions in the help file in /res/theme/help-en.html or just click [http://www.t-arn.com/software/CN1/AndroidDevDemo-en.html here].
 
 
 = Support =
