@@ -63,7 +63,7 @@ If you are new to JavaIDEdroid, follow the HowToGetStarted wiki to set it up cor
 3. The JID module openjdk6-javac.jar.dex.zip or ecj_ant-adapter_3-8-3.jar.dex.zip
 
 With the above, you'll have Ant running on Android.<br>
-You need the PRO version of JavaIDEdroid because the needed !JavaRunner Support is very limited in the free version.
+You need the PRO version of JavaIDEdroid because the needed !JavaRunner support is very limited in the free version.
 
 4. The JID module !BuildClientSupport_1-0-0.jar.dex.zip
 
