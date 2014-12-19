@@ -54,13 +54,16 @@ For *Localization* and *data files*, you can use the standard res/theme.xml alon
 
 You'll need following tools:
 
-1. JavaIDEdroidPRO (JID)<br>
+1. JavaIDEdroidPRO (JID)
+
+If you are new to JavaIDEdroid, follow the HowToGetStarted wiki to set it up correctly before you go on!
+
+
 2. The JID module ant_1-9-1.jar.dex.zip<br>
 3. The JID module openjdk6-javac.jar.dex.zip or ecj_ant-adapter_3-8-3.jar.dex.zip
 
 With the above, you'll have Ant running on Android.<br>
-You need the PRO version of JavaIDEdroid because the needed !JavaRunner Support is very limited in the free version.<br>
-If you are new to JavaIDEdroid, follow the HowToGetStarted wiki to set it up correctly before you go on!
+You need the PRO version of JavaIDEdroid because the needed !JavaRunner Support is very limited in the free version.
 
 4. The JID module !BuildClientSupport_1-0-0.jar.dex.zip
 
