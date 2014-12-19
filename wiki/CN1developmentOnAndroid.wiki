@@ -99,8 +99,11 @@ Follow the instructions in the JID help about "Modules and !JavaRunner".
 To get a working copy of the build.bsh script, download the source code 
 of the sample project *!AndroidDevDemo.zip* from the JavaIDEdroid download area. In this project, you'll also find the Ant build file build-jid.xml which is a customized version of the standard build file build.xml. The file build-jid.xml needs to be present in the root directory of every CN1 project.
 
-If you have questions, please post them in the JID support forum at
-https://groups.google.com/forum/#!forum/java-ide-droid
 
 = How to develop CN1 applications on Android =
 Download the source code of the sample app !AndroidDevDemo from the JavaIDEdroid download area and you'll find the instructions in the help file in /res/theme/help-en.html. 
+
+
+= Support =
+If you have questions, please post them in the JID support forum at https://groups.google.com/forum/#!forum/java-ide-droid <br>
+Do *not* post them in the Codename One forum because I do *dot* monitor that forum.
