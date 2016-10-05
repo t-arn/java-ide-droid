@@ -216,17 +216,10 @@ LOCAL_CFLAGS += $(libutils_CFLAGS)
 LOCAL_CFLAGS += $(aapt_CFLAGS)
 
 #To build binaries with PIE, uncomment folowing two lines and one line in Application.mk
-#LOCAL_CFLAGS += -fPIE 
-#LOCAL_LDFLAGS += -fPIE -pie
+#LOCAL_CFLAGS += -fPIE  
+#LOCAL_LDFLAGS += -fPIE -pie 
 
 LOCAL_LDLIBS += -lz -llog
-
-#for size reduction
-LOCAL_CFLAGS += -fvisibility=hidden
-LOCAL_CPPFLAGS += -ffunction-sections -fdata-sections -fvisibility=hidden
-LOCAL_CFLAGS += -ffunction-sections -fdata-sections  
-LOCAL_LDFLAGS += -Wl,--gc-sections,--icf=safe
-
 
 # Building a commandline executable for Android
 # include $(BUILD_EXECUTABLE)
