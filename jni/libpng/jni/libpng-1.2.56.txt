@@ -1,9 +1,9 @@
 libpng.txt - A description on how to use and modify libpng
 
- libpng version 1.2.44 - June 26, 2010
+ libpng version 1.2.56 - December 17, 2015
  Updated and distributed by Glenn Randers-Pehrson
  <glennrp at users.sourceforge.net>
- Copyright (c) 1998-2009 Glenn Randers-Pehrson
+ Copyright (c) 1998-2014 Glenn Randers-Pehrson
 
  This document is released under the libpng license.
  For conditions of distribution and use, see the disclaimer
@@ -11,9 +11,9 @@ libpng.txt - A description on how to use and modify libpng
 
  Based on:
 
- libpng versions 0.97, January 1998, through 1.2.44 - June 26, 2010
+ libpng versions 0.97, January 1998, through 1.2.56 - December 17, 2015
  Updated and distributed by Glenn Randers-Pehrson
- Copyright (c) 1998-2009 Glenn Randers-Pehrson
+ Copyright (c) 1998-2014 Glenn Randers-Pehrson
 
  libpng 1.0 beta 6  version 0.96 May 28, 1997
  Updated and distributed by Andreas Dilger
@@ -53,15 +53,16 @@ a W3C Recommendation and as an ISO Standard (ISO/IEC 15948:2003 (E)) at
 The W3C and ISO documents have identical technical content.
 
 The PNG-1.2 specification is available at
-<http://www.libpng.org/pub/png/documents/>.  It is technically equivalent
+<http://png-mng.sourceforge.net/pub/png/spec/1.2/>.
+It is technically equivalent
 to the PNG specification (second edition) but has some additional material.
 
-The PNG-1.0 specification is available
-as RFC 2083 <http://www.libpng.org/pub/png/documents/> and as a
-W3C Recommendation <http://www.w3.org/TR/REC.png.html>.
+The PNG-1.0 specification is available as RFC 2083 
+<http://png-mng.sourceforge.net/pub/png/spec/1.0/> and as a
+W3C Recommendation <http://www.w3.org/TR/REC-png-961001>.
 
 Some additional chunks are described in the special-purpose public chunks
-documents at <http://www.libpng.org/pub/png/documents/>.
+documents at <http://www.libpng.org/pub/png/spec/register/>
 
 Other information
 about PNG, and the latest version of libpng, can be found at the PNG home
@@ -83,7 +84,7 @@ majority of the needs of its users.
 
 Libpng uses zlib for its compression and decompression of PNG files.
 Further information about zlib, and the latest version of zlib, can
-be found at the zlib home page, <http://www.info-zip.org/pub/infozip/zlib/>.
+be found at the zlib home page, <http://zlib.net/>.
 The zlib compression utility is a general purpose utility that is
 useful for more than PNG files, and can be used without libpng.
 See the documentation delivered with zlib for more details.
@@ -150,7 +151,7 @@ prediction.
 
 If you are intending to keep the file pointer open for use in libpng,
 you must ensure you don't read more than 8 bytes from the beginning
-of the file, and you also have to make a call to png_set_sig_bytes_read()
+of the file, and you also have to make a call to png_set_sig_bytes()
 with the number of bytes you read from the beginning.  Libpng will
 then only check the bytes (if any) that your program didn't read.
 
@@ -878,7 +879,7 @@ things.
 As of libpng version 1.2.9, png_set_expand_gray_1_2_4_to_8() was
 added.  It expands the sample depth without changing tRNS to alpha.
 
-As of libpng version 1.2.44, not all possible expansions are supported.
+As of libpng version 1.2.56, not all possible expansions are supported.
 
 In the following table, the 01 means grayscale with depth<8, 31 means
 indexed with depth<8, other numerals represent the color type, "T" means
@@ -1048,9 +1049,12 @@ the normalized graylevel is computed:
     int bw = 65536 - (rw + gw);
     gray = (rw*red + gw*green + bw*blue)/65536;
 
-The default values approximate those recommended in the Charles
-Poynton's Color FAQ, <http://www.inforamp.net/~poynton/>
-Copyright (c) 1998-01-04 Charles Poynton <poynton at inforamp.net>
+The default values come from the PNG file cHRM chunk if present; otherwise, the
+defaults correspond to the ITU-R recommendation 709, and also the sRGB color
+space, as recommended in the Charles Poynton's Colour FAQ,
+Copyright (c) 2006-11-28 Charles Poynton, in section 9:
+
+<http://www.poynton.com/notes/colour_and_gamma/ColorFAQ.html#RTFToC9>
 
     Y = 0.212671 * R + 0.715160 * G + 0.072169 * B
 
@@ -1876,6 +1880,7 @@ width, height, bit_depth, and color_type must be the same in each call.
     palette        - the palette for the file
                      (array of png_color)
     num_palette    - number of entries in the palette
+
 
     png_set_gAMA(png_ptr, info_ptr, gamma);
     gamma          - the gamma the image was created
@@ -2757,41 +2762,6 @@ is called for the first time.)
               same as the value of filter_method used
               in png_set_IHDR().
 
-It is also possible to influence how libpng chooses from among the
-available filters.  This is done in one or both of two ways - by
-telling it how important it is to keep the same filter for successive
-rows, and by telling it the relative computational costs of the filters.
-
-    double weights[3] = {1.5, 1.3, 1.1},
-       costs[PNG_FILTER_VALUE_LAST] =
-       {1.0, 1.3, 1.3, 1.5, 1.7};
-
-    png_set_filter_heuristics(png_ptr,
-       PNG_FILTER_HEURISTIC_WEIGHTED, 3,
-       weights, costs);
-
-The weights are multiplying factors that indicate to libpng that the
-row filter should be the same for successive rows unless another row filter
-is that many times better than the previous filter.  In the above example,
-if the previous 3 filters were SUB, SUB, NONE, the SUB filter could have a
-"sum of absolute differences" 1.5 x 1.3 times higher than other filters
-and still be chosen, while the NONE filter could have a sum 1.1 times
-higher than other filters and still be chosen.  Unspecified weights are
-taken to be 1.0, and the specified weights should probably be declining
-like those above in order to emphasize recent filters over older filters.
-
-The filter costs specify for each filter type a relative decoding cost
-to be considered when selecting row filters.  This means that filters
-with higher costs are less likely to be chosen over filters with lower
-costs, unless their "sum of absolute differences" is that much smaller.
-The costs do not necessarily reflect the exact computational speeds of
-the various filters, since this would unduly influence the final image
-size.
-
-Note that the numbers above were invented purely for this example and
-are given only to help explain the function usage.  Little testing has
-been done to find optimum values for either the costs or the weights.
-
 Removing unwanted object code
 
 There are a bunch of #define's in pngconf.h that control what parts of
@@ -2849,7 +2819,7 @@ the message, "message" is the formatted string to be printed,
 and p1 and p2 are parameters that are to be embedded in the string
 according to printf-style formatting directives.  For example,
 
-   png_debug1(2, "foo=%d\n", foo);
+   png_debug1(2, "foo=%d", foo);
 
 is expanded to
 
@@ -2926,6 +2896,9 @@ to set the error callbacks AFTER png_read_init(), or to change them with
 png_set_error_fn(), which is essentially the same function, but with a new
 name to force compilation errors with applications that try to use the old
 method.
+
+Support for the sCAL, iCCP, iTXt, and sPLT chunks was added at libpng-1.0.6;
+however, iTXt support was not enabled by default.
 
 Starting with version 1.0.7, you can find out which version of the library
 you are using at run-time:
@@ -3041,6 +3014,11 @@ which does not. It has been deprecated since libpng-1.0.18 and 1.2.9.
 IX.  (Omitted)
 
 
+Starting with libpng-1.2.54, attempting to set an over-length
+PLTE chunk is an error. Previously this requirement of the PNG specification
+was not enforced, and the palette was always limited to 256 entries.
+An over-length PLTE chunk found in an input PNG is silently truncated.
+
 X. Detecting libpng
 
 The png_get_io_ptr() function has been present since libpng-0.88, has never
@@ -3057,11 +3035,11 @@ control.  The git repository was built from old libpng-x.y.z.tar.gz files
 going back to version 0.70.  You can access the git repository (read only)
 at
 
-    git://libpng.git.sourceforge.net/gitroot/libpng
+    git://git.code.sf.net/p/libpng/code
 
-or you can browse it via "gitweb" at
+or you can browse it with a web browser by selecting the "code" button at
 
-    http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng
+    https://sourceforge.net/projects/libpng/
 
 Patches can be sent to glennrp at users.sourceforge.net or to
 png-mng-implement at lists.sourceforge.net or you can upload them to
@@ -3071,7 +3049,8 @@ the libpng bug tracker at
 
 XII. Coding style
 
-Our coding style is similar to the "Allman" style, with curly
+Our coding style is similar to the "Allman" style
+(See http://en.wikipedia.org/wiki/Indent_style#Allman_style), with curly
 braces on separate lines:
 
     if (condition)
@@ -3155,8 +3134,8 @@ above the comment that says
   /* Maintainer: Put new private prototypes here ^ and in libpngpf.3 */
 
 The names of all exported functions and variables begin
-with  "png_", and all publicly visible C preprocessor
-macros begin with "PNG_".
+with "png_", and all publicly visible C preprocessor
+macros begin with "PNG".
 
 We put a space after each comma and after each semicolon
 in "for" statments, and we put spaces before and after each
@@ -3179,13 +3158,11 @@ Other rules can be inferred by inspecting the libpng source.
 
 XIII. Y2K Compliance in libpng
 
-June 26, 2010
-
 Since the PNG Development group is an ad-hoc body, we can't make
 an official declaration.
 
 This is your unofficial assurance that libpng from version 0.71 and
-upward through 1.2.44 are Y2K compliant.  It is my belief that earlier
+upward through 1.2.56 are Y2K compliant.  It is my belief that earlier
 versions were also Y2K compliant.
 
 Libpng only has three year fields.  One is a 2-byte unsigned integer that
